@@ -7,10 +7,10 @@
 }
 
 .registration {
+  max-width: 1024px;
   margin: 15px;
   padding: 25px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-  width: 750px;
 }
 .registration__title {
   font-size: 1.5rem;
@@ -18,77 +18,75 @@
 .registration__description {
   margin-top: 40px;
   text-align: justify;
+  font-size: 0.9rem;
 }
 .registrationForm {
   margin-top: 20px;
 }
+
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+}
 .container {
   display: flex;
   flex-direction: column;
+  justify-content: flex-end;
+  width: 48%;
   margin-top: 20px;
 }
-.container__labels {
-  display: flex;
-  justify-content: space-between;
+.container_width100 {
+  width: 100%;
 }
-.container__inputs {
-  display: flex;
-  justify-content: space-between;
+.container_margin0 {
+  margin-top: 0px;
 }
-
-.registrationForm__label {
-  width: 48%;
+.container__label {
+  min-height: 22px;
   font-weight: bold;
   font-size: 0.9rem;
 }
 
-.registrationForm__input {
-  width: 48%;
+.container__label_required {
+  color: red;
+}
+.container__input {
   height: 30px;
+  width: 100%;
   padding: 0px 10px;
   margin-top: 10px;
   outline: none;
 }
-
-.container__inputs_column {
-  flex-direction: column;
-  justify-content: left;
-  align-items: flex-start;
-}
-.registrationForm__label_required {
-  color: red;
-}
-
-.registrationForm__input_arrive {
+.container__input_arrive {
   color: transparent;
 }
-.registrationForm__input_arrive:invalid:before {
+.container__input_arrive:invalid:before {
   color: #808080;
   content: attr(placeholder);
   pointer-events: none;
 }
-.registrationForm__input_arrive:valid,
-.registrationForm__input_arrive:focus,
-.registrationForm__input_arrive:active {
+.container__input_arrive:valid,
+.container__input_arrive:focus,
+.container__input_arrive:active {
   color: #000;
 }
-.registrationForm__input_arrive:valid:before,
-.registrationForm__input_arrive:focus:before,
-.registrationForm__input_arrive:active:before {
+.container__input_arrive:valid:before,
+.container__input_arrive:focus:before,
+.container__input_arrive:active:before {
   display: none;
 }
 
-.registrationForm__input_radio {
-  margin-right: 5px;
+.container__input_radio {
+  max-height: 22px;
+  padding: 0px;
 }
-
-.container__inputs_radio {
-  margin-top: 10px;
+.container__label_radio {
+  font-weight: 400;
 }
 .registration__map {
-  margin-top: 5px;
   width: 100%;
   height: 300px;
+  margin-top: 5px;
   border: 0;
 }
 
@@ -97,13 +95,26 @@
   align-items: center;
   justify-content: center;
   width: 150px;
-  background-color: black;
-  border: none;
-  color: white;
-  cursor: pointer;
   height: 40px;
   margin: 20px auto 0px auto;
+  border: none;
+  background-color: black;
+  color: white;
+  cursor: pointer;
+  text-transform: uppercase;
 }
-.registrationForm__input_width100 {
+.container_coordinates {
   width: 100%;
+}
+
+@media screen and (max-width: 500px) {
+  .wrapper {
+    flex-direction: column;
+  }
+  .container {
+    width: 100%;
+  }
+  .container__label_none {
+    display: none;
+  }
 }
