@@ -28,62 +28,67 @@
   display: flex;
   justify-content: space-between;
 }
-.container {
+.formItem {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
   width: 48%;
   margin-top: 20px;
 }
-.container_width100 {
+.formItem_width100 {
   width: 100%;
 }
-.container_margin0 {
+.formItem_margin0 {
   margin-top: 0px;
 }
-.container__label {
+.formItem__label {
   min-height: 22px;
   font-weight: bold;
   font-size: 0.9rem;
 }
 
-.container__label_required {
+.formItem__label_required {
   color: red;
 }
-.container__input {
+.formItem__input {
   height: 30px;
   width: 100%;
   padding: 0px 10px;
   margin-top: 10px;
   outline: none;
 }
-.container__input_arrive {
+.formItem__input_arrive {
   color: transparent;
 }
-.container__input_arrive:invalid:before {
+.formItem__input_arrive:invalid:before {
   color: #808080;
   content: attr(placeholder);
   pointer-events: none;
 }
-.container__input_arrive:valid,
-.container__input_arrive:focus,
-.container__input_arrive:active {
+.formItem__input_arrive:valid,
+.formItem__input_arrive:focus,
+.formItem__input_arrive:active {
   color: #000;
 }
-.container__input_arrive:valid:before,
-.container__input_arrive:focus:before,
-.container__input_arrive:active:before {
+.formItem__input_arrive:valid:before,
+.formItem__input_arrive:focus:before,
+.formItem__input_arrive:active:before {
   display: none;
 }
 
-.container__input_radio {
+.formItem__input_radio {
   max-height: 22px;
   padding: 0px;
 }
-.container__label_radio {
+.formItem__label_radio {
   font-weight: 400;
 }
-.registration__map {
+.location__description {
+  margin-top: 40px;
+  text-align: justify;
+  font-size: 0.9rem;
+}
+.location__map {
   width: 100%;
   height: 300px;
   margin-top: 5px;
@@ -103,7 +108,7 @@
   cursor: pointer;
   text-transform: uppercase;
 }
-.container_coordinates {
+.formItem_coordinates {
   width: 100%;
 }
 
@@ -111,10 +116,10 @@
   .wrapper {
     flex-direction: column;
   }
-  .container {
+  .formItem {
     width: 100%;
   }
-  .container__label_none {
+  .formItem__label_none {
     display: none;
   }
 }
