@@ -418,10 +418,6 @@
   .blockPadding {
     padding: 100px 20px;
   }
-  .content {
-    padding-top: 20px;
-    padding-bottom: 20px;
-  }
   body .promo .promo__section {
     padding-right: 20px;
   }
@@ -443,14 +439,5 @@
 }
 
 @media screen and (max-width: 360px) {
-  .blockPadding {
-    padding: 100px 10px;
-  }
-  .content {
-    padding-top: 5px;
-    padding-bottom: 5px;
-  }
-  body .promo .promo__section {
-    padding-right: 10px;
-  }
+
 }
