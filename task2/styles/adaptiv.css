@@ -128,7 +128,7 @@
   }
 }
 @media screen and (max-width: 930px) {
-  .sticky {
+  .header-fixed {
     display: none;
   }
   .header {
