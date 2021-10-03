@@ -48,7 +48,7 @@
 }
 
 @media screen and (min-width: 1500px) {
-  .header__img {
+  .header__img, .header-fixed__img{
     height: 30px;
     width: 125px;
   }
