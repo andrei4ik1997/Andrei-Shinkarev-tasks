@@ -277,6 +277,7 @@ input[name="point"] {
 .burger__links {
   display: block;
   position: relative;
+  z-index: 1;
   bottom: -30px;
   max-height: 0;
   font-size: 0;
