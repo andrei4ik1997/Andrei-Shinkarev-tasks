@@ -47,26 +47,21 @@ a {
   color: #81848f;
 }
 
-h4 > a {
-  margin-right: 20px;
-  color: #515769;
-  font-size: 1.5714rem;
-}
-
 span {
   font-size: 1rem;
   font-weight: 400;
   color: #bfc1c7;
 }
 
-.textToUppercase {
+.blockquote {
+  padding: 10px 20px;
+}
+
+.text-to-uppercase {
   text-transform: uppercase;
 }
 
-blockquote {
-  padding: 10px 20px;
-}
-.bgColor{
+.bg-color-light-grey {
   background: #fafafa;
 }
 
@@ -76,17 +71,17 @@ blockquote {
   padding: 15px 30px;
   border-color: rgba(255, 255, 255, 0.3);
   border-width: 1px;
-  font-size: 	0.9286rem;
+  font-size: 0.9286rem;
   font-weight: 600;
   background: transparent;
   cursor: pointer;
 }
 
-.marginBottom0 {
+.margin-bottom-0 {
   margin-bottom: 0px;
 }
 
-.backToTop {
+.back-to-top {
   position: fixed;
   right: 10px;
   bottom: 10px;
@@ -96,7 +91,7 @@ blockquote {
   align-items: center;
   justify-content: center;
   border-radius: 3px;
-  font-size: 	0.7857rem;
+  font-size: 0.7857rem;
   letter-spacing: 1px;
   background: #515769;
   color: #fff;
@@ -104,6 +99,6 @@ blockquote {
   opacity: 0.4;
 }
 
-.blockPadding {
+.padding-100 {
   padding: 100px;
 }

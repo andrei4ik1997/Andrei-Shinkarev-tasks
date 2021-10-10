@@ -5,7 +5,7 @@
   .galary {
     height: 1500px;
   }
-  .blockPadding {
+  .padding-100 {
     padding: 100px 400px;
   }
   .blockquote:before {
@@ -21,7 +21,7 @@
   .galary {
     height: 1000px;
   }
-  .blockPadding {
+  .padding-100 {
     padding: 100px 200px;
   }
   .blockquote:before {
@@ -39,7 +39,7 @@
   .galary {
     height: 800px;
   }
-  .blockPadding {
+  .padding-100 {
     padding: 100px 150px;
   }
   .product__link:after {
@@ -48,7 +48,8 @@
 }
 
 @media screen and (min-width: 1500px) {
-  .header__img, .header-fixed__img{
+  .header__img,
+  .header-fixed__img {
     height: 30px;
     width: 125px;
   }
@@ -58,28 +59,28 @@
     top: 35px;
   }
 
-  #clients-slider__input_1:checked ~ .clients-slider__slide_first,
-  #clients-slider__input_1:checked ~ .clients-slider__slide_second,
-  #clients-slider__input_1:checked ~ .clients-slider__slide_third,
-  #clients-slider__input_1:checked ~ .clients-slider__slide_fouth,
-  #clients-slider__input_1:checked ~ .clients-slider__slide_fifth,
-  #clients-slider__input_1:checked ~ .clients-slider__slide_sixth {
+  .clients-slider__input:nth-of-type(1):checked ~ .clients-slider__slide:nth-of-type(1),
+  .clients-slider__input:nth-of-type(1):checked ~ .clients-slider__slide:nth-of-type(2),
+  .clients-slider__input:nth-of-type(1):checked ~ .clients-slider__slide:nth-of-type(3),
+  .clients-slider__input:nth-of-type(1):checked ~ .clients-slider__slide:nth-of-type(4),
+  .clients-slider__input:nth-of-type(1):checked ~ .clients-slider__slide:nth-of-type(5),
+  .clients-slider__input:nth-of-type(1):checked ~ .clients-slider__slide:nth-of-type(6) {
     display: block;
   }
 
-  #clients-slider__input_1:checked
+  .clients-slider__input:nth-of-type(1):checked
     ~ .clients-slider__arrow_next
     label:nth-child(2),
-  #clients-slider__input_2:checked
+  .clients-slider__input:nth-of-type(2):checked
     ~ .clients-slider__arrow_next
     label:nth-child(1) {
     display: none;
   }
 
-  #clients-slider__input_1:checked
+  .clients-slider__input:nth-of-type(1):checked
     ~ .clients-slider__arrow_prev
     label:nth-child(2),
-  #clients-slider__input_2:checked
+  .clients-slider__input:nth-of-type(2):checked
     ~ .clients-slider__arrow_prev
     label:nth-child(1) {
     display: none;
@@ -103,26 +104,26 @@
 }
 
 @media screen and (max-width: 1200px) {
-  .blockPadding {
+  .padding-100 {
     padding: 100px;
   }
   .galary {
     height: 680px;
   }
-  #clients-slider__input_1:checked ~ .clients-slider__slide_fifth {
+  .clients-slider__input:nth-of-type(1):checked ~ .clients-slider__slide:nth-of-type(5) {
     display: none;
   }
 
-  #clients-slider__input_2:checked ~ .clients-slider__slide_fifth {
+  .clients-slider__input:nth-of-type(2):checked ~ .clients-slider__slide:nth-of-type(5) {
     display: block;
   }
 }
 
 @media screen and (max-width: 992px) {
-  .blockPadding {
+  .padding-100 {
     padding: 100px 30px;
   }
-  
+
   .galary {
     height: 550px;
   }
@@ -137,7 +138,7 @@
   .burger {
     display: flex;
   }
-  .product__name {
+  .product__title-name {
     margin-right: 0px;
   }
   .promo {
@@ -155,11 +156,11 @@
     left: 0%;
     width: 100%;
   }
-  #clients-slider__input_1:checked ~ .clients-slider__slide_fouth {
+  .clients-slider__input:nth-of-type(1):checked ~ .clients-slider__slide:nth-of-type(4) {
     display: none;
   }
 
-  #clients-slider__input_2:checked ~ .clients-slider__slide_fouth {
+  .clients-slider__input:nth-of-type(2):checked ~ .clients-slider__slide:nth-of-type(4) {
     display: block;
   }
 }
@@ -198,7 +199,7 @@
     font-size: 4.2857rem;
   }
 
-  .product__name {
+  .product__title-name {
     margin-right: 25px;
   }
 }
@@ -211,20 +212,20 @@
     width: 100%;
     margin-bottom: 2px;
   }
-  .latestProguct__desc {
+  .latest-progucts__desc {
     width: 100%;
   }
-  .latestProguct__row {
+  .latest-progucts__row {
     display: block;
   }
   .product {
     width: 100%;
     margin-bottom: 50px;
   }
-  .product_marginBottom0 {
+  .product_margin-bottom-0 {
     margin-bottom: 0px;
   }
-  .product__name {
+  .product__title-name {
     margin-right: 20px;
   }
   .reviews__slider {
@@ -240,62 +241,62 @@
 }
 
 @media screen and (max-width: 660px) {
-  #clients-slider__input_1:checked
+  .clients-slider__input:nth-of-type(1):checked
     ~ .clients-slider__arrow_next
     label:nth-child(2),
-  #clients-slider__input_2:checked
+  .clients-slider__input:nth-of-type(2):checked
     ~ .clients-slider__arrow_next
     label:nth-child(1) {
     display: none;
   }
 
-  #clients-slider__input_1:checked
+  .clients-slider__input:nth-of-type(1):checked
     ~ .clients-slider__arrow_prev
     label:nth-child(2),
-  #clients-slider__input_2:checked
+  .clients-slider__input:nth-of-type(2):checked
     ~ .clients-slider__arrow_prev
     label:nth-child(1) {
     display: none;
   }
 
-  #clients-slider__input_1:checked
+  .clients-slider__input:nth-of-type(1):checked
     ~ .clients-slider__arrow_next
     label:nth-child(2),
-  #clients-slider__input_2:checked
+  .clients-slider__input:nth-of-type(2):checked
     ~ .clients-slider__arrow_next
     label:nth-child(3),
-  #clients-slider__input_3:checked
+  .clients-slider__input:nth-of-type(3):checked
     ~ .clients-slider__arrow_next
     label:nth-child(1) {
     display: block;
   }
 
-  #clients-slider__input_1:checked
+  .clients-slider__input:nth-of-type(1):checked
     ~ .clients-slider__arrow_prev
     label:nth-child(2),
-  #clients-slider__input_2:checked
+  .clients-slider__input:nth-of-type(2):checked
     ~ .clients-slider__arrow_prev
     label:nth-child(3),
-  #clients-slider__input_3:checked
+  .clients-slider__input:nth-of-type(3):checked
     ~ .clients-slider__arrow_prev
     label:nth-child(1) {
     display: block;
   }
 
-  #clients-slider__input_1:checked ~ .clients-slider__slide_third {
+  .clients-slider__input:nth-of-type(1):checked ~ .clients-slider__slide:nth-of-type(3) {
     display: none;
   }
 
-  #clients-slider__input_2:checked ~ .clients-slider__slide_third {
+  .clients-slider__input:nth-of-type(2):checked ~ .clients-slider__slide:nth-of-type(3) {
     display: block;
   }
 
-  #clients-slider__input_2:checked ~ .clients-slider__slide_fifth,
-  #clients-slider__input_2:checked ~ .clients-slider__slide_sixth {
+  .clients-slider__input:nth-of-type(2):checked ~ .clients-slider__slide:nth-of-type(5),
+  .clients-slider__input:nth-of-type(2):checked ~ .clients-slider__slide:nth-of-type(6) {
     display: none;
   }
-  #clients-slider__input_3:checked ~ .clients-slider__slide_fifth,
-  #clients-slider__input_3:checked ~ .clients-slider__slide_sixth {
+  .clients-slider__input:nth-of-type(3):checked ~ .clients-slider__slide:nth-of-type(5),
+  .clients-slider__input:nth-of-type(3):checked ~ .clients-slider__slide:nth-of-type(6) {
     display: block;
   }
 }
@@ -332,90 +333,90 @@
 }
 
 @media screen and (max-width: 550px) {
-  #clients-slider__input_1:checked
+  .clients-slider__input:nth-of-type(1):checked
     ~ .clients-slider__arrow_next
     label:nth-child(2),
-  #clients-slider__input_2:checked
+  .clients-slider__input:nth-of-type(2):checked
     ~ .clients-slider__arrow_next
     label:nth-child(3),
-  #clients-slider__input_3:checked
+  .clients-slider__input:nth-of-type(3):checked
     ~ .clients-slider__arrow_next
     label:nth-child(1) {
     display: none;
   }
 
-  #clients-slider__input_1:checked
+  .clients-slider__input:nth-of-type(1):checked
     ~ .clients-slider__arrow_prev
     label:nth-child(2),
-  #clients-slider__input_2:checked
+  .clients-slider__input:nth-of-type(2):checked
     ~ .clients-slider__arrow_prev
     label:nth-child(3),
-  #clients-slider__input_3:checked
+  .clients-slider__input:nth-of-type(3):checked
     ~ .clients-slider__arrow_prev
     label:nth-child(1) {
     display: none;
   }
 
-  #clients-slider__input_1:checked
+  .clients-slider__input:nth-of-type(1):checked
     ~ .clients-slider__arrow_next
     label:nth-child(2),
-  #clients-slider__input_2:checked
+  .clients-slider__input:nth-of-type(2):checked
     ~ .clients-slider__arrow_next
     label:nth-child(3),
-  #clients-slider__input_3:checked
+  .clients-slider__input:nth-of-type(3):checked
     ~ .clients-slider__arrow_next
     label:nth-child(4),
-  #clients-slider__input_4:checked
+  .clients-slider__input:nth-of-type(4):checked
     ~ .clients-slider__arrow_next
     label:nth-child(5),
-  #clients-slider__input_5:checked
+  .clients-slider__input:nth-of-type(5):checked
     ~ .clients-slider__arrow_next
     label:nth-child(6),
-  #clients-slider__input_6:checked
+  .clients-slider__input:nth-of-type(6):checked
     ~ .clients-slider__arrow_next
     label:nth-child(1) {
     display: block;
   }
 
-  #clients-slider__input_1:checked
+  .clients-slider__input:nth-of-type(1):checked
     ~ .clients-slider__arrow_prev
     label:nth-child(6),
-  #clients-slider__input_2:checked
+  .clients-slider__input:nth-of-type(2):checked
     ~ .clients-slider__arrow_prev
     label:nth-child(1),
-  #clients-slider__input_3:checked
+  .clients-slider__input:nth-of-type(3):checked
     ~ .clients-slider__arrow_prev
     label:nth-child(2),
-  #clients-slider__input_4:checked
+  .clients-slider__input:nth-of-type(4):checked
     ~ .clients-slider__arrow_prev
     label:nth-child(3),
-  #clients-slider__input_5:checked
+  .clients-slider__input:nth-of-type(5):checked
     ~ .clients-slider__arrow_prev
     label:nth-child(4),
-  #clients-slider__input_6:checked
+  .clients-slider__input:nth-of-type(6):checked
     ~ .clients-slider__arrow_prev
     label:nth-child(5) {
     display: block;
   }
-  #clients-slider__input_1:checked ~ .clients-slider__slide_second,
-  #clients-slider__input_2:checked ~ .clients-slider__slide_third,
-  #clients-slider__input_2:checked ~ .clients-slider__slide_fouth,
-  #clients-slider__input_3:checked ~ .clients-slider__slide_fifth,
-  #clients-slider__input_3:checked ~ .clients-slider__slide_sixth {
+  .clients-slider__input:nth-of-type(1):checked ~ .clients-slider__slide:nth-of-type(2),
+  .clients-slider__input:nth-of-type(2):checked ~ .clients-slider__slide:nth-of-type(3),
+  .clients-slider__input:nth-of-type(2):checked ~ .clients-slider__slide:nth-of-type(4),
+  .clients-slider__input:nth-of-type(3):checked ~ .clients-slider__slide:nth-of-type(5),
+  .clients-slider__input:nth-of-type(3):checked ~ .clients-slider__slide:nth-of-type(6) {
     display: none;
   }
-  #clients-slider__input_1:checked ~ .clients-slider__slide_first,
-  #clients-slider__input_2:checked ~ .clients-slider__slide_second,
-  #clients-slider__input_3:checked ~ .clients-slider__slide_third,
-  #clients-slider__input_4:checked ~ .clients-slider__slide_fouth,
-  #clients-slider__input_5:checked ~ .clients-slider__slide_fifth,
-  #clients-slider__input_6:checked ~ .clients-slider__slide_sixth {
+  .clients-slider__input:nth-of-type(1):checked ~ .clients-slider__slide:nth-of-type(1),
+  .clients-slider__input:nth-of-type(2):checked ~ .clients-slider__slide:nth-of-type(2),
+  .clients-slider__input:nth-of-type(3):checked ~ .clients-slider__slide:nth-of-type(3),
+  .clients-slider__input:nth-of-type(4):checked ~ .clients-slider__slide:nth-of-type(4),
+  .clients-slider__input:nth-of-type(5):checked ~ .clients-slider__slide:nth-of-type(5),
+  .clients-slider__input:nth-of-type(6):checked ~ .clients-slider__slide:nth-of-type(6) {
     display: block;
   }
 }
 
 @media screen and (max-width: 500px) {
-  .blockPadding {
+  .padding-100 {
     padding: 100px 20px;
   }
   body .promo .promo__section {
@@ -436,8 +437,4 @@
   .footer__form {
     width: 100%;
   }
-}
-
-@media screen and (max-width: 360px) {
-
 }

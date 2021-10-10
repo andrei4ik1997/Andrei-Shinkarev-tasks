@@ -6,181 +6,110 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Hind:300,400,500,600,700" type="text/css" />
+    <link rel="stylesheet" href="./icons/frontawesome/css/font-awesome.min.css" type="text/css" />
+    <link rel="stylesheet" href="./icons/simple-line-icons/simple-line-icons.min.css" type="text/css" />
     <link rel="stylesheet" href="./styles.css" type="text/css" />
-    <link
-      rel="stylesheet"
-      href="./icons/frontawesome/css/font-awesome.min.css"
-      type="text/css"
-    />
-    <link
-      rel="stylesheet"
-      href="./icons/simple-line-icons/simple-line-icons.min.css"
-      type="text/css"
-    />
-    <link
-      rel="stylesheet"
-      href="http://fonts.googleapis.com/css?family=Hind:300,400,500,600,700"
-      type="text/css"
-    />
     <title>Asentus by Shinkarev</title>
   </head>
   <body>
-    <input type="radio" name="point" id="slide1" aria-hidden="true" checked />
-    <input type="radio" name="point" id="slide2" aria-hidden="true" />
+    <input class="input-control" id="slide1" type="radio" name="slide" aria-hidden="true" checked />
+    <input class="input-control" id="slide2" type="radio" name="slide" aria-hidden="true" />
     <header class="burger">
       <div class="burger__menu">
         <a class="burger__logo" href="#">
-          <img
-            class="burger__img"
-            src="./images/logo-dark.png"
-            alt="Logo Dark"
-          />
+          <img class="burger__img" src="./images/logo-dark.png" alt="Logo Dark" />
         </a>
-        <input id="check-menu" type="checkbox" />
-        <label class="check-label" for="check-menu"></label>
-        <div class="burger__line burger__line_first"></div>
-        <div class="burger__line burger__line_second"></div>
-        <div class="burger__line burger__line_third"></div>
-        <div class="burger__line burger__line_fourth"></div>
+        <input class="burger__input" id="burger-menu-logo" type="checkbox" aria-hidden="true" />
+        <label class="burger__label" for="burger-menu-logo"></label>
+        <div class="burger__line"></div>
+        <div class="burger__line"></div>
+        <div class="burger__line"></div>
+        <div class="burger__line"></div>
         <nav class="burger__links">
-          <a class="burger__links-link textToUppercase" href="#">Home</a>
-          <a class="burger__links-link textToUppercase" href="#pricings"
-            >Pricing</a
-          >
-          <a class="burger__links-link textToUppercase" href="#achievements"
-            >About</a
-          >
-          <a class="burger__links-link textToUppercase" href="#latestProguct"
-            >Products</a
-          >
-          <a class="burger__links-link textToUppercase" href="#showcase">FAQ</a>
-          <a class="burger__links-link textToUppercase" href="#footer"
-            >Contact</a
-          >
+          <a class="burger__links-link text-to-uppercase" href="#">Home</a>
+          <a class="burger__links-link text-to-uppercase" href="#pricings">Pricing</a>
+          <a class="burger__links-link text-to-uppercase" href="#achievements">About</a>
+          <a class="burger__links-link text-to-uppercase" href="#latest-progucts">Products</a>
+          <a class="burger__links-link text-to-uppercase" href="#showcase">FAQ</a>
+          <a class="burger__links-link text-to-uppercase" href="#footer">Contact</a>
         </nav>
       </div>
     </header>
-    <header class="blockPadding header-fixed">
+    <header class="header-fixed padding-100">
       <a class="header-fixed__logo" href="#">
-        <img
-          class="header-fixed__img"
-          src="./images/logo-dark.png"
-          alt="Logo Dark"
-        />
+        <img class="header-fixed__img" src="./images/logo-dark.png" alt="Logo Dark" />
       </a>
       <nav class="header-fixed__navbar">
-        <a class="header-fixed__navbar-item textToUppercase" href="#">Home</a>
-        <a class="header-fixed__navbar-item textToUppercase" href="#pricings"
-          >Pricing</a
-        >
-        <a
-          class="header-fixed__navbar-item textToUppercase"
-          href="#achievements"
-          >About</a
-        >
-        <a
-          class="header-fixed__navbar-item textToUppercase"
-          href="#latestProguct"
-          >Products</a
-        >
-        <a class="header-fixed__navbar-item textToUppercase" href="#showcase"
-          >FAQ</a
-        >
-        <a
-          class="
-            header-fixed__navbar-item header-fixed__navbar-item_padding0
-            textToUppercase
-          "
-          href="#footer"
-          >Contact</a
-        >
+        <a class="header-fixed__navbar-item text-to-uppercase" href="#">Home</a>
+        <a class="header-fixed__navbar-item text-to-uppercase" href="#pricings">Pricing</a>
+        <a class="header-fixed__navbar-item text-to-uppercase" href="#achievements">About</a>
+        <a class="header-fixed__navbar-item text-to-uppercase" href="#latest-progucts">Products</a>
+        <a class="header-fixed__navbar-item text-to-uppercase" href="#showcase">FAQ</a>
+        <a class="header-fixed__navbar-item header-fixed__navbar-item_padding-0 text-to-uppercase" href="#footer">Contact</a>
       </nav>
     </header>
     <header class="header">
       <div class="header__separator header__separator_first">
-        <div class="blockPadding header__menu">
+        <div class="header__menu padding-100">
           <a class="header__logo" href="#">
-            <img
-              class="header__img header__img_light"
-              src="./images/logo.png"
-              alt="Logo Light"
-            />
+            <img class="header__img header__img_light" src="./images/logo.png" alt="Logo Light" />
           </a>
           <nav class="navbar">
-            <a class="navbar__item textToUppercase" href="#">Home</a>
-            <a class="navbar__item textToUppercase" href="#pricings">Pricing</a>
-            <a class="navbar__item textToUppercase" href="#achievements"
-              >About</a
-            >
-            <a class="navbar__item textToUppercase" href="#latestProguct"
-              >Products</a
-            >
-            <a class="navbar__item textToUppercase" href="#showcase">FAQ</a>
-            <a
-              class="navbar__item navbar__item_padding0 textToUppercase"
-              href="#footer"
-              >Contact</a
-            >
+            <a class="navbar__item text-to-uppercase" href="#">Home</a>
+            <a class="navbar__item text-to-uppercase" href="#pricings">Pricing</a>
+            <a class="navbar__item text-to-uppercase" href="#achievements">About</a>
+            <a class="navbar__item text-to-uppercase" href="#latest-progucts">Products</a>
+            <a class="navbar__item text-to-uppercase" href="#showcase">FAQ</a>
+            <a class="navbar__item navbar__item_padding-0 text-to-uppercase" href="#footer">Contact</a>
           </nav>
         </div>
       </div>
     </header>
-    <main>
+    <main class="main">
       <section class="slider">
         <div class="slider__slides">
-          <div class="slider__slide slider__slide_slide1">
-            <div class="blockPadding content">
-              <h1 class="content__title textToUppercase">Hi-Tech Design</h1>
+          <div class="slider__slide">
+            <div class="content padding-100">
+              <h1 class="content__title text-to-uppercase">Hi-Tech Design</h1>
               <p class="content__description">
-                Lorem ipsum dolor amet consectetur adipiscing dolore magna
-                aliqua
+                Lorem ipsum dolor amet consectetur adipiscing dolore magna aliqua
                 <br />
                 enim minim estudiat veniam siad venumus dolore
               </p>
-              <button
-                class="button content__button textToUppercase"
-                aria-label="Explore"
-              >
+              <button class="button content__button text-to-uppercase" type="button" aria-label="Explore" tabindex="-1">
                 explore
               </button>
             </div>
           </div>
-          <div class="slider__slide slider__slide_slide2">
-            <div class="blockPadding content">
-              <h1 class="content__title textToUppercase">Hi-Tech Design</h1>
+          <div class="slider__slide slider__slide_slide-2">
+            <div class="content padding-100">
+              <h1 class="content__title text-to-uppercase">Hi-Tech Design</h1>
               <p class="content__description">
-                Lorem ipsum dolor amet consectetur adipiscing dolore magna
-                aliqua
+                Lorem ipsum dolor amet consectetur adipiscing dolore magna aliqua
                 <br />
                 enim minim estudiat veniam siad venumus dolore
               </p>
-              <button
-                class="button content__button textToUppercase"
-                aria-label="Explore"
-              >
+              <button class="button content__button text-to-uppercase" type="button" aria-label="Explore" tabindex="-1">
                 explore
               </button>
             </div>
           </div>
         </div>
-
-        <div class="blockPadding slider__controls">
-          <label for="slide1"></label>
-          <label for="slide2"></label>
+        <div class="slider__controls padding-100">
+          <label class="slider__controls-label" for="slide1"></label>
+          <label class="slider__controls-label" for="slide2"></label>
         </div>
       </section>
-      <section id="achievements" class="blockPadding bgColor achievements">
+      <section class="achievements bg-color-light-grey padding-100" id="achievements">
         <div class="achievements__row">
           <div class="service">
             <div class="service__logo">
               <i class="service__icon icon-chemistry"></i>
             </div>
             <div class="service__info">
-              <h3>Art Of Coding</h3>
-              <p>
-                Lorem ipsum dolor amet consectetur ut consequat siad esqudiat
-                dolor
-              </p>
+              <h3 class="service__info-title">Art Of Coding</h3>
+              <p class="service__info-desc">Lorem ipsum dolor amet consectetur ut consequat siad esqudiat dolor</p>
             </div>
           </div>
           <div class="service">
@@ -188,11 +117,8 @@
               <i class="service__icon icon-screen-tablet"></i>
             </div>
             <div class="service__info">
-              <h3>Responsive Design</h3>
-              <p>
-                Lorem ipsum dolor amet consectetur ut consequat siad esqudiat
-                dolor
-              </p>
+              <h3 class="service__info-title">Responsive Design</h3>
+              <p class="service__info-desc">Lorem ipsum dolor amet consectetur ut consequat siad esqudiat dolor</p>
             </div>
           </div>
           <div class="service">
@@ -200,11 +126,8 @@
               <i class="service__icon icon-badge"></i>
             </div>
             <div class="service__info">
-              <h3>Feature Reach</h3>
-              <p>
-                Lorem ipsum dolor amet consectetur ut consequat siad esqudiat
-                dolor
-              </p>
+              <h3 class="service__info-title">Feature Reach</h3>
+              <p class="service__info-desc">Lorem ipsum dolor amet consectetur ut consequat siad esqudiat dolor</p>
             </div>
           </div>
         </div>
@@ -214,11 +137,8 @@
               <i class="service__icon icon-notebook"></i>
             </div>
             <div class="service__info">
-              <h3>Useful Documentation</h3>
-              <p>
-                Lorem ipsum dolor amet consectetur ut consequat siad esqudiat
-                dolor
-              </p>
+              <h3 class="service__info-title">Useful Documentation</h3>
+              <p class="service__info-desc">Lorem ipsum dolor amet consectetur ut consequat siad esqudiat dolor</p>
             </div>
           </div>
           <div class="service">
@@ -226,11 +146,8 @@
               <i class="service__icon icon-speedometer"></i>
             </div>
             <div class="service__info">
-              <h3>Fast Delivery</h3>
-              <p>
-                Lorem ipsum dolor amet consectetur ut consequat siad esqudiat
-                dolor
-              </p>
+              <h3 class="service__info-title">Fast Delivery</h3>
+              <p class="service__info-desc">Lorem ipsum dolor amet consectetur ut consequat siad esqudiat dolor</p>
             </div>
           </div>
           <div class="service">
@@ -238,74 +155,58 @@
               <i class="service__icon icon-badge"></i>
             </div>
             <div class="service__info">
-              <h3>Free Plugins</h3>
-              <p>
-                Lorem ipsum dolor amet consectetur ut consequat siad esqudiat
-                dolor
-              </p>
+              <h3 class="service__info-title">Free Plugins</h3>
+              <p class="service__info-desc">Lorem ipsum dolor amet consectetur ut consequat siad esqudiat dolor</p>
             </div>
           </div>
         </div>
       </section>
-      <section id="latestProguct" class="blockPadding latestProguct">
-        <h2 class="latestProguct__title">Latest Products</h2>
-        <p class="latestProguct__desc">
-          Lorem ipsum dolor sit amet consectetur adipiscing elit sed tempor
-          incdidunt ut laboret dolor magna ut consequat siad esqudiat dolor
+      <section class="latest-progucts padding-100" id="latest-progucts">
+        <h2 class="latest-progucts__title">Latest Products</h2>
+        <p class="latest-progucts__desc">
+          Lorem ipsum dolor sit amet consectetur adipiscing elit sed tempor incdidunt ut laboret dolor magna ut consequat siad
+          esqudiat dolor
         </p>
-        <div class="latestProguct__row">
+        <div class="latest-progucts__row">
           <div class="product">
-            <img
-              class="product__img"
-              src="./images/970x647/01.jpg"
-              alt="Latest Products Image"
-            />
-            <h4>
-              <span class="product__name">Triangle Roof</span>
-              <span class="textToUppercase">Management</span>
+            <img class="product__img" src="./images/970x647/01.jpg" alt="Latest Products Image" />
+            <h4 class="product__title">
+              <span class="product__title-name">Triangle Roof</span>
+              <span class="product__title-subname text-to-uppercase">Management</span>
             </h4>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipiscing elit sed tempor
-              incdidunt ut laboret dolor magna ut consequat siad esqudiat dolor
+            <p class="product__desc">
+              Lorem ipsum dolor sit amet consectetur adipiscing elit sed tempor incdidunt ut laboret dolor magna ut consequat siad
+              esqudiat dolor
             </p>
-            <a class="product__link textToUppercase" href="#">Read More</a>
+            <a class="product__link text-to-uppercase" href="#">Read More</a>
           </div>
           <div class="product">
-            <img
-              class="product__img"
-              src="./images/970x647/02.jpg"
-              alt="Latest Products Image"
-            />
-
-            <h4>
-              <span class="product__name"> Curved Corners</span>
-              <span class="textToUppercase">Developmeny</span>
+            <img class="product__img" src="./images/970x647/02.jpg" alt="Latest Products Image" />
+            <h4 class="product__title">
+              <span class="product__title-name"> Curved Corners</span>
+              <span class="product__title-subname text-to-uppercase">Developmeny</span>
             </h4>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipiscing elit sed tempor
-              incdidunt ut laboret dolor magna ut consequat siad esqudiat dolor
+            <p class="product__desc">
+              Lorem ipsum dolor sit amet consectetur adipiscing elit sed tempor incdidunt ut laboret dolor magna ut consequat siad
+              esqudiat dolor
             </p>
-            <a class="product__link textToUppercase" href="#">Read More</a>
+            <a class="product__link text-to-uppercase" href="#">Read More</a>
           </div>
-          <div class="product product_marginBottom0">
-            <img
-              class="product__img"
-              src="./images/970x647/03.jpg"
-              alt="Latest Products Image"
-            />
-            <h4>
-              <span class="product__name">Bird On Green</span>
-              <span class="textToUppercase">Design</span>
+          <div class="product product_margin-bottom-0">
+            <img class="product__img" src="./images/970x647/03.jpg" alt="Latest Products Image" />
+            <h4 class="product__title">
+              <span class="product__title-name">Bird On Green</span>
+              <span class="product__title-subname text-to-uppercase">Design</span>
             </h4>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipiscing elit sed tempor
-              incdidunt ut laboret dolor magna ut consequat siad esqudiat dolor
+            <p class="product__desc">
+              Lorem ipsum dolor sit amet consectetur adipiscing elit sed tempor incdidunt ut laboret dolor magna ut consequat siad
+              esqudiat dolor
             </p>
-            <a class="product__link textToUppercase" href="#">Read More</a>
+            <a class="product__link text-to-uppercase" href="#">Read More</a>
           </div>
         </div>
       </section>
-      <section id="clients" class="blockPadding bgColor clients">
+      <section class="clients bg-color-light-grey padding-100" id="clients">
         <div class="clients-slider">
           <input
             class="clients-slider__input"
@@ -352,309 +253,237 @@
           />
 
           <div class="clients-slider__arrow clients-slider__arrow_prev">
-            <label for="clients-slider__input_1"
-              ><i class="fa fa-angle-left fa-5x"></i>
+            <label class="clients-slider__label" for="clients-slider__input_1"
+              ><i class="clients-slider__icon fa fa-angle-left fa-5x"></i>
             </label>
-            <label for="clients-slider__input_2"
-              ><i class="fa fa-angle-left fa-5x"></i>
+            <label class="clients-slider__label" for="clients-slider__input_2"
+              ><i class="clients-slider__icon fa fa-angle-left fa-5x"></i>
             </label>
-            <label for="clients-slider__input_3"
-              ><i class="fa fa-angle-left fa-5x"></i>
+            <label class="clients-slider__label" for="clients-slider__input_3"
+              ><i class="clients-slider__icon fa fa-angle-left fa-5x"></i>
             </label>
-            <label for="clients-slider__input_4"
-              ><i class="fa fa-angle-left fa-5x"></i>
+            <label class="clients-slider__label" for="clients-slider__input_4"
+              ><i class="clients-slider__icon fa fa-angle-left fa-5x"></i>
             </label>
-            <label for="clients-slider__input_5"
-              ><i class="fa fa-angle-left fa-5x"></i>
+            <label class="clients-slider__label" for="clients-slider__input_5"
+              ><i class="clients-slider__icon fa fa-angle-left fa-5x"></i>
             </label>
-            <label for="clients-slider__input_6"
-              ><i class="fa fa-angle-left fa-5x"></i>
+            <label class="clients-slider__label" for="clients-slider__input_6"
+              ><i class="clients-slider__icon fa fa-angle-left fa-5x"></i>
             </label>
           </div>
 
-          <div class="clients-slider__slide clients-slider__slide_first">
-            <img src="./images/clients/01.png" alt="Client Logo" />
+          <div class="clients-slider__slide">
+            <img class="clients-slider__slide-image" src="./images/clients/01.png" alt="Client Logo" />
           </div>
-          <div class="clients-slider__slide clients-slider__slide_second">
-            <img src="./images/clients/02.png" alt="Client Logo" />
+          <div class="clients-slider__slide">
+            <img class="clients-slider__slide-image" src="./images/clients/02.png" alt="Client Logo" />
           </div>
-          <div class="clients-slider__slide clients-slider__slide_third">
-            <img src="./images/clients/03.png" alt="Client Logo" />
+          <div class="clients-slider__slide">
+            <img class="clients-slider__slide-image" src="./images/clients/03.png" alt="Client Logo" />
           </div>
-          <div class="clients-slider__slide clients-slider__slide_fouth">
-            <img src="./images/clients/04.png" alt="Client Logo" />
+          <div class="clients-slider__slide">
+            <img class="clients-slider__slide-image" src="./images/clients/04.png" alt="Client Logo" />
           </div>
-          <div class="clients-slider__slide clients-slider__slide_fifth">
-            <img src="./images/clients/05.png" alt="Client Logo" />
+          <div class="clients-slider__slide">
+            <img class="clients-slider__slide-image" src="./images/clients/05.png" alt="Client Logo" />
           </div>
-          <div class="clients-slider__slide clients-slider__slide_sixth">
-            <img src="./images/clients/06.png" alt="Client Logo" />
+          <div class="clients-slider__slide">
+            <img class="clients-slider__slide-image" src="./images/clients/06.png" alt="Client Logo" />
           </div>
 
           <div class="clients-slider__arrow clients-slider__arrow_next">
-            <label for="clients-slider__input_1"
-              ><i class="fa fa-angle-right fa-5x"></i>
+            <label class="clients-slider__label" for="clients-slider__input_1"
+              ><i class="clients-slider__icon fa fa-angle-right fa-5x"></i>
             </label>
-            <label for="clients-slider__input_2"
-              ><i class="fa fa-angle-right fa-5x"></i>
+            <label class="clients-slider__label" for="clients-slider__input_2"
+              ><i class="clients-slider__icon fa fa-angle-right fa-5x"></i>
             </label>
-            <label for="clients-slider__input_3"
-              ><i class="fa fa-angle-right fa-5x"></i>
+            <label class="clients-slider__label" for="clients-slider__input_3"
+              ><i class="clients-slider__icon fa fa-angle-right fa-5x"></i>
             </label>
-            <label for="clients-slider__input_4"
-              ><i class="fa fa-angle-right fa-5x"></i>
+            <label class="clients-slider__label" for="clients-slider__input_4"
+              ><i class="clients-slider__icon fa fa-angle-right fa-5x"></i>
             </label>
-            <label for="clients-slider__input_5"
-              ><i class="fa fa-angle-right fa-5x"></i>
+            <label class="clients-slider__label" for="clients-slider__input_5"
+              ><i class="clients-slider__icon fa fa-angle-right fa-5x"></i>
             </label>
-            <label for="clients-slider__input_6"
-              ><i class="fa fa-angle-right fa-5x"></i>
+            <label class="clients-slider__label" for="clients-slider__input_6"
+              ><i class="clients-slider__icon fa fa-angle-right fa-5x"></i>
             </label>
           </div>
         </div>
       </section>
-      <section class="blockPadding reviews">
-        <h2>Customer Reviews</h2>
+      <section class="reviews padding-100">
+        <h2 class="reviews__header">Customer Reviews</h2>
         <div class="reviews__slider">
           <div class="reviews__siders">
             <blockquote class="blockquote">
               <p class="blockquote__message">
-                Lorem ipsum dolor sit amet consectetur adipiscing elit sed
-                tempor incididunt ut laboret dolore magna aliqua. Ut enim minim
-                veniam exercitation laboris ut siad consequat siad minim enum
-                esqudiat dolore.
+                Lorem ipsum dolor sit amet consectetur adipiscing elit sed tempor incididunt ut laboret dolore magna aliqua. Ut
+                enim minim veniam exercitation laboris ut siad consequat siad minim enum esqudiat dolore.
               </p>
               <p class="blockquote__message">
-                Lorem ipsum dolor sit amet consectetur adipiscing elit sed
-                tempor incididunt ut laboret tempor incididunt dolore magna
-                consequat siad minim aliqua.
+                Lorem ipsum dolor sit amet consectetur adipiscing elit sed tempor incididunt ut laboret tempor incididunt dolore
+                magna consequat siad minim aliqua.
               </p>
-              <p>
-                <span class="reviews__name">Joh Milner1</span>, Metronic
-                Customer
-              </p>
+              <p class="blockquote__author"><span class="reviews__name">Joh Milner1</span>, Metronic Customer</p>
             </blockquote>
             <blockquote class="blockquote">
               <p class="blockquote__message">
-                Lorem ipsum dolor sit amet consectetur adipiscing elit sed
-                tempor incididunt ut laboret dolore magna aliqua. Ut enim minim
-                veniam exercitation laboris ut siad consequat siad minim enum
-                esqudiat dolore.
+                Lorem ipsum dolor sit amet consectetur adipiscing elit sed tempor incididunt ut laboret dolore magna aliqua. Ut
+                enim minim veniam exercitation laboris ut siad consequat siad minim enum esqudiat dolore.
               </p>
               <p class="blockquote__message">
-                Lorem ipsum dolor sit amet consectetur adipiscing elit sed
-                tempor incididunt ut laboret tempor incididunt dolore magna
-                consequat siad minim aliqua.
+                Lorem ipsum dolor sit amet consectetur adipiscing elit sed tempor incididunt ut laboret tempor incididunt dolore
+                magna consequat siad minim aliqua.
               </p>
-              <p>
-                <span class="reviews__name">Joh Milner2</span>, Metronic
-                Customer
-              </p>
+              <p class="blockquote__author"><span class="reviews__name">Joh Milner2</span>, Metronic Customer</p>
             </blockquote>
             <blockquote class="blockquote">
               <p class="blockquote__message">
-                Lorem ipsum dolor sit amet consectetur adipiscing elit sed
-                tempor incididunt ut laboret dolore magna aliqua. Ut enim minim
-                veniam exercitation laboris ut siad consequat siad minim enum
-                esqudiat dolore.
+                Lorem ipsum dolor sit amet consectetur adipiscing elit sed tempor incididunt ut laboret dolore magna aliqua. Ut
+                enim minim veniam exercitation laboris ut siad consequat siad minim enum esqudiat dolore.
               </p>
               <p class="blockquote__message">
-                Lorem ipsum dolor sit amet consectetur adipiscing elit sed
-                tempor incididunt ut laboret tempor incididunt dolore magna
-                consequat siad minim aliqua.
+                Lorem ipsum dolor sit amet consectetur adipiscing elit sed tempor incididunt ut laboret tempor incididunt dolore
+                magna consequat siad minim aliqua.
               </p>
-              <p>
-                <span class="reviews__name">Joh Milner3</span>, Metronic
-                Customer
-              </p>
+              <p class="blockquote__author"><span class="reviews__name">Joh Milner3</span>, Metronic Customer</p>
             </blockquote>
             <blockquote class="blockquote">
               <p class="blockquote__message">
-                Lorem ipsum dolor sit amet consectetur adipiscing elit sed
-                tempor incididunt ut laboret dolore magna aliqua. Ut enim minim
-                veniam exercitation laboris ut siad consequat siad minim enum
-                esqudiat dolore.
+                Lorem ipsum dolor sit amet consectetur adipiscing elit sed tempor incididunt ut laboret dolore magna aliqua. Ut
+                enim minim veniam exercitation laboris ut siad consequat siad minim enum esqudiat dolore.
               </p>
               <p class="blockquote__message">
-                Lorem ipsum dolor sit amet consectetur adipiscing elit sed
-                tempor incididunt ut laboret tempor incididunt dolore magna
-                consequat siad minim aliqua.
+                Lorem ipsum dolor sit amet consectetur adipiscing elit sed tempor incididunt ut laboret tempor incididunt dolore
+                magna consequat siad minim aliqua.
               </p>
-              <p>
-                <span class="reviews__name">Joh Milner4</span>, Metronic
-                Customer
-              </p>
+              <p class="blockquote__author"><span class="reviews__name">Joh Milner4</span>, Metronic Customer</p>
             </blockquote>
             <blockquote class="blockquote">
               <p class="blockquote__message">
-                Lorem ipsum dolor sit amet consectetur adipiscing elit sed
-                tempor incididunt ut laboret dolore magna aliqua. Ut enim minim
-                veniam exercitation laboris ut siad consequat siad minim enum
-                esqudiat dolore.
+                Lorem ipsum dolor sit amet consectetur adipiscing elit sed tempor incididunt ut laboret dolore magna aliqua. Ut
+                enim minim veniam exercitation laboris ut siad consequat siad minim enum esqudiat dolore.
               </p>
               <p class="blockquote__message">
-                Lorem ipsum dolor sit amet consectetur adipiscing elit sed
-                tempor incididunt ut laboret tempor incididunt dolore magna
-                consequat siad minim aliqua.
+                Lorem ipsum dolor sit amet consectetur adipiscing elit sed tempor incididunt ut laboret tempor incididunt dolore
+                magna consequat siad minim aliqua.
               </p>
-              <p>
-                <span class="reviews__name">Joh Milner5</span>, Metronic
-                Customer
-              </p>
+              <p class="blockquote__author"><span class="reviews__name">Joh Milner5</span>, Metronic Customer</p>
             </blockquote>
           </div>
         </div>
       </section>
-      <section id="pricings" class="blockPadding bgColor pricings">
+      <section class="pricings bg-color-light-grey padding-100" id="pricings">
         <div class="pricings__row">
           <div class="tariff">
             <div class="tariff__logo">
               <i class="tariff__icon icon-chemistry"></i>
             </div>
-            <h3 class="tariff__title">Starter Kit <span> - $</span> 49</h3>
-            <p>
-              Lorem ipsum dolor amet consectetur ut consequat siad esqudiat
-              dolor
-            </p>
+            <h3 class="tariff__title">Starter Kit <span class="tariff__price"> - $</span> 49</h3>
+            <p class="tariff__desc">Lorem ipsum dolor amet consectetur ut consequat siad esqudiat dolor</p>
             <ul class="privilege tariff__privilege">
               <li class="privilege__item">Basic Features</li>
               <li class="privilege__item">Up to 5 products</li>
               <li class="privilege__item">50 Users Panels</li>
             </ul>
-            <button
-              class="button tariff__button textToUppercase"
-              aria-label="Choose"
-            >
-              Choose
-            </button>
+            <button class="tariff__button button text-to-uppercase" type="button" aria-label="Choose Starter Kit">Choose</button>
           </div>
           <div class="tariff tariff__active">
             <div class="tariff__logo">
               <i class="tariff__icon icon-badge"></i>
             </div>
-            <h3 class="tariff__title">Professional <span> - $</span> 149</h3>
-            <p>
-              Lorem ipsum dolor amet consectetur ut consequat siad esqudiat
-              dolor
-            </p>
+            <h3 class="tariff__title">Professional <span class="tariff__price"> - $</span> 149</h3>
+            <p class="tariff__desc">Lorem ipsum dolor amet consectetur ut consequat siad esqudiat dolor</p>
             <ul class="privilege tariff__privilege">
               <li class="privilege__item">Basic Features</li>
               <li class="privilege__item">Up to 100 products</li>
               <li class="privilege__item">100 Users Panels</li>
             </ul>
-            <button
-              class="button tariff__button textToUppercase"
-              aria-label="Choose"
-            >
-              Choose
-            </button>
+            <button class="tariff__button button text-to-uppercase" type="button" aria-label="Choose Professional">Choose</button>
           </div>
           <div class="tariff">
             <div class="tariff__logo">
               <i class="tariff__icon icon-shield"></i>
             </div>
-            <h3 class="tariff__title">Advanced <span> - $</span> 249</h3>
-            <p>
-              Lorem ipsum dolor amet consectetur ut consequat siad esqudiat
-              dolor
-            </p>
+            <h3 class="tariff__title">Advanced <span class="tariff__price"> - $</span> 249</h3>
+            <p class="tariff__desc">Lorem ipsum dolor amet consectetur ut consequat siad esqudiat dolor</p>
             <ul class="privilege tariff__privilege">
               <li class="privilege__item">Extended Features</li>
               <li class="privilege__item">Unlimited products</li>
               <li class="privilege__item">Unlimited Users Panels</li>
             </ul>
-            <button
-              class="button tariff__button textToUppercase"
-              aria-label="Choose"
-            >
-              Choose
-            </button>
+            <button class="tariff__button button text-to-uppercase" type="button" aria-label="Choose Advanced">Choose</button>
           </div>
         </div>
       </section>
-      <section id="promo" class="promo">
-        <div class="blockPadding promo__section">
-          <h2>Our Clients</h2>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipiscing elit sed tempor
-            incididunt ut laboret dolore magna aliqua enim minim veniam
-            exercitation ipsum dolor sit amet consectetur adipiscing elit sed
-            tempor incididunt ut laboret dolore magna aliqua enim minim veniam
-            exercitation
+      <section class="promo" id="promo">
+        <div class="promo__section padding-100">
+          <h2 class="promo__header">Our Clients</h2>
+          <p class="promo__desc">
+            Lorem ipsum dolor sit amet consectetur adipiscing elit sed tempor incididunt ut laboret dolore magna aliqua enim minim
+            veniam exercitation ipsum dolor sit amet consectetur adipiscing elit sed tempor incididunt ut laboret dolore magna
+            aliqua enim minim veniam exercitation
           </p>
-          <p>
-            Ipsum dolor sit amet consectetur adipiscing elit sed tempor
-            incididut ut sead laboret dolore magna aliqua enim minim veniam
-            exercitation ipsum dolor sit amet consectetur adipiscing
+          <p class="promo__desc">
+            Ipsum dolor sit amet consectetur adipiscing elit sed tempor incididut ut sead laboret dolore magna aliqua enim minim
+            veniam exercitation ipsum dolor sit amet consectetur adipiscing
           </p>
         </div>
         <div class="promo__logo">
-          <img
-            class="promo__img"
-            src="./images/970x970/01.jpg"
-            alt="Promo Image"
-          />
+          <img class="promo__img" src="./images/970x970/01.jpg" alt="Promo Image" />
         </div>
       </section>
-      <section id="showcase" class="blockPadding bgColor showcase">
-        <h2 class="showcase__title">Showcase</h2>
+      <section class="showcase bg-color-light-grey padding-100" id="showcase">
+        <h2 class="showcase__header">Showcase</h2>
         <p class="showcase__desc">
-          Lorem ipsum dolor sit amet consectetur adipiscing elit sed tempor
-          incididunt ut laboret dolore magna aliqua enim minim veniam
-          exercitation
+          Lorem ipsum dolor sit amet consectetur adipiscing elit sed tempor incididunt ut laboret dolore magna aliqua enim minim
+          veniam exercitation
         </p>
         <div class="galary">
           <div class="galary__image galary__image_first">
-            <img src="./images/800x400/01.jpg" alt="Galary Image" />
+            <img class="galary__image-picture" src="./images/800x400/01.jpg" alt="Galary Image" />
             <div class="galary__image-container">
               <h3 class="galary__image-title">Art Of Coding</h3>
-              <p class="galary__image-desc">
-                Lorem ipsum dolor sit amet consectetur adipiscing
-              </p>
+              <p class="galary__image-desc">Lorem ipsum dolor sit amet consectetur adipiscing</p>
             </div>
           </div>
           <div class="galary__image galary__image_second">
-            <img src="./images/397x400/01.jpg" alt="Galary Image" />
+            <img class="galary__image-picture" src="./images/397x400/01.jpg" alt="Galary Image" />
             <div class="galary__image-container">
               <h3 class="galary__image-title">Clean Design</h3>
-              <p class="galary__image-desc">
-                Lorem ipsum dolor sit amet consectetur adipiscing
-              </p>
+              <p class="galary__image-desc">Lorem ipsum dolor sit amet consectetur adipiscing</p>
             </div>
           </div>
           <div class="galary__image galary__image_third">
-            <img src="./images/397x300/01.jpg" alt="Galary Image" />
+            <img class="galary__image-picture" src="./images/397x300/01.jpg" alt="Galary Image" />
             <div class="galary__image-container">
               <h3 class="galary__image-title">Clean Design</h3>
-              <p class="galary__image-desc">
-                Lorem ipsum dolor sit amet consectetur adipiscing
-              </p>
+              <p class="galary__image-desc">Lorem ipsum dolor sit amet consectetur adipiscing</p>
             </div>
           </div>
           <div class="galary__image galary__image_fourth">
-            <img src="./images/397x300/02.jpg" alt="Galary Image" />
+            <img class="galary__image-picture" src="./images/397x300/02.jpg" alt="Galary Image" />
             <div class="galary__image-container">
               <h3 class="galary__image-title">Clean Design</h3>
-              <p class="galary__image-desc">
-                Lorem ipsum dolor sit amet consectetur adipiscing
-              </p>
+              <p class="galary__image-desc">Lorem ipsum dolor sit amet consectetur adipiscing</p>
             </div>
           </div>
           <div class="galary__image galary__image_fifth">
-            <img src="./images/397x300/03.jpg" alt="Galary Image" />
+            <img class="galary__image-picture" src="./images/397x300/03.jpg" alt="Galary Image" />
             <div class="galary__image-container">
               <h3 class="galary__image-title">Clean Design</h3>
-              <p class="galary__image-desc">
-                Lorem ipsum dolor sit amet consectetur adipiscing
-              </p>
+              <p class="galary__image-desc">Lorem ipsum dolor sit amet consectetur adipiscing</p>
             </div>
           </div>
         </div>
       </section>
     </main>
-    <footer id="footer" class="footer">
+    <footer class="footer" id="footer">
       <div class="footer__separator">
-        <div class="blockPadding footer__container">
+        <div class="footer__container padding-100">
           <div class="footer__menu">
             <ul class="footer__list">
               <li class="footer__list-item">
@@ -664,7 +493,7 @@
                 <a class="footer__list-link" href="#achievements">About</a>
               </li>
               <li class="footer__list-item">
-                <a class="footer__list-link" href="#latestProguct">Products</a>
+                <a class="footer__list-link" href="#latest-progucts">Products</a>
               </li>
               <li class="footer__list-item">
                 <a class="footer__list-link" href="#pricings">Pricing</a>
@@ -687,99 +516,49 @@
           <div class="footer__messagers">
             <ul class="footer__list">
               <li class="footer__list-item">
-                <a
-                  class="footer__list-link"
-                  href="https://twitter.com/"
-                  target="_blank"
-                  >Twitter</a
-                >
+                <a class="footer__list-link" href="https://twitter.com/" target="_blank">Twitter</a>
               </li>
               <li class="footer__list-item">
-                <a
-                  class="footer__list-link"
-                  href="https://www.facebook.com/"
-                  target="_blank"
-                  >Facebook</a
-                >
+                <a class="footer__list-link" href="https://www.facebook.com/" target="_blank">Facebook</a>
               </li>
               <li class="footer__list-item">
-                <a
-                  class="footer__list-link"
-                  href="https://www.instagram.com/"
-                  target="_blank"
-                  >Instagram</a
-                >
+                <a class="footer__list-link" href="https://www.instagram.com/" target="_blank">Instagram</a>
               </li>
               <li class="footer__list-item">
-                <a
-                  class="footer__list-link"
-                  href="https://www.youtube.com/"
-                  target="_blank"
-                  >YouTube</a
-                >
+                <a class="footer__list-link" href="https://www.youtube.com/" target="_blank">YouTube</a>
               </li>
             </ul>
           </div>
           <form class="form footer__form">
             <h2 class="form__title">Send Us A Note</h2>
-            <input
-              class="form__input"
-              type="text"
-              name="name"
-              placeholder="Name"
-              aria-label="Name"
-              required
-            />
-            <input
-              class="form__input"
-              type="email"
-              name="email"
-              placeholder="Email"
-              aria-label="Email"
-              required
-            />
-            <input
-              class="form__input"
-              type="text"
-              name="phone"
-              placeholder="Phone"
-              aria-label="Phone"
-              required
-            />
+            <input class="form__input" type="text" name="name" placeholder="Name" aria-label="Name" required />
+            <input class="form__input" type="email" name="email" placeholder="Email" aria-label="Email" required />
+            <input class="form__input" type="text" name="phone" placeholder="Phone" aria-label="Phone" required />
             <textarea
-              class="form__input"
+              class="form__input form__input_textarea"
               rows="6"
               name="message"
               placeholder="Message"
               aria-label="Message"
               required
             ></textarea>
-            <button
-              class="button form__button textToUppercase"
-              type="submit"
-              aria-label="Submit"
-            >
-              Submit
-            </button>
+            <button class="button form__button text-to-uppercase" type="submit" aria-label="Submit">Submit</button>
           </form>
         </div>
       </div>
-      <div class="blockPadding footer__info">
+      <div class="footer__info padding-100">
         <div class="footer__info-container">
           <img class="footer__logo" src="./images/logo.png" alt="Footer Logo" />
-          <p class="footer__creator marginBottom0">
+          <p class="footer__creator margin-bottom-0">
             <a class="footer__info-link" href="#">Asentus by Shinkarev</a>
             Theme Powered by:
-            <a
-              class="footer__info-link"
-              href="https://github.com/andrei4ik1997/Andrei-Shinkarev-tasks"
-              target="_blank"
+            <a class="footer__info-link" href="https://github.com/andrei4ik1997/Andrei-Shinkarev-tasks" target="_blank"
               >Github.com</a
             >
           </p>
         </div>
       </div>
     </footer>
-    <a href="#" class="backToTop textToUppercase">Top</a>
+    <a href="#" class="back-to-top text-to-uppercase">Top</a>
   </body>
 </html>

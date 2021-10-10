@@ -1,11 +1,13 @@
+body .header-fixed {
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
 .header-fixed {
   position: fixed;
   top: 0;
   z-index: 1;
   width: 100%;
   height: 100px;
-  padding-top: 0px !important;
-  padding-bottom: 0px !important;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -37,7 +39,7 @@
   content: " ";
 }
 
-.header-fixed__navbar-item_padding0 {
+.header-fixed__navbar-item_padding-0 {
   padding-right: 0px;
 }
 
@@ -55,9 +57,12 @@
   transition: all ease-in-out 0.3s;
 }
 
+.header .header__menu {
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
+
 .header__menu {
-  padding-top: 0px !important;
-  padding-bottom: 0px !important;
   height: 100px;
   width: 100%;
   display: flex;
@@ -81,7 +86,7 @@
   line-height: 55px;
 }
 
-.navbar__item_padding0 {
+.navbar__item_padding-0 {
   padding-right: 0px;
 }
 
@@ -121,11 +126,11 @@
   transition: all ease-in-out 0.3s;
 }
 
-.slider__slide_slide1 {
+.slider__slide:nth-of-type(1) {
   background-image: url(../images/1920x1080/01.jpg);
 }
 
-.slider__slide_slide2 {
+.slider__slide:nth-of-type(2) {
   background-image: url(../images/1920x1080/02.jpg);
 }
 
@@ -160,20 +165,21 @@
   background-color: #fff;
   color: #515769;
 }
-
-input[name="point"] {
+.input-control {
   display: none;
 }
 
+.slider .slider__controls {
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
 .slider__controls {
   position: absolute;
   bottom: 0px;
   margin-bottom: 20px;
-  padding-top: 0px !important;
-  padding-bottom: 0px !important;
 }
 
-.slider__controls label {
+.slider__controls-label {
   width: 10px;
   height: 10px;
   margin: 1px;
@@ -184,31 +190,27 @@ input[name="point"] {
   cursor: pointer;
 }
 
-#slide1:checked ~ main .slider__controls label:nth-of-type(1),
-#slide2:checked ~ main .slider__controls label:nth-of-type(2) {
+.input-control:nth-of-type(1):checked ~ .main .slider__controls-label:nth-of-type(1),
+.input-control:nth-of-type(2):checked ~ .main .slider__controls-label:nth-of-type(2) {
   width: 12px;
   height: 12px;
   margin: 0;
   background-color: #fff;
 }
 
-#slide1:checked ~ .header > .header__separator {
+.input-control:nth-of-type(1):checked ~ .header > .header__separator {
   background-image: url(../images/1920x1080/01.jpg);
 }
 
-#slide2:checked ~ .header > .header__separator {
+.input-control:nth-of-type(2):checked ~ .header > .header__separator {
   background-image: url(../images/1920x1080/02.jpg);
 }
 
-#slide1:checked ~ main .slider__slide_slide1 {
+.input-control:nth-of-type(1):checked ~ .main .slider__slide:nth-of-type(1) {
   transform: translateX(0%);
 }
-#slide2:checked ~ main .slider__slide_slide2 {
+.input-control:nth-of-type(2):checked ~ .main .slider__slide:nth-of-type(2) {
   transform: translateX(-100%);
-}
-
-.slider__controls_1 {
-  opacity: 0;
 }
 
 .burger {
@@ -217,12 +219,11 @@ input[name="point"] {
   z-index: 1;
   width: 100%;
   height: 100px;
-  padding-top: 0px;
-  padding-bottom: 0px;
   display: none;
   align-items: center;
   background-color: #fff;
 }
+
 .burger__logo {
   height: 100%;
   width: max-content;
@@ -241,11 +242,11 @@ input[name="point"] {
   position: relative;
 }
 
-#check-menu {
+.burger__input {
   display: none;
 }
 
-.check-label {
+.burger__label {
   display: block;
   position: absolute;
   top: 0px;
@@ -265,12 +266,12 @@ input[name="point"] {
   background-color: #000;
 }
 
-.burger__line_second,
-.burger__line_third {
+.burger__line:nth-of-type(2),
+.burger__line:nth-of-type(3) {
   top: 18px;
 }
 
-.burger__line_fourth {
+.burger__line:nth-of-type(4) {
   top: 28px;
 }
 
@@ -308,19 +309,19 @@ input[name="point"] {
   content: " ";
 }
 
-#check-menu:checked ~ .burger__links {
+.burger__input:checked ~ .burger__links {
   max-height: 600px;
 }
 
-#check-menu:checked ~ .burger__line_first,
-#check-menu:checked ~ .burger__line_fourth {
+.burger__input:checked ~ .burger__line:nth-of-type(1),
+.burger__input:checked ~ .burger__line:nth-of-type(4) {
   display: none;
 }
 
-#check-menu:checked ~ .burger__line_second {
+.burger__input:checked ~ .burger__line:nth-of-type(2) {
   transform: rotate(45deg);
 }
 
-#check-menu:checked ~ .burger__line_third {
+.burger__input:checked ~ .burger__line:nth-of-type(3) {
   transform: rotate(-45deg);
 }

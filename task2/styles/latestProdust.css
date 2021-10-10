@@ -2,12 +2,12 @@
   width: 100%;
 }
 
-.latestProguct__desc {
+.latest-progucts__desc {
   width: 50%;
   margin-bottom: 40px;
 }
 
-.latestProguct__row {
+.latest-progucts__row {
   display: flex;
   margin: 0px -15px;
 }
@@ -22,7 +22,7 @@
   margin-bottom: 20px;
 }
 
-.product__name {
+.product__title-name {
   margin-right: 15px;
   color: #515769;
   font-size: 1.5714rem;
@@ -47,6 +47,6 @@
 }
 
 .product a:hover,
-.product__name:hover {
+.product__title-name:hover {
   color: #999caa;
 }
