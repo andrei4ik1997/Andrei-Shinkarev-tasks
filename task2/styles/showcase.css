@@ -31,33 +31,33 @@
   padding: 2px;
 }
 
-.galary__image_first {
+.galary__image:nth-of-type(1) {
   top: 0px;
   left: 0px;
   width: 66.666%;
   height: 50%;
 }
 
-.galary__image_second {
+.galary__image:nth-of-type(2) {
   top: 0px;
   right: 0px;
   width: 33.333%;
   height: 50%;
 }
 
-.galary__image_third {
+.galary__image:nth-of-type(3) {
   bottom: 0px;
   left: 0px;
   width: 33.333%;
   height: 50%;
 }
-.galary__image_fourth {
+.galary__image:nth-of-type(4) {
   bottom: 0px;
   left: 33.333%;
   width: 33.333%;
   height: 50%;
 }
-.galary__image_fifth {
+.galary__image:nth-of-type(5) {
   width: 33.333%;
   height: 50%;
   bottom: 0px;
