@@ -4,16 +4,18 @@ const person = {
   name: "Andrei",
 };
 
-function sayHello(surname, age) {
-  console.log(`Hello  ${this.name} ${surname}, age: ${age}`);
-}
-
 function myApply(func, context, args) {
-  const age = Math.random() * 100;
-  context[uniqId] = func;
-  const result = context[age](...args);
-  delete context[age];
+  context.applyFunc = func;
+  const result = context.applyFunc(...args);
+  delete context.applyFunc;
   return result;
 }
 
-myApply(sayHello, person, ["Sinkarev", 1234]);
+function sayHello(surname, age) {
+  return `Hello ${this.name} ${surname}, age: ${age}`;
+}
+
+console.log(myApply(sayHello, person, ["Shinkarev", 24]));
+console.log(myApply(sayHello, person, ["Ivanov", 42]));
+console.log(myApply(sayHello, person, ["Petrov", 37]));
+console.log(myApply(sayHello, person, ["Sidorov", 27]));
