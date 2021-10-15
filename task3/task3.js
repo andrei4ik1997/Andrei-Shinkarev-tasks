@@ -1,8 +1,7 @@
 "use strict";
 
 function stringParse(string) {
-  if (!arguments.length) return `You haven't entered anything`;
-  else if (typeof string !== "string") {
+  if (typeof string !== "string") {
     return "Please enter a valid string";
   }
   const letterArray = string.split("");
