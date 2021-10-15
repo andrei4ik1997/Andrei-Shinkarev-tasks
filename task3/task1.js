@@ -1,11 +1,10 @@
 "use strict";
 
-const calculateWordLength = function () {
-  if (!arguments.length) return `You haven't entered anything`;
-  else if (typeof arguments[0] !== "string") {
-    return `You have not entered a string, but a ${typeof arguments[0]}`;
+const calculateWordLength = function (string) {
+if (typeof string !== "string") {
+    return `Please enter a valid string value, but you enter a ${typeof string} value`;
   }
-  const wordsArray = arguments[0]
+  const wordsArray = string
     .split(" ")
     .filter(
       (word) =>
