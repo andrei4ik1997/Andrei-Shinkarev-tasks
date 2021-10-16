@@ -1,8 +1,7 @@
 "use strict";
 
-const multiplyAll = function () {
-  const arr = arguments[0];
-  return (n) => arr.map((number) => number * n);
+const multiplyAll = function (arr) {
+    return (n) => arr.map((number) => number * n);
 };
 
 console.log(multiplyAll([1, 2, 3])(1));
