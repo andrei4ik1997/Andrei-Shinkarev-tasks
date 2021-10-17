@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calendar</title>
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <script src="https://kit.fontawesome.com/d054066f81.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <main class="main">
+      <section class="calendar">
+        <div class="calendar__fullDate">
+          <h1 class="calendar__fullDate-clock">00:00:00</h1>
+          <p class="calendar__fullDate-date">17 October 2021</p>
+        </div>
+        <div class="calendar__date">
+          <input class="calendar__date-day" value="17" type="number" step="1" aria-label="Day" />
+          <select class="calendar__date-month" size="1" aria-label="Months">
+            <option class="calendar__date-month_january" value="0">January</option>
+            <option class="calendar__date-month_february" value="1">February</option>
+            <option class="calendar__date-month_march" value="2">March</option>
+            <option class="calendar__date-month_april" value="3">April</option>
+            <option class="calendar__date-month_may" value="4">May</option>
+            <option class="calendar__date-month_june" value="5">June</option>
+            <option class="calendar__date-month_july" value="6">July</option>
+            <option class="calendar__date-month_august" value="7">August</option>
+            <option class="calendar__date-month_september" value="8">September</option>
+            <option class="calendar__date-month_october" value="9" selected>October</option>
+            <option class="calendar__date-month_november" value="10">November</option>
+            <option class="calendar__date-month_december" value="11">December</option>
+          </select>
+          <input class="calendar__date-year" type="number" value="2021" step="1" aria-label="Year" />
+          <div class="calendar__date-controls">
+            <i class="calendar__date-controls-arrow calendar__date-controls-arrow_prev fas fa-chevron-up"></i>
+            <i class="calendar__date-controls-arrow calendar__date-controls-arrow_next fas fa-chevron-down"></i>
+          </div>
+        </div>
+        <div class="calendar__days-of-week">
+          <div class="calendar__days-of-week-day">Mon</div>
+          <div class="calendar__days-of-week-day">Tue</div>
+          <div class="calendar__days-of-week-day">Wed</div>
+          <div class="calendar__days-of-week-day">Thu</div>
+          <div class="calendar__days-of-week-day">Fri</div>
+          <div class="calendar__days-of-week-day">Sat</div>
+          <div class="calendar__days-of-week-day">Sun</div>
+        </div>
+        <div class="calendar__days">
+          <div class="calendar__day calendar__day_prev-mounth-day">27</div>
+          <div class="calendar__day calendar__day_prev-mounth-day">28</div>
+          <div class="calendar__day calendar__day_prev-mounth-day">29</div>
+          <div class="calendar__day calendar__day_prev-mounth-day">30</div>
+          <div class="calendar__day">1</div>
+          <div class="calendar__day">2</div>
+          <div class="calendar__day">3</div>
+          <div class="calendar__day">4</div>
+          <div class="calendar__day">5</div>
+          <div class="calendar__day">6</div>
+          <div class="calendar__day">7</div>
+          <div class="calendar__day">8</div>
+          <div class="calendar__day">9</div>
+          <div class="calendar__day">10</div>
+          <div class="calendar__day">11</div>
+          <div class="calendar__day">12</div>
+          <div class="calendar__day">13</div>
+          <div class="calendar__day">14</div>
+          <div class="calendar__day">15</div>
+          <div class="calendar__day">16</div>
+          <div class="calendar__day calendar__day_today">17</div>
+          <div class="calendar__day">18</div>
+          <div class="calendar__day">19</div>
+          <div class="calendar__day">20</div>
+          <div class="calendar__day">21</div>
+          <div class="calendar__day">22</div>
+          <div class="calendar__day">23</div>
+          <div class="calendar__day">24</div>
+          <div class="calendar__day">25</div>
+          <div class="calendar__day">26</div>
+          <div class="calendar__day">27</div>
+          <div class="calendar__day">28</div>
+          <div class="calendar__day">29</div>
+          <div class="calendar__day">30</div>
+          <div class="calendar__day">31</div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
