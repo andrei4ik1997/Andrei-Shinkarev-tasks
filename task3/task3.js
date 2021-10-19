@@ -2,6 +2,7 @@
 
 function stringParse(string) {
   if (typeof string !== "string") {
+    if (!arguments.length) return `You haven't passed anything to the function`;
     return "Please enter a valid string";
   }
   const letterArray = string.split("");

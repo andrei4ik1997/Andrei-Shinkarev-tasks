@@ -2,6 +2,7 @@
 
 const wordPattern = function (word) {
   if (typeof word !== "string") {
+    if (!arguments.length) return `You haven't passed anything to the function`;
     return `Please enter a valid string value, but you enter a ${typeof word} value`;
   }
   let letterArray = word.toLowerCase().split("");
@@ -12,7 +13,7 @@ const wordPattern = function (word) {
       letterArray[i] = arr.indexOf(letterArray[i]);
     }
     return letterArray.join(".");
-  } 
+  }
   return `Please enter a string value without number`;
 };
 

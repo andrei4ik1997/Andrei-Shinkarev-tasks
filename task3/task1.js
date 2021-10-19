@@ -1,7 +1,8 @@
 "use strict";
 
 const calculateWordLength = function (string) {
-if (typeof string !== "string") {
+  if (typeof string !== "string") {
+    if (!arguments.length) return `You haven't passed anything to the function`;
     return `Please enter a valid string value, but you enter a ${typeof string} value`;
   }
   const wordsArray = string
@@ -10,7 +11,7 @@ if (typeof string !== "string") {
       (word) =>
         !Number.isInteger(Math.floor(+word)) &&
         word !== "null" &&
-        word !== "underfined"
+        word !== "undefined"
     );
   return wordsArray.map((word) => `${word} ${word.length}`);
 };
@@ -23,5 +24,5 @@ console.log(calculateWordLength(true));
 console.log(calculateWordLength("hello worldd"));
 console.log(calculateWordLength("hello worldd"));
 console.log(calculateWordLength("hello 6 74.1 worldd null"));
-console.log(calculateWordLength("hello 6 74.1 worldd null underfined"));
+console.log(calculateWordLength("hello 6 74.1 worldd null undefined"));
 console.log(calculateWordLength("be happy"));
