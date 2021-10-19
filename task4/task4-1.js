@@ -2,8 +2,8 @@ const multiplyTwo = (n) => n * 2;
 const minusFour = (n) => n - 4;
 const plusFive = (n) => n + 5;
 
-const pipe = function () {
-  const funcs = arguments;
+const pipe = function (funcs) {
+  funcs = [...arguments];
   return function (n) {
     let result = n;
     for (let func of funcs) {
