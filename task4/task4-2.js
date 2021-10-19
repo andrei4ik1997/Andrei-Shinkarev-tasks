@@ -3,7 +3,7 @@
 const sum = (a, b) => a + b;
 
 const memo = function (func) {
-  let cache = {};
+  const cache = {};
   return function (a, b) {
     let result;
     cache[a] = cache[a] || {};
