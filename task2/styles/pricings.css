@@ -1,0 +1,64 @@
+.pricings {
+  width: 100%;
+}
+
+.pricings__row {
+  display: flex;
+}
+
+.tariff {
+  width: 33.3333%;
+  padding: 70px 45px;
+  margin: 50px 0px;
+  background-color: #fff;
+}
+
+.tariff__active {
+  margin: 0px;
+  padding-top: 120px;
+}
+
+.tariff__icon {
+  margin-bottom: 30px;
+  display: block;
+  font-size: 2.1429rem;
+  color: #999caa;
+}
+
+.tariff__privilege {
+  margin-bottom: 50px;
+  padding-left: 0;
+  list-style: none;
+}
+
+.privilege__item {
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: 10px;
+  font-size: 0.9286rem;
+  color: #81848f;
+  font-weight: 500;
+}
+
+.privilege__item:before {
+  position: absolute;
+  top: 7px;
+  left: 0;
+  width: 9px;
+  height: 2px;
+  margin-right: 10px;
+  background: #17bed2;
+  content: " ";
+}
+
+.tariff__button {
+  background: #f3f4f5;
+  color: #515769;
+  border: none;
+}
+
+.tariff__button:hover {
+  background: #17bed2;
+  color: #fff;
+  border-color: transparent;
+}
