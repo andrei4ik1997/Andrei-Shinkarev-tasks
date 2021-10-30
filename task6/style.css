@@ -32,10 +32,10 @@
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-.calendar__fullDate-clock {
+.calendar__fullDateClock {
   font-size: 40px;
 }
-.calendar__fullDate-date {
+.calendar__fullDateDate {
   margin-top: 10px;
   color: #b3e6ff;
 }
@@ -46,15 +46,15 @@
   width: 100%;
   justify-content: space-between;
 }
-.calendar__date-day {
+.calendar__dateDay {
   width: calc(100% / 7);
   background: transparent;
   color: white;
   border: none;
   outline: none;
- text-align: center;
+  text-align: center;
 }
-.calendar__date-month {
+.calendar__dateMonth {
   width: calc(2 * (100% / 7));
   background: transparent;
   color: white;
@@ -62,11 +62,11 @@
   outline: none;
   margin-left: 10px;
 }
-.calendar__date-month option {
+.calendar__dateMonth option {
   background: #222227;
 }
 
-.calendar__date-year {
+.calendar__dateYear {
   width: calc(100% / 7);
   background: transparent;
   color: white;
@@ -74,23 +74,23 @@
   outline: none;
   margin-left: 10px;
 }
-.calendar__date-controls {
+.calendar__dateControls {
   display: flex;
   justify-content: right;
   width: calc(3 * (100% / 7));
   text-align: center;
 }
-.calendar__date-controls-arrow {
+.calendar__dateControlsArrow {
   width: calc(100% / 3);
   cursor: pointer;
 }
-.calendar__days-of-week {
+.calendar__daysOfWeek {
   width: 100%;
   display: flex;
   justify-content: space-between;
   padding: 0px 20px;
 }
-.calendar__days-of-week-day {
+.calendar__daysOfWeek_day {
   width: calc(100% / 7);
   text-align: center;
 }
@@ -122,7 +122,7 @@
   background-color: #2997cc;
 }
 
-.calendar__day_prev-mounth-day,
+.calendar__day_prevMounthDay,
 .calendar__day_next-mounth-day {
   opacity: 0.5;
 }
