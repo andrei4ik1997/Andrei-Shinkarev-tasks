@@ -1,0 +1,178 @@
+.main {
+  width: 100%;
+  height: 100vh;
+  background-color: #12121f;
+  color: #eee;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.calendar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 550px;
+  height: 600px;
+  background-color: #222227;
+  box-shadow: 0 0.5rem 3rem rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.calendar__header {
+  display: flex;
+  width: 100%;
+  height: 185px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.calendar__clock {
+  width: 40%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.calendar__clockTime {
+  font-size: 40px;
+}
+.calendar__clockDate {
+  margin-top: 10px;
+  color: #b3e6ff;
+  cursor: pointer;
+}
+
+.calendar__clockDate:hover{
+  color: grey;
+}
+
+.calendar__dateControlsArrow:hover {
+  color: grey;
+  cursor: pointer;
+}
+
+.calendar__settings {
+  width: 60%;
+  padding: 20px;
+}
+
+.settings__days {
+  display: flex;
+  margin-bottom: 10px;
+}
+.settings__lastDays {
+  display: flex;
+  align-items: center;
+  margin-right: 20px;
+}
+.settings__nextDays {
+  display: flex;
+  align-items: center;
+}
+.settings__holiday {
+  margin-top: 10px;
+}
+.settings__label {
+  margin-right: 5px;
+}
+.settings__scheduler {
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+}
+.calendar__date {
+  display: flex;
+  padding: 20px;
+  width: 100%;
+  justify-content: space-between;
+}
+.calendar__dateContainer {
+  width: calc(5 * (100% / 7));
+  padding: 0px 20px;
+}
+.calendar__dateDay {
+  width: 15%;
+  text-align: center;
+}
+.calendar__dateMonth {
+  margin-left: 10px;
+  width: 30%;
+}
+
+.calendar__dateYear {
+  margin-left: 10px;
+  width: 20%;
+  text-align: center;
+}
+
+.calendar__dateControls {
+  display: flex;
+  justify-content: right;
+  width: calc(2 * (100% / 7));
+  text-align: center;
+}
+.calendar__dateControlsArrow {
+  width: calc(100% / 2);
+  cursor: pointer;
+  display: inline-block;
+}
+.calendar__daysOfWeek {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 0px 20px;
+}
+.calendar__daysOfWeekDay {
+  width: calc(100% / 7);
+  text-align: center;
+}
+
+.calendar__days {
+  width: 100%;
+  margin-top: 20px;
+  padding: 0px 20px;
+  display: flex;
+  flex-wrap: wrap;
+}
+.calendar__day_holiday {
+  color: red;
+}
+
+.calendar__day {
+  width: calc(100% / 7);
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.calendar__day:hover {
+  border: 2px solid #777;
+  cursor: pointer;
+}
+
+.calendar__day_today {
+  outline: 2px solid black;
+  outline-offset: -5px;
+  font-weight: bold;
+  background-color: #2997cc;
+}
+
+.calendar__day_prev-mounth-day,
+.calendar__day_next-mounth-day {
+  opacity: 0.5;
+}
+
+.calendar__day_to-do::after {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  content: "";
+  border: transparent solid 2px;
+  background-color: green;
+  width: 10px;
+  height: 10px;
+  border-radius: 100%;
+}
