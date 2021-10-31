@@ -335,20 +335,18 @@ function createDays(params) {
     }
   }
   if (firstDayWeek === _utils__WEBPACK_IMPORTED_MODULE_1__.weekDays[0]) {
-    if (firstDayIndex < 6) {
-      for (let i = 0; i <= firstDayIndex; i++) {
-        let number = prevLastDay - firstDayIndex + i;
-        if (toDoDaysInPrevMonth.includes(number)) {
-          (0,___WEBPACK_IMPORTED_MODULE_0__.createDiv)({
-            divClass: "calendar__day calendar__day_to-do calendar__day_prev-mounth-day",
-            innerText: number,
-          });
-        } else {
-          (0,___WEBPACK_IMPORTED_MODULE_0__.createDiv)({
-            divClass: "calendar__day calendar__day_prev-mounth-day",
-            innerText: number,
-          });
-        }
+    for (let i = 0; i <= firstDayIndex; i++) {
+      let number = prevLastDay - firstDayIndex + i;
+      if (toDoDaysInPrevMonth.includes(number)) {
+        (0,___WEBPACK_IMPORTED_MODULE_0__.createDiv)({
+          divClass: "calendar__day calendar__day_to-do calendar__day_prev-mounth-day",
+          innerText: number,
+        });
+      } else {
+        (0,___WEBPACK_IMPORTED_MODULE_0__.createDiv)({
+          divClass: "calendar__day calendar__day_prev-mounth-day",
+          innerText: number,
+        });
       }
     }
 
