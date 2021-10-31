@@ -32,7 +32,7 @@
 }
 
 .scheduler__close {
-  font-size: 20px;
+  font-size: 1.4286rem;
   font-weight: 700;
   opacity: 0.5;
   cursor: pointer;
@@ -40,7 +40,6 @@
 
 .scheduler__title {
   text-align: center;
-  font-size: 22px;
 }
 
 .modal__date {
@@ -50,20 +49,6 @@
 
 .modal__buttons {
   display: flex;
-}
-
-.btn__modal {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 200px;
-  height: 50px;
-  margin: 0 auto;
-  border: none;
-  background-color: #303030;
-  color: #fff;
-  font-size: 20px;
-  cursor: pointer;
 }
 
 .show {
@@ -118,7 +103,6 @@
 
 .note__text {
   width: 80%;
-  height: 100%;
   color: black;
 }
 
