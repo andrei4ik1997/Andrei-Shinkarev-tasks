@@ -114,20 +114,18 @@ export function createDays(params) {
     }
   }
   if (firstDayWeek === weekDays[0]) {
-    if (firstDayIndex < 6) {
-      for (let i = 0; i <= firstDayIndex; i++) {
-        let number = prevLastDay - firstDayIndex + i;
-        if (toDoDaysInPrevMonth.includes(number)) {
-          createDiv({
-            divClass: "calendar__day calendar__day_to-do calendar__day_prev-mounth-day",
-            innerText: number,
-          });
-        } else {
-          createDiv({
-            divClass: "calendar__day calendar__day_prev-mounth-day",
-            innerText: number,
-          });
-        }
+    for (let i = 0; i <= firstDayIndex; i++) {
+      let number = prevLastDay - firstDayIndex + i;
+      if (toDoDaysInPrevMonth.includes(number)) {
+        createDiv({
+          divClass: "calendar__day calendar__day_to-do calendar__day_prev-mounth-day",
+          innerText: number,
+        });
+      } else {
+        createDiv({
+          divClass: "calendar__day calendar__day_prev-mounth-day",
+          innerText: number,
+        });
       }
     }
 
