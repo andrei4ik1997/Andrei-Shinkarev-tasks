@@ -1,12 +1,13 @@
 .weather {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   height: 600px;
   width: 500px;
   margin-left: 50px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
   background-color: #222227;
-  display: flex;
-  flex-direction: column;
-  align-items:center;
-  justify-content: center;
 }
 
 .weather__today {
@@ -19,39 +20,45 @@
 .weather__infoRow {
   display: flex;
   align-items: center;
-  margin-top: 15px;
+  margin-top: 10px;
 }
+
 .weather__temp {
   font-size: 36px;
   font-weight: bold;
   line-height: 20px;
 }
+
 .weather__icon {
   margin: 0px 15px;
   height: max-content;
   text-align: center;
 }
+
 .weather__icon_marginLeftRigt10px {
   margin: 0px 15px;
 }
+
 .weather__humidity {
   margin: 0px 15px;
 }
 
 .weather__daily {
+  display: flex;
+  flex-wrap: wrap;
   padding: 10px 20px;
   height: 415px;
   width: 100%;
-  display: flex;
-  flex-wrap: wrap;
 }
+
 .weather__day {
   width: calc(100% / 4);
   height: 50%;
   padding: 5px;
-  cursor: pointer;
   border: 1px solid rgba(255, 255, 255, 0.2);
+  cursor: pointer;
 }
+
 .weather__day-week {
   width: 100%;
 }
@@ -59,6 +66,7 @@
 .weather__icon_margin-top-bottom-10px {
   margin: 10px 0px;
 }
+
 .weather__description_margin-top-10px {
   margin-top: 10px;
 }

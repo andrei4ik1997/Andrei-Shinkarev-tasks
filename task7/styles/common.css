@@ -5,18 +5,14 @@
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
-input {
-  background: transparent;
-  color: white;
-  border: none;
-  outline: none;
-}
+input,
 select {
-  background: transparent;
-  color: white;
   border: none;
   outline: none;
+  background: transparent;
+  color: white;
 }
+
 option {
   background: #222227;
 }
@@ -33,5 +29,3 @@ button .fa-times {
   height: 100%;
   align-items: center;
 }
-
-/*  */
