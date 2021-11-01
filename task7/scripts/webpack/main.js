@@ -59,11 +59,8 @@ __webpack_require__.r(__webpack_exports__);
 
 function changeDate() {
   const calendarClock = document.querySelector(".calendar__clock");
-  const calendarDateDay = document.querySelector(".calendar__dateDay");
-  const calendarDateMonth = document.querySelector(".calendar__dateMonth");
-  const calendarDateYear = document.querySelector(".calendar__dateYear");
-  const calendarDateControlsArrowPrev = document.querySelector(".calendar__dateControlsArrow_prev");
-  const calendarDateControlsArrowNext = document.querySelector(".calendar__dateControlsArrow_next");
+  const calendarDateContainer = document.querySelector(".calendar__dateContainer");
+  const calendarDateControls = document.querySelector(".calendar__dateControls");
 
   calendarClock.addEventListener("click", () => {
     _index__WEBPACK_IMPORTED_MODULE_1__.date.setDate(new Date().getDate());
@@ -72,32 +69,33 @@ function changeDate() {
     (0,_makeCalendar__WEBPACK_IMPORTED_MODULE_0__.makeCalendar)();
   });
 
-  calendarDateDay.addEventListener("change", (e) => {
-    _index__WEBPACK_IMPORTED_MODULE_1__.date.setDate(+e.target.value);
-    _index__WEBPACK_IMPORTED_MODULE_1__.date.setMonth(_index__WEBPACK_IMPORTED_MODULE_1__.date.getMonth());
-    _index__WEBPACK_IMPORTED_MODULE_1__.date.setFullYear(_index__WEBPACK_IMPORTED_MODULE_1__.date.getFullYear());
+  calendarDateContainer.addEventListener("change", (e) => {
+    const value = +e.target.value;
+    switch (e.target.dataset.action) {
+      case "day":
+        _index__WEBPACK_IMPORTED_MODULE_1__.date.setDate(value);
+        break;
+      case "month":
+        _index__WEBPACK_IMPORTED_MODULE_1__.date.setMonth(value);
+        break;
+      case "year":
+        _index__WEBPACK_IMPORTED_MODULE_1__.date.setFullYear(value);
+        break;
+    }
     (0,_makeCalendar__WEBPACK_IMPORTED_MODULE_0__.makeCalendar)();
   });
 
-  calendarDateMonth.addEventListener("change", (e) => {
-    console.log(+e.target.value)
-    _index__WEBPACK_IMPORTED_MODULE_1__.date.setMonth(+e.target.value);
-    (0,_makeCalendar__WEBPACK_IMPORTED_MODULE_0__.makeCalendar)();
-  });
-
-  calendarDateYear.addEventListener("change", (e) => {
-    _index__WEBPACK_IMPORTED_MODULE_1__.date.setFullYear(e.target.value);
-    (0,_makeCalendar__WEBPACK_IMPORTED_MODULE_0__.makeCalendar)();
-  });
-
-  calendarDateControlsArrowPrev.addEventListener("click", () => {
-    _index__WEBPACK_IMPORTED_MODULE_1__.date.setMonth(_index__WEBPACK_IMPORTED_MODULE_1__.date.getMonth() + 1);
-    (0,_makeCalendar__WEBPACK_IMPORTED_MODULE_0__.makeCalendar)();
-  });
-
-  calendarDateControlsArrowNext.addEventListener("click", () => {
-    _index__WEBPACK_IMPORTED_MODULE_1__.date.setMonth(_index__WEBPACK_IMPORTED_MODULE_1__.date.getMonth() - 1);
-    (0,_makeCalendar__WEBPACK_IMPORTED_MODULE_0__.makeCalendar)();
+  calendarDateControls.addEventListener("click", (e) => {
+    switch (e.target.dataset.action) {
+      case "prevMonth":
+        _index__WEBPACK_IMPORTED_MODULE_1__.date.setMonth(_index__WEBPACK_IMPORTED_MODULE_1__.date.getMonth() + 1);
+        (0,_makeCalendar__WEBPACK_IMPORTED_MODULE_0__.makeCalendar)();
+        break;
+      case "nextMonth":
+        _index__WEBPACK_IMPORTED_MODULE_1__.date.setMonth(_index__WEBPACK_IMPORTED_MODULE_1__.date.getMonth() - 1);
+        (0,_makeCalendar__WEBPACK_IMPORTED_MODULE_0__.makeCalendar)();
+        break;
+    }
   });
 }
 
@@ -120,35 +118,22 @@ __webpack_require__.r(__webpack_exports__);
 
 
 function changeSettings() {
-  const settingsSelectFirstDay = document.querySelector(".settings__select_first-day");
-  const settingsHolidayFirst = document.querySelector(".settings__holidayFirst");
-  const settingsHolidaySecond = document.querySelector(".settings__holidaySecond");
-  const settingsInputLastDays = document.querySelector(".settings__input_lastDays");
-  const settingsInputNextDays = document.querySelector(".settings__input_nextDays");
-  const settingsInputScheduler = document.querySelector(".settings__input_scheduler");
+  const settings = document.querySelector(".settings");
 
-  settingsInputLastDays.addEventListener("change", (e) => {
-    fetchFuncChecked(e.target);
-  });
-
-  settingsInputNextDays.addEventListener("change", (e) => {
-    fetchFuncChecked(e.target);
-  });
-
-  settingsSelectFirstDay.addEventListener("change", (e) => {
-    fetchFuncValue(e.target);
-  });
-
-  settingsHolidayFirst.addEventListener("change", (e) => {
-    fetchFuncValue(e.target);
-  });
-
-  settingsHolidaySecond.addEventListener("change", (e) => {
-    fetchFuncValue(e.target);
-  });
-
-  settingsInputScheduler.addEventListener("change", (e) => {
-    fetchFuncChecked(e.target);
+  settings.addEventListener("change", (e) => {
+    const { id, checked, value } = e.target;
+    switch (id) {
+      case "showLastDays":
+      case "showNextDays":
+      case "scheduler":
+        fetchFunc({ id, value: checked });
+        break;
+      case "firstDayWeek":
+      case "firstHoliday":
+      case "secondHoliday":
+        fetchFunc({ id, value });
+        break;
+    }
   });
 }
 
@@ -167,16 +152,7 @@ const putMethod = (params) => {
   };
 };
 
-const fetchFuncChecked = function (target) {
-  const { id, checked } = target;
-  fetch(`${_utils__WEBPACK_IMPORTED_MODULE_1__.urlApi}/config/${id}`, putMethod({ idValue: id, value: checked }))
-    .then((res) => res.json())
-    .then(() => (0,_makeCalendar__WEBPACK_IMPORTED_MODULE_0__.makeCalendar)())
-    .catch((err) => console.log(err));
-};
-
-const fetchFuncValue = function (target) {
-  const { id, value } = target;
+const fetchFunc = ({ id, value }) => {
   fetch(`${_utils__WEBPACK_IMPORTED_MODULE_1__.urlApi}/config/${id}`, putMethod({ idValue: id, value: value }))
     .then((res) => res.json())
     .then(() => (0,_makeCalendar__WEBPACK_IMPORTED_MODULE_0__.makeCalendar)())
@@ -236,12 +212,14 @@ function createDays(params) {
   const firstDayIndex = new Date(currentYear, currentMonth, 0).getDay();
   const lastDayIndex = new Date(currentYear, currentMonth + 1, 0).getDay();
   const totalDays = lastDay + firstDayIndex;
+  const twoWeekInDays = 14;
+  const oneWeekInDays = 7
   let nextDays = null;
 
   if (totalDays < 35) {
-    nextDays = 14 - lastDayIndex;
+    nextDays = twoWeekInDays - lastDayIndex;
   } else {
-    nextDays = 7 - lastDayIndex;
+    nextDays = oneWeekInDays - lastDayIndex;
   }
 
   const restDaysInMonth = restDays
@@ -413,8 +391,8 @@ __webpack_require__.r(__webpack_exports__);
 function createDiv(params) {
   const { divClass = "", innerText = "", parentDiv = "calendar__days" } = params;
   const divElem = document.createElement("div");
-  divElem.className = `${divClass}`;
-  divElem.innerText = `${innerText}`;
+  divElem.className = divClass;
+  divElem.innerText = innerText;
   document.querySelector(`.${parentDiv}`).append(divElem);
 }
 
@@ -477,17 +455,18 @@ __webpack_require__.r(__webpack_exports__);
 function createLastNextDays(params) {
   const { showLastDays, showNextDays } = params;
 
-  const createLastNextDaysFunc = (selector) => {
+  const createrDays = ({ selector }) => {
     const calendarDay = document.querySelectorAll(`${selector}`);
     calendarDay.forEach((day) => {
       day.style.visibility = "hidden";
     });
   };
+
   if (!showLastDays) {
-    createLastNextDaysFunc(".calendar__day_prev-mounth-day");
+    createrDays({ selector: ".calendar__day_prev-mounth-day" });
   }
   if (!showNextDays) {
-    createLastNextDaysFunc(".calendar__day_next-mounth-day");
+    createrDays({ selector: ".calendar__day_next-mounth-day" });
   }
 }
 
@@ -538,10 +517,10 @@ const create = (params) => {
       divElem.id = item.id;
       divElem.innerHTML = `<div class="note__text">${item.value}</div>
       <button class="note__icon note__icon_trash">
-        <i id=${item.id} class="fas fa-trash"></i>
+        <i id=${item.id} class="fas fa-trash" data-action="trash"></i>
       </button>
       <button class="note__icon note__icon_edit">
-        <i id=${item.id} class="far fa-edit"></i>
+        <i id=${item.id} class="far fa-edit" data-action="edit"></i>
       </button>`;
       document.querySelector(".scheduler__notes").append(divElem);
     });
@@ -552,17 +531,18 @@ const create = (params) => {
       parentDiv: "scheduler__notes",
     });
   }
-  const iconsTrash = document.querySelectorAll(".fa-trash");
-  const iconsEdit = document.querySelectorAll(".fa-edit");
+  const notes = document.querySelectorAll(".note");
 
-  iconsTrash.forEach((iconTrash) => {
-    iconTrash.addEventListener("click", (e) => {
-      (0,_scheduler__WEBPACK_IMPORTED_MODULE_0__.deleteNote)({ date, id: e.target.id });
-    });
-  });
-  iconsEdit.forEach((iconEdit) => {
-    iconEdit.addEventListener("click", (e) => {
-      (0,_scheduler__WEBPACK_IMPORTED_MODULE_0__.editNote)({ posts, date, id: e.target.id });
+  notes.forEach((note) => {
+    note.addEventListener("click", (e) => {
+      switch (e.target.dataset.action) {
+        case "trash":
+          (0,_scheduler__WEBPACK_IMPORTED_MODULE_0__.deleteNote)({ date, id: e.target.id });
+          break;
+        case "edit":
+          (0,_scheduler__WEBPACK_IMPORTED_MODULE_0__.editNote)({ posts, date, id: e.target.id });
+          break;
+      }
     });
   });
 };
@@ -727,7 +707,6 @@ function addNote() {
       _utils__WEBPACK_IMPORTED_MODULE_1__.month.findIndex((month) => month === dateString[1]),
       +dateString[0]
     );
-
     const obj = {
       day: date.getDate(),
       month: date.getMonth(),
@@ -735,13 +714,8 @@ function addNote() {
       value: formInput.value,
     };
 
-    fetch(`${_utils__WEBPACK_IMPORTED_MODULE_1__.urlApi}/notes`, postMethod(obj))
-      .then((res) => res.json())
-      .then(() => {
-        addForm.reset();
-        (0,_creators__WEBPACK_IMPORTED_MODULE_0__.createNotes)(date);
-      })
-      .catch((err) => console.log(err));
+    fetchFunc({ date, obj });
+    addForm.reset();
   });
 }
 
@@ -753,6 +727,15 @@ const postMethod = (data) => {
     },
     body: JSON.stringify(data),
   };
+};
+
+const fetchFunc = ({ date, obj }) => {
+  fetch(`${_utils__WEBPACK_IMPORTED_MODULE_1__.urlApi}/notes`, postMethod(obj))
+    .then((res) => res.json())
+    .then(() => {
+      (0,_creators__WEBPACK_IMPORTED_MODULE_0__.createNotes)(date);
+    })
+    .catch((err) => console.log(err));
 };
 
 
@@ -845,34 +828,32 @@ __webpack_require__.r(__webpack_exports__);
 
 function editNote(params) {
   const { posts, date, id } = params;
+  const schedulerNotes = document.querySelector(".scheduler__notes");
   const index = posts.findIndex((item) => item.id === +id);
-  const editElem = document.getElementById(`${id}`);
+  const editElem = document.getElementById(id);
   editElem.innerHTML = `<input class="note__text" type='text' value=${posts[index].value}>
-    <button class="note__icon note__icon_check">
-        <i class="fas fa-check"></i>
+    <button class="note__icon note__icon_check" >
+        <i class="fas fa-check" data-action="check"></i>
     </button>
-     <button class="note__icon note__icon_cancel">
-        <i class="fas fa-times"></i>
+     <button class="note__icon note__icon_cancel" >
+        <i class="fas fa-times" data-action="cancel"></i>
     </button>`;
   const editInput = editElem.firstChild;
   editInput.focus();
   editInput.selectionStart = editInput.value.length;
 
-  const iconsCheck = editElem.querySelectorAll(".fa-check");
-  const iconsCancel = editElem.querySelectorAll(".fa-times");
-
-  iconsCheck.forEach((iconCheck) => {
-    iconCheck.addEventListener("click", () => {
-      fetch(`${_utils__WEBPACK_IMPORTED_MODULE_1__.urlApi}/notes/${id}`, putMethod({ id, value: editInput.value, date }))
-        .then((res) => res.json())
-        .then(() => (0,_creators__WEBPACK_IMPORTED_MODULE_0__.createNotes)(date))
-        .catch((err) => console.log(err));
-    });
-  });
-  iconsCancel.forEach((iconCancel) => {
-    iconCancel.addEventListener("click", () => {
-      (0,_creators__WEBPACK_IMPORTED_MODULE_0__.createNotes)(date);
-    });
+  schedulerNotes.addEventListener("click", (e) => {
+    switch (e.target.dataset.action) {
+      case "check":
+        fetch(`${_utils__WEBPACK_IMPORTED_MODULE_1__.urlApi}/notes/${id}`, putMethod({ id, value: editInput.value, date }))
+          .then((res) => res.json())
+          .then(() => (0,_creators__WEBPACK_IMPORTED_MODULE_0__.createNotes)(date))
+          .catch((err) => console.log(err));
+        break;
+      case "cancel":
+        (0,_creators__WEBPACK_IMPORTED_MODULE_0__.createNotes)(date);
+        break;
+    }
   });
 }
 
