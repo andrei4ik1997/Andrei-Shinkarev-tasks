@@ -4,7 +4,7 @@ import { urlApi } from "../utils";
 export function editNote(params) {
   const { posts, date, id } = params;
   const index = posts.findIndex((item) => item.id === +id);
-  const editElem = document.getElementById(`${id}`);
+  const editElem = document.getElementById(id);
   editElem.innerHTML = `<input class="note__text" type='text' value=${posts[index].value}>
     <button class="note__icon note__icon_check">
         <i class="fas fa-check"></i>
