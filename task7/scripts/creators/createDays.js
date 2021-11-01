@@ -15,12 +15,14 @@ export function createDays(params) {
   const firstDayIndex = new Date(currentYear, currentMonth, 0).getDay();
   const lastDayIndex = new Date(currentYear, currentMonth + 1, 0).getDay();
   const totalDays = lastDay + firstDayIndex;
+  const twoWeekInDays = 14;
+  const oneWeekInDays = 7
   let nextDays = null;
 
   if (totalDays < 35) {
-    nextDays = 14 - lastDayIndex;
+    nextDays = twoWeekInDays - lastDayIndex;
   } else {
-    nextDays = 7 - lastDayIndex;
+    nextDays = oneWeekInDays - lastDayIndex;
   }
 
   const restDaysInMonth = restDays
