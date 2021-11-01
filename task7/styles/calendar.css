@@ -48,11 +48,6 @@
   color: grey;
 }
 
-.calendar__dateControlsArrow:hover {
-  color: grey;
-  cursor: pointer;
-}
-
 .calendar__settings {
   width: 60%;
   padding: 20px;
@@ -127,6 +122,10 @@
 .calendar__dateControlsArrow {
   display: inline-block;
   width: calc(100% / 2);
+}
+
+.calendar__dateControlsArrow i:hover {
+  color: grey;
   cursor: pointer;
 }
 
