@@ -707,6 +707,7 @@ function addNote() {
       _utils__WEBPACK_IMPORTED_MODULE_1__.month.findIndex((month) => month === dateString[1]),
       +dateString[0]
     );
+
     const obj = {
       day: date.getDate(),
       month: date.getMonth(),
@@ -714,8 +715,13 @@ function addNote() {
       value: formInput.value,
     };
 
-    fetchFunc({ date, obj });
-    addForm.reset();
+    fetch(`${_utils__WEBPACK_IMPORTED_MODULE_1__.urlApi}/notes`, postMethod(obj))
+      .then((res) => res.json())
+      .then(() => {
+        addForm.reset();
+        (0,_creators__WEBPACK_IMPORTED_MODULE_0__.createNotes)(date);
+      })
+      .catch((err) => console.log(err));
   });
 }
 
@@ -727,15 +733,6 @@ const postMethod = (data) => {
     },
     body: JSON.stringify(data),
   };
-};
-
-const fetchFunc = ({ date, obj }) => {
-  fetch(`${_utils__WEBPACK_IMPORTED_MODULE_1__.urlApi}/notes`, postMethod(obj))
-    .then((res) => res.json())
-    .then(() => {
-      (0,_creators__WEBPACK_IMPORTED_MODULE_0__.createNotes)(date);
-    })
-    .catch((err) => console.log(err));
 };
 
 
