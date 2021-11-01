@@ -33,11 +33,12 @@ export function changeDate() {
     switch (e.target.dataset.action) {
       case "prevMonth":
         date.setMonth(date.getMonth() + 1);
+        makeCalendar();
         break;
       case "nextMonth":
         date.setMonth(date.getMonth() - 1);
+        makeCalendar();
         break;
     }
-    makeCalendar();
   });
 }

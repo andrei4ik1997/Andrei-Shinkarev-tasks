@@ -3,34 +3,32 @@ import { urlApi } from "../utils";
 
 export function editNote(params) {
   const { posts, date, id } = params;
+  const schedulerNotes = document.querySelector(".scheduler__notes");
   const index = posts.findIndex((item) => item.id === +id);
   const editElem = document.getElementById(id);
   editElem.innerHTML = `<input class="note__text" type='text' value=${posts[index].value}>
-    <button class="note__icon note__icon_check">
-        <i class="fas fa-check"></i>
+    <button class="note__icon note__icon_check" >
+        <i class="fas fa-check" data-action="check"></i>
     </button>
-     <button class="note__icon note__icon_cancel">
-        <i class="fas fa-times"></i>
+     <button class="note__icon note__icon_cancel" >
+        <i class="fas fa-times" data-action="cancel"></i>
     </button>`;
   const editInput = editElem.firstChild;
   editInput.focus();
   editInput.selectionStart = editInput.value.length;
 
-  const iconsCheck = editElem.querySelectorAll(".fa-check");
-  const iconsCancel = editElem.querySelectorAll(".fa-times");
-
-  iconsCheck.forEach((iconCheck) => {
-    iconCheck.addEventListener("click", () => {
-      fetch(`${urlApi}/notes/${id}`, putMethod({ id, value: editInput.value, date }))
-        .then((res) => res.json())
-        .then(() => createNotes(date))
-        .catch((err) => console.log(err));
-    });
-  });
-  iconsCancel.forEach((iconCancel) => {
-    iconCancel.addEventListener("click", () => {
-      createNotes(date);
-    });
+  schedulerNotes.addEventListener("click", (e) => {
+    switch (e.target.dataset.action) {
+      case "check":
+        fetch(`${urlApi}/notes/${id}`, putMethod({ id, value: editInput.value, date }))
+          .then((res) => res.json())
+          .then(() => createNotes(date))
+          .catch((err) => console.log(err));
+        break;
+      case "cancel":
+        createNotes(date);
+        break;
+    }
   });
 }
 

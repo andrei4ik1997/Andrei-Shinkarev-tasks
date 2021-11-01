@@ -29,10 +29,10 @@ const create = (params) => {
       divElem.id = item.id;
       divElem.innerHTML = `<div class="note__text">${item.value}</div>
       <button class="note__icon note__icon_trash">
-        <i id=${item.id} class="fas fa-trash"></i>
+        <i id=${item.id} class="fas fa-trash" data-action="trash"></i>
       </button>
       <button class="note__icon note__icon_edit">
-        <i id=${item.id} class="far fa-edit"></i>
+        <i id=${item.id} class="far fa-edit" data-action="edit"></i>
       </button>`;
       document.querySelector(".scheduler__notes").append(divElem);
     });
@@ -43,17 +43,18 @@ const create = (params) => {
       parentDiv: "scheduler__notes",
     });
   }
-  const iconsTrash = document.querySelectorAll(".fa-trash");
-  const iconsEdit = document.querySelectorAll(".fa-edit");
+  const notes = document.querySelectorAll(".note");
 
-  iconsTrash.forEach((iconTrash) => {
-    iconTrash.addEventListener("click", (e) => {
-      deleteNote({ date, id: e.target.id });
-    });
-  });
-  iconsEdit.forEach((iconEdit) => {
-    iconEdit.addEventListener("click", (e) => {
-      editNote({ posts, date, id: e.target.id });
+  notes.forEach((note) => {
+    note.addEventListener("click", (e) => {
+      switch (e.target.dataset.action) {
+        case "trash":
+          deleteNote({ date, id: e.target.id });
+          break;
+        case "edit":
+          editNote({ posts, date, id: e.target.id });
+          break;
+      }
     });
   });
 };
