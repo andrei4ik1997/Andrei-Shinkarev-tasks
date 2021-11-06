@@ -6,7 +6,7 @@ export function addNote() {
   addForm.addEventListener("submit", (e) => {
     e.preventDefault();
     const formInput = document.querySelector(".form__input");
-    const modalDate = document.querySelector(".modal__date");
+    const modalDate = document.querySelector(".scheduler__date");
     const dateString = modalDate.innerText.split(" ");
     const date = new Date(
       +dateString[2],

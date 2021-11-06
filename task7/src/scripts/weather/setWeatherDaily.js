@@ -16,8 +16,8 @@ export function setWeatherDaily(arr) {
     divElem.className = `weather__day`;
     divElem.innerHTML = `<div class="weather__day-week">${weekDays[dateWeather.getDay()].slice(0, 3)}</div>
       <div class="weather__date">${dateWeather.getDate()} ${month[dateWeather.getMonth()]}</div>
-      <div class="weather__icon weather__icon_margin-top-bottom-10px">
-      <img class="weather__icon-image" src=${iconurl} alt="Weather icon" />
+      <div class="weather__icon weather__icon_marginTopBottom10px">
+      <img class="weather__iconImage" src=${iconurl} alt="Weather icon" />
       </div>
       <div class="weather__temp-day">
       Day: <span class="weather__temp-day-value">${Math.round(tempDay)}&deg</span>
@@ -26,7 +26,7 @@ export function setWeatherDaily(arr) {
       Night: <span class="weather__temp-night-value">${Math.round(tempNight)}&deg</span>
       </div>
       <div
-        class="weather__description weather__description_margin-top-10px"
+        class="weather__description"
       >${main}
       </div>`;
     weatherDaily.append(divElem);

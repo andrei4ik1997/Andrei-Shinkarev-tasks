@@ -1,0 +1,114 @@
+.scheduler {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  display: none;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, 0.5);
+  &__content {
+    @include alignCenter;
+    flex-direction: column;
+    max-width: 500px;
+    max-height: 80vh;
+    margin: 40px auto;
+    padding: 15px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+    overflow-y: auto;
+    color: black;
+    background-color: #fff;
+  }
+  &__contentTop {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+  }
+  &__close {
+    font-size: 1.4286rem;
+    font-weight: 700;
+    opacity: 0.5;
+    cursor: pointer;
+  }
+
+  &__title {
+    text-align: center;
+  }
+  &__date {
+    text-align: center;
+    font-weight: bold;
+  }
+  &__notes {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  &__notes-empty {
+    @include alignCenter;
+    @include justifyCenter;
+    height: 50px;
+  }
+  &__button {
+    min-height: 30px;
+    width: 100%;
+    border: none;
+    border-radius: 5px;
+    background-color: #db3345;
+    color: white;
+    cursor: pointer;
+  }
+}
+
+.note {
+  @include alignCenter;
+  justify-content: space-between;
+  margin-top: 10px;
+  padding: 0px 10px;
+  width: 100%;
+  height: 30px;
+  border: solid #e4e4e4 2px;
+  border-radius: 5px;
+  &__text {
+    width: 80%;
+    color: black;
+  }
+  &__icon {
+    height: 30px;
+    border: none;
+    border-radius: 5px;
+    background-color: transparent;
+    color: black;
+    cursor: pointer;
+  }
+}
+
+.form {
+  @include alignCenter;
+  @include justifyCenter;
+  flex-direction: column;
+  width: 100%;
+  margin: 10px 0px;
+  &__input {
+    width: 100%;
+    height: 50px;
+    padding-left: 10px;
+    margin-bottom: 10px;
+    border: solid #e4e4e4 2px;
+    border-radius: 5px;
+    color: black;
+  }
+  &__button {
+    width: 100%;
+    height: 30px;
+    border: none;
+    border-radius: 5px;
+    background-color: #16a3b7;
+    color: white;
+    cursor: pointer;
+  }
+}
+
+.show {
+  display: block;
+}

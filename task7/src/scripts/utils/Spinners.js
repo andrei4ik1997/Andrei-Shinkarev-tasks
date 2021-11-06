@@ -19,7 +19,7 @@ export class SpinnerCalendar {
 
 export class SpinnerScheduler {
   constructor() {
-    this.deleteButton = document.querySelector(".delete__button");
+    this.deleteButton = document.querySelector(".scheduler__button");
     this.schedulerNotes = document.querySelector(".scheduler__notes");
     this.spinner = document.createElement("img");
   }
@@ -40,7 +40,7 @@ export class SpinnerWeather {
   constructor() {
     this.weather = document.querySelector(".weather");
     this.weatherDaily = document.querySelector(".weather__daily");
-    this.weatherToday = document.querySelector(".weather__today");
+    this.weatherToday = document.querySelector(".weather__header");
     this.spinner = document.createElement("img");
   }
   create() {

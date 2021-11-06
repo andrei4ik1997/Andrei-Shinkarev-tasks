@@ -3,7 +3,7 @@ import { createNotes } from "../creators";
 
 export function showScheduler(date) {
   const calendarDays = document.querySelectorAll(".calendar__day");
-  const modalDate = document.querySelector(".modal__date");
+  const modalDate = document.querySelector(".scheduler__date");
   const scheduler = document.querySelector(".scheduler");
   let clickDay = null;
   calendarDays.forEach((day) =>

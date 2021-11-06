@@ -3,10 +3,10 @@ import { makeCalendar } from "./scripts/makeCalendar";
 import { scheduler } from "./scripts/scheduler";
 import { changeSettings, changeDate } from "./scripts/changers";
 import { weather } from "./scripts/weather";
+import "./styles/index.scss";
 export let date = new Date();
 
 const calendarClockTime = document.querySelector(`.calendar__clockTime`);
-
 
 makeCalendar();
 changeSettings();

@@ -4,8 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Calendar by Shinkarev</title>
-    <link rel="stylesheet" href="./index.css" />
-    <link rel="stylesheet" href="./icons/fontawesome/css/all.css" />
+    <link rel="stylesheet" href="./icons/css/all.css" />
   </head>
   <body>
     <main class="main">
@@ -112,18 +111,18 @@
           <div class="scheduler__contentTop">
             <p class="scheduler__close">Close</p>
           </div>
-          <h2 class="scheduler__title">To do at <span class="modal__date"></span></h2>
+          <h2 class="scheduler__title">To do at <span class="scheduler__date"></span></h2>
           <form class="scheduler__form form">
             <input class="form__input" type="text" name="text" value="" placeholder="New to do" aria-label="New to do" required />
             <button class="form__button" type="submit" aria-label="Add to do">Add to do</button>
           </form>
           <h2 class="scheduler__title">My to do's in this day</h2>
           <div class="scheduler__notes"></div>
-          <button class="delete__button" type="button" aria-label="Delete all to do's">Delete all to do's</button>
+          <button class="scheduler__button" type="button" aria-label="Delete all to do's">Delete all to do's</button>
         </div>
       </section>
       <section class="weather">
-        <div class="weather__today">
+        <div class="weather__header">
           <h2 class="weather__location">Mogilev</h2>
           <p class="weather__date"></p>
           <div class="weather__info">
@@ -132,7 +131,7 @@
                 <span class="weather__tempValue"></span>
               </div>
               <div class="weather__icon weather__icon_marginLeftRigt10px">
-                <img class="weather__icon-image" alt="Weather icon" />
+                <img class="weather__iconImage" alt="Weather icon" />
               </div>
               <div class="weather__infoContainer">
                 <div class="weather__description"></div>
@@ -161,6 +160,5 @@
         <div class="weather__daily"></div>
       </section>
     </main>
-    <script src="./scripts/webpack/main.js"></script>
   </body>
 </html>

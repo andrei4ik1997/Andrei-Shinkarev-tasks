@@ -7,7 +7,7 @@ export function setWeatherCurrent(arr) {
   const iconurl = "http://openweathermap.org/img/w/" + icon + ".png";
   const weatherDate = document.querySelector(".weather__date");
   const weatherTempValue = document.querySelector(".weather__tempValue");
-  const weatherIconImage = document.querySelector(".weather__icon-image");
+  const weatherIconImage = document.querySelector(".weather__iconImage");
   const weatherDescription = document.querySelector(".weather__description");
   const weatherFeelsLikeValue = document.querySelector(".weather__feelsLikeValue");
   const weatherWindSpeedValue = document.querySelector(".weather__windSpeedValue");

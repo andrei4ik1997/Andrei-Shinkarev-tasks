@@ -2,10 +2,10 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: $font;
 }
 html {
-  font-size: 14px;
+  font-size: $fontSize;
 }
 h1,
 h2,
@@ -53,3 +53,6 @@ button .fa-times {
   height: 100%;
   align-items: center;
 }
+
+
+

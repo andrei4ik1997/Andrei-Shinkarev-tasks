@@ -11,7 +11,7 @@ export function deleteNote(params) {
 }
 
 export function deleteAllNotes() {
-  const deleteAll = document.querySelector(".delete__button");
+  const deleteAll = document.querySelector(".scheduler__button");
 
   deleteAll.addEventListener("click", () => {
     const iconTrashAll = document.querySelectorAll(".fa-trash");

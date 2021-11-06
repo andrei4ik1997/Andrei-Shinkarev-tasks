@@ -1,7 +1,16 @@
 # Calendar and Weather on Pure JavaScript and HTML
 
-![preview](images/calendar.gif)
+![preview](./src/images/calendar.gif)
 
+## Environment
+Development:
+```
+npm start
+```
+Production:
+```
+npm build
+```
 ## Installation
 
 You need install JSON Server :
