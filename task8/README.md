@@ -1,13 +1,13 @@
-# Calendar and Weather on Pure JavaScript and HTML
+# Calendar and Weather on TypeScript and HTML
 
 ![preview](./src/images/calendar.gif)
 
 ## Environment
-Development:
+Development mode (JSON Server start automatically):
 ```
 npm start
 ```
-Production:
+Production ( You need JSON Server manually):
 ```
 npm build
 ```
@@ -28,8 +28,8 @@ json-server --watch db/db.json
 ## Built with
 
 - HTML
-- CSS
-- JavaScript
+- SCSS
+- TypeScript
 - Webpack
 - JSON Server
 - OpenWeatherMap API
