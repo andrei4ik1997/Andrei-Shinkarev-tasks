@@ -1,0 +1,11 @@
+<div class="container">
+  <h1></h1>
+  <app-post-form (onAdd)="updatePosts($event)" (onDeleteAllPosts)="deleteAllPosts()"></app-post-form>
+  <hr />
+  <app-post
+    (onDelete)="deletePost($event)"
+    *ngFor="let p of posts"
+    [post]="p"
+  >
+  </app-post>
+</div>
