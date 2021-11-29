@@ -1,14 +1,8 @@
 import { createDiv } from "./createDiv";
 import { weekDays } from "../utils/index";
+import { ParamsCreateDay } from "../interfaces";
 
-interface Params {
-  date: Date;
-  firstDayWeek: string;
-  restDays: Array<{ day: number; month: number }>;
-  notes: Array<{ id: number; day: number; month: number; year: number; value: string }>;
-}
-
-export function createDays(params: Params): void {
+export function createDays(params: ParamsCreateDay): void {
   const { date, firstDayWeek, restDays, notes } = params;
   const calendarDays:HTMLElement = document.querySelector(".calendar__days");
   const calendarDateDay:HTMLInputElement = document.querySelector(".calendar__dateDay");

@@ -1,23 +1,22 @@
-import { createHolidays, createWeekDays, createLastNextDays, createDays } from "./creators/index";
+import {
+  createHolidays,
+  createWeekDays,
+  createLastNextDays,
+  createDays,
+} from "./creators/index";
 import { showScheduler } from "./scheduler/index";
 import { setSettings } from "./setSettings";
 import { getDate, urlApi, SpinnerCalendar } from "./utils/index";
 import { date } from "../index";
-
-interface Config {
-  firstDayWeek: string;
-  firstHoliday: string;
-  secondHoliday: string;
-  showLastDays: boolean;
-  showNextDays: boolean;
-  scheduler: boolean;
-}
+import { Config } from "./interfaces";
 
 export function makeCalendar() {
-  const calendarClockDate: HTMLElement = document.querySelector(".calendar__clockDate");
+  const calendarClockDate: HTMLElement = document.querySelector(
+    ".calendar__clockDate"
+  );
   calendarClockDate.innerText = `${getDate(new Date())}`;
 
- const spinnerCalendar = new SpinnerCalendar();
+  const spinnerCalendar = new SpinnerCalendar();
   spinnerCalendar.create();
 
   fetch(`${urlApi}/db`)
@@ -30,7 +29,14 @@ export function makeCalendar() {
         arrValues.push(values);
       }
       const newConfig: Config = Object.fromEntries(arrValues);
-      const { firstDayWeek, firstHoliday, secondHoliday, showLastDays, showNextDays, scheduler } = newConfig;
+      const {
+        firstDayWeek,
+        firstHoliday,
+        secondHoliday,
+        showLastDays,
+        showNextDays,
+        scheduler,
+      } = newConfig;
 
       spinnerCalendar.remove();
       setSettings(newConfig);
@@ -39,5 +45,5 @@ export function makeCalendar() {
       createHolidays({ firstHoliday, secondHoliday, firstDayWeek });
       createLastNextDays({ showLastDays, showNextDays });
       scheduler ? showScheduler(date) : null;
-    })
+    });
 }

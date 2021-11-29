@@ -1,12 +1,6 @@
 import { createNotes } from "../creators/index";
 import { month, urlApi } from "../utils/index";
-
-interface Note {
-  year: number;
-  month: number;
-  day: number;
-  value: string;
-}
+import { Note } from "../interfaces";
 
 export function addNote(): void {
   const addForm: HTMLFormElement = document.querySelector(".scheduler__form");
@@ -33,7 +27,7 @@ export function addNote(): void {
       .then(() => {
         addForm.reset();
         createNotes(date);
-      })
+      });
   });
 }
 

@@ -1,20 +1,18 @@
 import { createNotes } from "../creators/index";
 import { urlApi } from "../utils/index";
+import { Post } from "../interfaces";
 
-interface Post {
+export function editNote(params: {
+  posts: Array<Post>;
+  date: Date;
   id: number;
-  year: number;
-  month: number;
-  day: number;
-  value: string;
-}
-
-export function editNote(params: { posts: Array<Post>; date: Date; id: number }) {
+}) {
   const { posts, date, id } = params;
   const day = date.getDate();
   const month = date.getMonth();
   const year = date.getFullYear();
-  const schedulerNotes: HTMLElement = document.querySelector(".scheduler__notes");
+  const schedulerNotes: HTMLElement =
+    document.querySelector(".scheduler__notes");
   const index = posts.findIndex((item: Post) => item.id === +id);
   const editElem: HTMLElement = document.getElementById(String(id));
   editElem.innerHTML = `<input class="note__text" type='text' value=${posts[index].value}>
@@ -32,9 +30,12 @@ export function editNote(params: { posts: Array<Post>; date: Date; id: number })
     const target = e.target as HTMLInputElement;
     switch (target.dataset.action) {
       case "check":
-        fetch(`${urlApi}/notes/${id}`, putMethod({ id, day, month, year, value: editInput.value }))
+        fetch(
+          `${urlApi}/notes/${id}`,
+          putMethod({ id, day, month, year, value: editInput.value })
+        )
           .then((res) => res.json())
-          .then(() => createNotes(date))
+          .then(() => createNotes(date));
         break;
       case "cancel":
         createNotes(date);

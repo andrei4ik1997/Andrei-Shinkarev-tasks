@@ -1,12 +1,7 @@
+import { ParamsCreateHolidays } from "../interfaces";
 import { weekDays } from "../utils/index";
 
-interface Params {
-  firstHoliday: string;
-  secondHoliday: string;
-  firstDayWeek: string;
-}
-
-export function createHolidays(params: Params): void {
+export function createHolidays(params: ParamsCreateHolidays): void {
   const { firstHoliday, secondHoliday, firstDayWeek } = params;
   const calendarDays:HTMLElement = document.querySelector(".calendar__days");
   const calendarDaysChildren: HTMLCollection = calendarDays.children;

@@ -1,14 +1,7 @@
 import { deleteNote, editNote } from "../scheduler/index";
 import { createDiv } from "./index";
 import { SpinnerScheduler, urlApi } from "../utils/index";
-
-interface Post {
-  id: number;
-  year: number;
-  month: number;
-  day: number;
-  value: string;
-}
+import { Post } from "../interfaces";
 
 export function createNotes(date: Date): void {
   const spinnerScheduler = new SpinnerScheduler();
@@ -18,15 +11,20 @@ export function createNotes(date: Date): void {
     .then((result) => {
       spinnerScheduler.remove();
       create({ posts: result, date });
-    })
+    });
 }
 
 const create = (params: { posts: []; date: Date }): void => {
   const { posts, date } = params;
-  const schedulerNotes:HTMLElement = document.querySelector(".scheduler__notes");
+  const schedulerNotes: HTMLElement =
+    document.querySelector(".scheduler__notes");
   schedulerNotes.innerHTML = "";
   const filterPosts = posts.filter((item: Post) => {
-    return item.year === date.getFullYear() && item.month === date.getMonth() && item.day === date.getDate();
+    return (
+      item.year === date.getFullYear() &&
+      item.month === date.getMonth() &&
+      item.day === date.getDate()
+    );
   });
 
   if (filterPosts.length) {

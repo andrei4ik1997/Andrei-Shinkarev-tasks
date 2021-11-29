@@ -1,11 +1,4 @@
-interface Config {
-  firstDayWeek: string;
-  firstHoliday: string;
-  secondHoliday: string;
-  showLastDays: boolean;
-  showNextDays: boolean;
-  scheduler: boolean;
-}
+import { Config } from "./interfaces";
 
 export function setSettings(config: Config) {
   const { firstDayWeek, firstHoliday, secondHoliday, showLastDays, showNextDays, scheduler } = config;

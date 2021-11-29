@@ -1,10 +1,6 @@
-interface Params {
-  divClass: string;
-  innerText: string | number;
-  parentDiv?: string;
-}
+import { ParamsCreateDiv } from "../interfaces";
 
-export function createDiv(params: Params): void {
+export function createDiv(params: ParamsCreateDiv): void {
   const { divClass = "", innerText = "", parentDiv = "calendar__days" } = params;
   const divElem: HTMLElement = document.createElement("div");
   divElem.className = divClass;
