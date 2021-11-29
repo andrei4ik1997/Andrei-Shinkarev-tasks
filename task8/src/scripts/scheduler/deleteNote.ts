@@ -7,7 +7,6 @@ export function deleteNote(params: { date: Date; id: number }) {
   fetch(`${urlApi}/notes/${id}`, deleteMethod)
     .then((response) => response.json())
     .then(() => createNotes(date))
-    .catch((err) => console.log(err));
 }
 
 export function deleteAllNotes() {

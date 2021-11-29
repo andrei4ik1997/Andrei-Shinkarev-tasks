@@ -19,7 +19,6 @@ export function createNotes(date: Date): void {
       spinnerScheduler.remove();
       create({ posts: result, date });
     })
-    .catch((err) => console.log(err));
 }
 
 const create = (params: { posts: []; date: Date }): void => {

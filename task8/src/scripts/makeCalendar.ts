@@ -40,5 +40,4 @@ export function makeCalendar() {
       createLastNextDays({ showLastDays, showNextDays });
       scheduler ? showScheduler(date) : null;
     })
-    .catch((err) => console.log(err));
 }

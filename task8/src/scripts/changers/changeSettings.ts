@@ -48,5 +48,4 @@ const fetchFunc = (params: Params) => {
   fetch(`${urlApi}/config/${idValue}`, putMethod({ idValue, value }))
     .then((res) => res.json())
     .then(() => makeCalendar())
-    .catch((err) => console.log(err));
 };

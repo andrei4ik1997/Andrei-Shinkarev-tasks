@@ -35,7 +35,6 @@ export function editNote(params: { posts: Array<Post>; date: Date; id: number })
         fetch(`${urlApi}/notes/${id}`, putMethod({ id, day, month, year, value: editInput.value }))
           .then((res) => res.json())
           .then(() => createNotes(date))
-          .catch((err) => console.log(err));
         break;
       case "cancel":
         createNotes(date);

@@ -19,5 +19,4 @@ export function weather(): void {
       spinnerWeather.remove();
       setWeather(result);
     })
-    .catch((err) => console.log(err));
 }

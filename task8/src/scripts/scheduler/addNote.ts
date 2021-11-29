@@ -34,7 +34,6 @@ export function addNote(): void {
         addForm.reset();
         createNotes(date);
       })
-      .catch((err) => console.log(err));
   });
 }
 
