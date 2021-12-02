@@ -84,9 +84,16 @@
           </div>
         </div>
         <div class="product__desc-footer">
-          <button class="product__desc-footer-button" (click)="addProduct(card)">
+          <button
+            class="product__desc-footer-button"
+            (click)="addProduct(card)"
+            *ngIf="cardsService.getInBasket(card.id) < card.amount; else max"
+          >
             Добавить в корзину
           </button>
+          <ng-template #max>
+            <div class="card__max-value">Max available value in basket</div>
+          </ng-template>
           <div class="product__desc-footer-container">
             <div class="product__desc-footer-bonus">
               <fa-icon [icon]="faToolbox" size="lg"></fa-icon>

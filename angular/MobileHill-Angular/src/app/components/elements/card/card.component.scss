@@ -31,19 +31,19 @@
   }
   &__container {
     display: flex;
-    justify-content: space-evenly;
+    padding: 0px 15px;
+    justify-content: space-between;
     align-items: center;
     height: 15%;
   }
   &__price {
-    width: 75px;
+    width: 30%;
     font-family: "Oswald", sans-serif;
     font-size: 15px;
-    text-align: center;
     color: #000000;
   }
   &__button-basket {
-    width: 140px;
+    width: 70%;
     height: 40px;
     background: #f3f638;
     box-shadow: 6px 6px 20px rgba(0, 0, 0, 0.25);
@@ -56,5 +56,11 @@
     &:active {
       box-shadow: 0 3px 0 #f3f638;
     }
+  }
+  &__max-value {
+    width: 70%;
+    text-align: center;
+    font-weight: 600;
+    font-family: "Noto Sans", sans-serif;
   }
 }

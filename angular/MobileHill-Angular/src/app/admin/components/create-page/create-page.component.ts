@@ -19,20 +19,32 @@ export class CreatePageComponent implements OnInit {
 
   ngOnInit(): void {
     this.form = new FormGroup({
-      name: new FormControl(null, [Validators.required]),
-      category: new FormControl('', [Validators.required]),
-      brand: new FormControl('', [Validators.required]),
-      articul: new FormControl(null, [Validators.required]),
-      price: new FormControl(null, [Validators.required]),
-      amount: new FormControl(null, [Validators.required]),
+      name: new FormControl(null, Validators.required),
+      category: new FormControl('', Validators.required),
+      brand: new FormControl('', Validators.required),
+      articul: new FormControl(null, Validators.required),
+      price: new FormControl(null, [
+        Validators.required,
+        Validators.pattern('^[0-9]*[.,]?[0-9]+$'),
+      ]),
+      amount: new FormControl(null, [
+        Validators.required,
+        Validators.pattern('^[0-9]+$'),
+      ]),
       images: new FormGroup({
-        image: new FormControl(null, [Validators.required]),
+        image: new FormControl(null, Validators.required),
         imageArray: new FormArray([]),
       }),
-      dispay: new FormControl(null, [Validators.required]),
-      memory: new FormControl('', [Validators.required]),
-      camera: new FormControl(null, [Validators.required]),
-      description: new FormControl(null, [Validators.required]),
+      dispay: new FormControl(null, [
+        Validators.required,
+        Validators.pattern('^[0-9]*[.,]?[0-9]+$'),
+      ]),
+      memory: new FormControl('', Validators.required),
+      camera: new FormControl(null, [
+        Validators.required,
+        Validators.pattern('^[0-9]*[.,]?[0-9]+$'),
+      ]),
+      description: new FormControl(null),
     });
   }
 

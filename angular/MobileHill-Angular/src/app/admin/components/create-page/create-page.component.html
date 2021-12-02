@@ -19,7 +19,9 @@
       class="form__control-validation"
       *ngIf="form.get('name').touched && form.get('name').invalid"
     >
-      <small *ngIf="form.get('name').errors.required">Not value</small>
+      <small *ngIf="form.get('name').errors.required">
+        The field cannot be empty
+      </small>
     </div>
   </div>
   <div class="form__row">
@@ -46,7 +48,9 @@
         class="form__control-validation"
         *ngIf="form.get('category').touched && form.get('category').invalid"
       >
-        <small *ngIf="form.get('category').errors.required">Not value</small>
+        <small *ngIf="form.get('category').errors.required"
+          >Choose category</small
+        >
       </div>
     </div>
     <div
@@ -78,13 +82,9 @@
       </select>
       <div
         class="form__control-validation"
-        *ngIf="
-          form.get('brand').touched && form.get('brand').invalid
-        "
+        *ngIf="form.get('brand').touched && form.get('brand').invalid"
       >
-        <small *ngIf="form.get('brand').errors.required"
-          >Not value</small
-        >
+        <small *ngIf="form.get('brand').errors.required">Choose brand</small>
       </div>
     </div>
   </div>
@@ -108,7 +108,9 @@
         class="form__control-validation"
         *ngIf="form.get('articul').touched && form.get('articul').invalid"
       >
-        <small *ngIf="form.get('articul').errors.required">Not value</small>
+        <small *ngIf="form.get('articul').errors.required"
+          >The field cannot be empty
+        </small>
       </div>
     </div>
     <div
@@ -118,11 +120,13 @@
           form.get('price').touched && form.get('price').invalid
       }"
     >
-      <label class="form__control-label" for="price">Price</label>
+      <label class="form__control-label" for="price">Price, $</label>
       <input
         class="form__control-input"
         id="price"
         type="number"
+        min="0"
+        step="0.1"
         placeholder="Price"
         formControlName="price"
       />
@@ -130,7 +134,10 @@
         class="form__control-validation"
         *ngIf="form.get('price').touched && form.get('price').invalid"
       >
-        <small *ngIf="form.get('price').errors.required">Not value</small>
+        <small *ngIf="form.get('price').errors.required"
+          >The field cannot be empty
+        </small>
+        <small *ngIf="form.get('price').errors.pattern">Only numbers</small>
       </div>
     </div>
     <div
@@ -140,10 +147,11 @@
           form.get('amount').touched && form.get('amount').invalid
       }"
     >
-      <label class="form__control-label" for="amount">Amount</label>
+      <label class="form__control-label" for="amount">Amount, pc.</label>
       <input
         class="form__control-input"
         id="amount"
+        min="0"
         type="number"
         placeholder="Amount"
         formControlName="amount"
@@ -152,7 +160,10 @@
         class="form__control-validation"
         *ngIf="form.get('amount').touched && form.get('amount').invalid"
       >
-        <small *ngIf="form.get('amount').errors.required">Not value</small>
+        <small *ngIf="form.get('amount').errors.required"
+          >The field cannot be empty</small
+        >
+        <small *ngIf="form.get('amount').errors.pattern">Only numbers</small>
       </div>
     </div>
   </div>
@@ -181,7 +192,7 @@
         "
       >
         <small *ngIf="form.get('images').get('image').errors.required"
-          >Not value</small
+          >The field cannot be empty</small
         >
       </div>
     </div>
@@ -208,7 +219,9 @@
           class="form__control-validation"
           *ngIf="getControls()[i].touched && getControls()[i].invalid"
         >
-          <small *ngIf="getControls()[i].errors.required">Not value</small>
+          <small *ngIf="getControls()[i].errors.required"
+            >The field cannot be empty</small
+          >
         </div>
       </div>
 
@@ -225,11 +238,13 @@
           form.get('dispay').touched && form.get('dispay').invalid
       }"
     >
-      <label class="form__control-label" for="dispay">Dispay</label>
+      <label class="form__control-label" for="dispay">Dispay, ''</label>
       <input
         class="form__control-input"
         id="dispay"
         type="number"
+        min="0"
+        step="0.1"
         placeholder="Dispay"
         formControlName="dispay"
       />
@@ -237,7 +252,10 @@
         class="form__control-validation"
         *ngIf="form.get('dispay').touched && form.get('dispay').invalid"
       >
-        <small *ngIf="form.get('dispay').errors.required">Not value</small>
+        <small *ngIf="form.get('dispay').errors.required"
+          >The field cannot be empty</small
+        >
+        <small *ngIf="form.get('dispay').errors.pattern">Only numbers</small>
       </div>
     </div>
     <div
@@ -247,7 +265,7 @@
           form.get('memory').touched && form.get('memory').invalid
       }"
     >
-      <label class="form__control-label" for="memory">Memory</label>
+      <label class="form__control-label" for="memory">Memory, Gb</label>
       <select
         class="form__control-input"
         size="1"
@@ -267,7 +285,7 @@
         class="form__control-validation"
         *ngIf="form.get('memory').touched && form.get('memory').invalid"
       >
-        <small *ngIf="form.get('memory').errors.required">Not value</small>
+        <small *ngIf="form.get('memory').errors.required">Choose memory</small>
       </div>
     </div>
     <div
@@ -277,7 +295,7 @@
           form.get('camera').touched && form.get('camera').invalid
       }"
     >
-      <label class="form__control-label" for="camera">Camera</label>
+      <label class="form__control-label" for="camera">Camera, MP</label>
       <input
         class="form__control-input"
         id="camera"
@@ -291,7 +309,10 @@
         class="form__control-validation"
         *ngIf="form.get('camera').touched && form.get('camera').invalid"
       >
-        <small *ngIf="form.get('camera').errors.required">Not value</small>
+        <small *ngIf="form.get('camera').errors.required"
+          >The field cannot be empty</small
+        >
+        <small *ngIf="form.get('camera').errors.pattern">Only numbers</small>
       </div>
     </div>
   </div>

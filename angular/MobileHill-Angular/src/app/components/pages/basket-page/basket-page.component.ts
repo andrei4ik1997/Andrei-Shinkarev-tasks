@@ -62,7 +62,7 @@ export class BasketPageComponent implements OnInit, OnDestroy {
       price: this.totalPrice,
       date: new Date(),
     };
-
+    console.log(order);
     this.getOrderSubscription = this.orderService
       .create(order)
       .subscribe(() => {

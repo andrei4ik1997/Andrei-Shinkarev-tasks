@@ -20,7 +20,6 @@
   &__menu-list {
     display: flex;
     list-style-type: none;
-    
   }
   &__menu-list-item {
     font-family: "Biryani", sans-serif;
@@ -32,10 +31,14 @@
     &:last-child a {
       margin-right: 0px;
     }
-  }
-  &__menu-list-item a {
-    text-decoration: none;
-    color: white;
-    margin-right: 40px;
+    &-link {
+      text-decoration: none;
+      margin-right: 40px;
+      color: white;
+      font-size: 18px;
+      &_active {
+        color: black;
+      }
+    }
   }
 }

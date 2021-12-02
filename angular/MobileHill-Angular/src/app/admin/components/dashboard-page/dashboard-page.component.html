@@ -19,6 +19,7 @@
           <th class="table__row-cell">Articul</th>
           <th class="table__row-cell">Name</th>
           <th class="table__row-cell">Price</th>
+          <th class="table__row-cell">Amount</th>
           <th class="table__row-cell">Date add</th>
           <th class="table__row-cell">Action</th>
         </tr>
@@ -32,6 +33,7 @@
           <td class="table__row-cell">{{ card.articul }}</td>
           <td class="table__row-cell">{{ card.name }}</td>
           <td class="table__row-cell">{{ card.price }}</td>
+          <td class="table__row-cell">{{ card.amount }}</td>
           <td class="table__row-cell">{{ card.date | date: "medium" }}</td>
           <td class="table__row-cell">
             <button

@@ -18,6 +18,7 @@
   &__menu-item-link {
     text-decoration: none;
     color: #ffffff;
+
   }
 
   &__links {
@@ -77,4 +78,8 @@
 .footer__contacts-mail a:visited,
 .footer__contacts-mail a:link {
   color: #ffffff;
+}
+
+.footer__menu-list-item-link_active{
+  color: black;
 }

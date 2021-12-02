@@ -10,8 +10,12 @@
     <button
       class="card__button-basket"
       (click)="addProduct(card)"
+      *ngIf="cardsService.getInBasket(card.id) < card.amount; else max"
     >
       В корзину
     </button>
+    <ng-template #max>
+      <div class="card__max-value">Max available value</div>
+    </ng-template>
   </div>
 </article>

@@ -10,23 +10,46 @@
   <nav class="header__menu">
     <ul class="header__menu-list">
       <li class="header__menu-list-item">
-        <a routerLink="/">Main</a>
+        <a
+          class="header__menu-list-item-link"
+          routerLink="/main"
+          routerLinkActive="header__menu-list-item-link_active"
+          >Main</a
+        >
       </li>
       <li class="header__menu-list-item">
-        <a routerLink="/about">About</a>
+        <a
+          class="header__menu-list-item-link"
+          routerLink="/about"
+          routerLinkActive="header__menu-list-item-link_active"
+          >About</a
+        >
       </li>
       <li class="header__menu-list-item">
-        <a routerLink="/contacts">Contacts</a>
+        <a
+          class="header__menu-list-item-link"
+          routerLink="/contacts"
+          routerLinkActive="header__menu-list-item-link_active"
+          >Contacts</a
+        >
       </li>
     </ul>
     <ul class="header__menu-list">
       <li class="header__menu-list-item">
-        <a routerLink="/basket"
+        <a
+          class="header__menu-list-item-link"
+          routerLinkActive="header__menu-list-item-link_active"
+          routerLink="/basket"
           ><fa-icon [icon]="faShoppingCart" size="lg"></fa-icon
         ></a>
       </li>
       <li class="header__menu-list-item">
-        <a routerLink="/admin">Admin</a>
+        <a
+          class="header__menu-list-item-link"
+          routerLinkActive="header__menu-list-item-link_active"
+          routerLink="/admin"
+          >Admin</a
+        >
       </li>
     </ul>
   </nav>

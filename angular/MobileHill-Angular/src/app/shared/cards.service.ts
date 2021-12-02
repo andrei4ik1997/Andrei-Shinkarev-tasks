@@ -3,14 +3,15 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { map, Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
+import { ToastrService } from 'ngx-toastr';
 
 @Injectable({
   providedIn: 'root',
 })
 export class CardsService {
   cartProducts: Card[] = [];
-  maxInBasket: number;
-  constructor(private http: HttpClient) {}
+  inBasket: number = 0;
+  constructor(private http: HttpClient, private toastr: ToastrService) {}
 
   create(card: Card): Observable<Card> {
     return this.http
@@ -80,9 +81,21 @@ export class CardsService {
       } else {
         this.cartProducts[indexBasket].count =
           +this.cartProducts[indexBasket].count + 1;
+        this.inBasket += 1;
       }
     } else {
       this.cartProducts.push(newCard);
     }
+    this.toastr.success(`Add to basket ${newCard.name}`, 'Add', {
+      positionClass: 'toast-bottom-right',
+    });
+  }
+
+  getInBasket(id: string | number) {
+    const index = this.cartProducts.findIndex((item) => item.id === id);
+    if (index === -1) {
+      return 0;
+    }
+    return this.cartProducts[index].count;
   }
 }

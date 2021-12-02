@@ -20,7 +20,7 @@
           <td class="table__row-cell">{{ order.adress }}</td>
           <td class="table__row-cell">
             <div *ngFor="let product of order.orders">
-              {{ product.name }}
+              {{ product.name }} x  {{ product.count }}
             </div>
           </td>
           <td class="table__row-cell">

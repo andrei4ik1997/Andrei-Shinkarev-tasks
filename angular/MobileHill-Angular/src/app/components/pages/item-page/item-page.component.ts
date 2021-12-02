@@ -46,7 +46,7 @@ export class ItemPageComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private cardsService: CardsService
+    public cardsService: CardsService
   ) {}
 
   ngOnInit(): void {

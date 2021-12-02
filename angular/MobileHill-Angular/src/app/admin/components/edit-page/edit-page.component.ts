@@ -28,16 +28,28 @@ export class EditPageComponent implements OnInit, OnDestroy {
       return this.cardsService.getById(params.id).subscribe((card: Card) => {
         this.card = card;
         this.form = new FormGroup({
-          name: new FormControl(card.name, [Validators.required]),
-          category: new FormControl(card.category, [Validators.required]),
-          brand: new FormControl(card.brand, [Validators.required]),
-          articul: new FormControl(card.articul, [Validators.required]),
-          price: new FormControl(card.price, [Validators.required]),
-          amount: new FormControl(card.amount, [Validators.required]),
+          name: new FormControl(card.name, Validators.required),
+          category: new FormControl(card.category, Validators.required),
+          brand: new FormControl(card.brand, Validators.required),
+          articul: new FormControl(card.articul, Validators.required),
+          price: new FormControl(card.price, [
+            Validators.required,
+            Validators.pattern('^[0-9]*[.,]?[0-9]+$'),
+          ]),
+          amount: new FormControl(card.amount, [
+            Validators.required,
+            Validators.pattern('^[0-9]+$'),
+          ]),
           images: new FormArray([]),
-          dispay: new FormControl(card.dispay, [Validators.required]),
+          dispay: new FormControl(card.dispay, [
+            Validators.required,
+            Validators.pattern('^[0-9]*[.,]?[0-9]+$'),
+          ]),
           memory: new FormControl(card.memory, [Validators.required]),
-          camera: new FormControl(card.camera, [Validators.required]),
+          camera: new FormControl(card.camera, [
+            Validators.required,
+            Validators.pattern('^[0-9]*[.,]?[0-9]+$'),
+          ]),
           description: new FormControl(card.description, [Validators.required]),
         });
         this.card.images.forEach((image) => {

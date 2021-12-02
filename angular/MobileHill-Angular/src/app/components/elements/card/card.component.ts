@@ -10,11 +10,12 @@ import { Card } from 'src/app/shared/interfaces';
 export class CardComponent implements OnInit {
   @Input() card: Card;
 
-  constructor(private cardsService: CardsService) {}
+  constructor(public cardsService: CardsService) {}
 
   ngOnInit(): void {
   }
   addProduct(card: Card) {
     this.cardsService.addProduct(card);
+
   }
 }
