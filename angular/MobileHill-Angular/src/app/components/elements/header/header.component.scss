@@ -1,0 +1,41 @@
+.header {
+  &__container {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 20px 0px 0px 0px;
+  }
+  &__logo {
+    width: 15%;
+  }
+  &__logo-image {
+    width: 130px;
+    height: 80px;
+  }
+  &__menu {
+    width: 70%;
+    display: flex;
+    justify-content: space-between;
+  }
+  &__menu-list {
+    display: flex;
+    list-style-type: none;
+    
+  }
+  &__menu-list-item {
+    font-family: "Biryani", sans-serif;
+    font-weight: bold;
+    font-size: 16px;
+    text-transform: uppercase;
+    color: white;
+    text-decoration: none;
+    &:last-child a {
+      margin-right: 0px;
+    }
+  }
+  &__menu-list-item a {
+    text-decoration: none;
+    color: white;
+    margin-right: 40px;
+  }
+}

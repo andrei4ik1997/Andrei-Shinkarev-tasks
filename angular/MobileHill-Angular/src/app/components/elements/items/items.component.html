@@ -1,0 +1,15 @@
+<section class="items">
+  <div class="items__container" *ngIf="cards$ | async as cards; else spinner">
+    <app-card
+      [ngStyle]="{ width: '30%' }"
+      *ngFor="let card of cards"
+      [card]="card"
+    ></app-card>
+  </div>
+</section>
+
+<ng-template #spinner>
+  <div class="spinner">
+    <img alt="spinner" class="spinner__image" src="/assets/spinner.svg" />
+  </div>
+</ng-template>

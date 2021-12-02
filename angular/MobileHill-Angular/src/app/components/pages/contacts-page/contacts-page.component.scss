@@ -1,0 +1,114 @@
+.contacts {
+  width: 70%;
+  margin: auto;
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 30px 30px 0px 0px;
+  padding: 30px;
+  &__title {
+    font-family: "Noto Sans", sans-serif;
+    font-weight: 600;
+    font-size: 30px;
+  }
+  &__contaiter {
+    margin-top: 25px;
+    display: flex;
+    justify-content: space-between;
+  }
+}
+.contacts__appeal {
+  position: relative;
+  width: 65%;
+  height: 300px;
+  background: linear-gradient(180deg, #aaf8f3 0%, rgba(9, 102, 96, 0.5) 100%);
+  box-shadow: 0px 4px 100px rgba(0, 0, 0, 0.25);
+  border-radius: 30px;
+  padding: 20px;
+  &-title {
+    font-family: "Biryani", sans-serif;
+    font-weight: bold;
+    font-size: 36px;
+    color: #ffffff;
+  }
+  &-desc {
+    margin-top: 50px;
+    width: 65%;
+    font-family: "Biryani", sans-serif;
+    font-size: 15px;
+    color: #ffffff;
+  }
+  &-icon {
+    position: absolute;
+    right: 50px;
+    top: 120px;
+  }
+  &-logo {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    width: 50%;
+  }
+}
+
+.contacts__contact {
+  padding: 20px 20px 0px 20px;
+  width: 30%;
+  height: 300px;
+  background: linear-gradient(180deg, #aaf8f3 0%, rgba(9, 102, 96, 0.5) 100%);
+  box-shadow: 0px 4px 100px rgba(0, 0, 0, 0.25);
+  border-radius: 30px;
+  &-title {
+    font-family: "Biryani", sans-serif;
+    font-weight: bold;
+    font-size: 36px;
+    line-height: 1;
+    text-align: center;
+    color: #ffffff;
+  }
+  &-icon {
+    text-align: center;
+    margin: 10px auto;
+  }
+  &-desc {
+    font-family: "Biryani", sans-serif;
+    font-weight: bold;
+    font-size: 15px;
+    text-align: center;
+    letter-spacing: 0.05em;
+    margin: auto;
+    color: #ffffff;
+  }
+}
+
+.contacts__adress {
+  position: relative;
+  margin-top: 30px;
+  width: 100%;
+  height: 150px;
+  background: linear-gradient(180deg, #aaf8f3 0%, rgba(9, 102, 96, 0.5) 100%);
+  box-shadow: 0px 4px 100px rgba(0, 0, 0, 0.25);
+  border-radius: 30px;
+  padding: 20px 0px 0px 40px;
+  &-title {
+    font-family: "Biryani", sans-serif;
+    font-weight: bold;
+    font-size: 36px;
+    color: #ffffff;
+  }
+  &-desc {
+    font-family: "Biryani", sans-serif;
+    font-style: normal;
+    font-size: 15px;
+    color: #ffffff;
+  }
+  &-icon {
+    position: absolute;
+    right: 40px;
+    top: 20px;
+  }
+  &-logo {
+    position: absolute;
+    bottom: 0px;
+    right: 135px;
+    width: 40%;
+  }
+}

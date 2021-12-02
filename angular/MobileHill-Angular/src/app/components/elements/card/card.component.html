@@ -1,0 +1,17 @@
+<article class="card">
+  <a class="card__image-container" routerLink="/main/{{ card.id }}">
+    <img class="card__image" alt="img" src="{{ card.images[0] }}" />
+  </a>
+
+  <div class="card__name">{{ card.name }}</div>
+
+  <div class="card__container">
+    <span class="card__price">{{ card.price }}</span>
+    <button
+      class="card__button-basket"
+      (click)="addProduct(card)"
+    >
+      В корзину
+    </button>
+  </div>
+</article>

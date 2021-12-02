@@ -1,0 +1,122 @@
+<section class="product">
+  <div *ngIf="!loading; else spinner">
+    <div class="product__header-container">
+      <h5 class="product__chapter">{{ card.category }}</h5>
+      <a class="product__back" routerLink="/">
+        <fa-icon [icon]="faArrowLeft" size="lg"></fa-icon>
+      </a>
+    </div>
+    <div class="product__name">{{ card.name }}</div>
+    <div class="product__info-container">
+      <ngx-gallery
+        [options]="galleryOptions"
+        [images]="galleryImages"
+      ></ngx-gallery>
+      <div class="product__desc">
+        <div class="product__desc-count">В наличии: {{ card.amount }} шт.</div>
+        <div class="product__desc-title">Основные характеристики</div>
+        <div class="product__desc-characteristic">
+          <fa-icon
+            class="product__desc-characteristic-icon"
+            [icon]="faCheck"
+            size="lg"
+          ></fa-icon>
+          <div class="product__desc-characteristic-name">Диагональ дисплея</div>
+          <span class="product__desc-characteristic-value">
+            {{ card.dispay }}''
+          </span>
+        </div>
+        <div class="product__desc-characteristic">
+          <fa-icon
+            class="product__desc-characteristic-icon"
+            [icon]="faCheck"
+            size="lg"
+          ></fa-icon>
+          <span class="product__desc-characteristic-name">
+            Обьем встроенной памяти
+          </span>
+          <span class="product__desc-characteristic-value">
+            {{ card.memory }}
+          </span>
+        </div>
+        <div class="product__desc-characteristic">
+          <fa-icon
+            class="product__desc-characteristic-icon"
+            [icon]="faCheck"
+            size="lg"
+          ></fa-icon>
+          <span class="product__desc-characteristic-name">
+            Основная камера
+          </span>
+          <span class="product__desc-characteristic-value">
+            {{ card.camera }} МП
+          </span>
+        </div>
+        <div class="product__desc-container">
+          <div class="product__desc-property">
+            <div class="product__desc-property-title">Цвет</div>
+            <div class="product__desc-property-value">
+              <div
+                class="
+                  product__desc-property-value-color
+                  product__desc-property-value-color_black
+                "
+              ></div>
+              <div
+                class="
+                  product__desc-property-value-color
+                  product__desc-property-value-color_white
+                "
+              ></div>
+              <div
+                class="
+                  product__desc-property-value-color
+                  product__desc-property-value-color_green
+                "
+              ></div>
+            </div>
+          </div>
+          <div class="product__desc-property">
+            <div class="product__desc-property-title">Цена</div>
+            <div class="product__desc-property-value">
+              {{ card.price }} Руб.
+            </div>
+          </div>
+        </div>
+        <div class="product__desc-footer">
+          <button class="product__desc-footer-button" (click)="addProduct(card)">
+            Добавить в корзину
+          </button>
+          <div class="product__desc-footer-container">
+            <div class="product__desc-footer-bonus">
+              <fa-icon [icon]="faToolbox" size="lg"></fa-icon>
+              <span class="product__desc-footer-bonus-text">
+                Гарантийное обслуживание
+              </span>
+            </div>
+            <div class="product__desc-footer-bonus">
+              <fa-icon [icon]="faTruck" size="lg"></fa-icon>
+              <span class="product__desc-footer-bonus-text">
+                Доставка по всей Беларуси
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="product__info-description">
+      <div class="product__info-description-title">
+        Дополнительные характеристики
+      </div>
+      <div class="product__info-description-text">
+        <quill-view-html [content]="card.description"></quill-view-html>
+      </div>
+    </div>
+  </div>
+</section>
+
+<ng-template #spinner>
+  <div class="spinner">
+    <img alt="spinner" class="spinner__image" src="/assets/spinner.svg" />
+  </div>
+</ng-template>

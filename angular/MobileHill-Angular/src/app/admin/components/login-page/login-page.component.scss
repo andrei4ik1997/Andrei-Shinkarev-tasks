@@ -1,0 +1,59 @@
+.form {
+  width: 500px;
+  margin: 20px auto;
+  padding: 10px;
+  border: #ccc 1px dotted;
+  &__auth-error {
+    background: #dc3545;
+    color: #fff;
+    padding: 0.7rem;
+    margin: 1rem 0;
+    font-weight: bold;
+  }
+  &__button {
+    background: #dc3545;
+    color: #fff;
+    display: inline-block;
+    margin-top: 20px;
+    width: 80px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    border: none;
+    cursor: pointer;
+    margin-right: 0.5rem;
+    transition: opacity 0.2s ease-in;
+    outline: none;
+    &:disabled {
+      cursor: not-allowed;
+      background: #f4f4f4;
+      color: #111;
+    }
+  }
+}
+.form__control {
+  display: flex;
+  flex-direction: column;
+  color: #888;
+  margin-top: 10px;
+  &_invalid {
+    color: #dc3545;
+    input {
+      border-color: #dc3545;
+    }
+  }
+  &-label {
+    margin-bottom: 5px;
+  }
+
+  &-input {
+    display: block;
+    width: 100%;
+    padding: 0.4rem;
+    font-size: 1.2rem;
+    border: 1px solid #ccc;
+    outline: none;
+  }
+}

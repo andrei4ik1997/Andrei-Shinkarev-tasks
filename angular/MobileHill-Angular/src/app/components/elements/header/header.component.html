@@ -1,0 +1,33 @@
+<div class="header__container">
+  <a routerLink="/" class="header__logo">
+    <img
+      alt="logo"
+      class="header__logo-image"
+      src="/assets/img/shop/logo.png"
+    />
+  </a>
+
+  <nav class="header__menu">
+    <ul class="header__menu-list">
+      <li class="header__menu-list-item">
+        <a routerLink="/">Main</a>
+      </li>
+      <li class="header__menu-list-item">
+        <a routerLink="/about">About</a>
+      </li>
+      <li class="header__menu-list-item">
+        <a routerLink="/contacts">Contacts</a>
+      </li>
+    </ul>
+    <ul class="header__menu-list">
+      <li class="header__menu-list-item">
+        <a routerLink="/basket"
+          ><fa-icon [icon]="faShoppingCart" size="lg"></fa-icon
+        ></a>
+      </li>
+      <li class="header__menu-list-item">
+        <a routerLink="/admin">Admin</a>
+      </li>
+    </ul>
+  </nav>
+</div>

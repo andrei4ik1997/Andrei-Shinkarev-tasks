@@ -1,0 +1,161 @@
+.about {
+  padding-bottom: 50px;
+  width: 70%;
+  margin: auto;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 30px 30px 0px 0px;
+  &__container {
+    position: relative;
+    width: 100%;
+    height: 285px;
+    background: linear-gradient(180deg, #aaf8f3 0%, rgba(9, 102, 96, 0.5) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 30px;
+  }
+  &__title {
+    font-family: "Biryani", sans-serif;
+    text-align: center;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 46px;
+    color: #ffffff;
+  }
+  &__title-logo:nth-of-type(1) {
+    position: absolute;
+    bottom: 0px;
+    right: 117px;
+  }
+  &__title-logo:nth-of-type(2) {
+    position: absolute;
+    right: 30px;
+    top: 0px;
+  }
+}
+
+.about__benefits {
+  width: 100%;
+  height: 370px;
+  display: flex;
+  flex-direction: column;
+  margin-top: 65px;
+  padding: 0px 35px;
+  &-title {
+    text-align: center;
+    font-family: "Noto Sans", sans-serif;
+    font-weight: 500;
+    font-size: 25px;
+    text-transform: uppercase;
+  }
+  &-container {
+    margin-top: 30px;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+  }
+  &-item {
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    &-logo {
+      background: rgba(255, 255, 255, 0.3);
+      box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+      border-radius: 10px;
+      width: 100%;
+      height: 230px;
+    }
+    &-container {
+      display: flex;
+      align-items: center;
+      margin-top: 20px;
+      width: 100%;
+      height: 55px;
+    }
+    &-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #f9fe00;
+    }
+    &-desc {
+      width: 80%;
+      font-family: "Biryani", sans-serif;
+      font-weight: bold;
+      font-size: 15px;
+      color: #000000;
+      margin-left: 10px;
+    }
+  }
+}
+
+.about__subscribe {
+  margin-top: 100px;
+  width: 100%;
+  height: 170px;
+  background: #cccccc;
+  border: 1px solid rgba(0, 0, 0, 0.18);
+  border-left: none;
+  border-right: none;
+  display: flex;
+  &-container {
+    padding: 0px 20px;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  &-title {
+    font-family: "Oxanium";
+    font-weight: 500;
+    font-size: 24px;
+    text-transform: uppercase;
+  }
+  &-subtitle {
+    margin-top: 10px;
+    font-family: "Biryani", sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    letter-spacing: 0.05em;
+  }
+  &-input-container {
+    display: flex;
+    margin-top: 10px;
+  }
+  &-input {
+    width: 75%;
+    height: 35px;
+    background: rgba(169, 169, 169, 0.5);
+    border: none;
+    outline: none;
+    padding-left: 10px;
+    font-family: "Biryani", sans-serif;
+    font-size: 13px;
+    letter-spacing: 0.05em;
+    color: rgba(255, 255, 255, 0.7);
+    &::-webkit-input-placeholder {
+      color: white;
+    }
+  }
+  &-button {
+    width: 25%;
+    height: 35px;
+    background: #f3f638;
+    box-shadow: 6px 6px 20px rgba(0, 0, 0, 0.25);
+    border-radius: 6px;
+    cursor: pointer;
+    border: none;
+    margin-left: 8px;
+    font-weight: 600;
+    font-size: 13px;
+    font-family: "Noto Sans", sans-serif;
+    word-wrap: break-word;
+  }
+  &-logo {
+    width: 50%;
+  }
+}

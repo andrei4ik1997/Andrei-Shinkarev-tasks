@@ -1,0 +1,168 @@
+<section class="basket">
+  <div *ngIf="cartProducts.length; else empty">
+    <h3 class="basket__title">Basket</h3>
+    <article class="basket__item" *ngFor="let product of cartProducts">
+      <img alt="img" src="{{ product.images[0] }}" class="basket__item-img" />
+      <div class="basket__item-name">
+        {{ product.category }} {{ product.name }}
+      </div>
+      <div class="basket__item-count">
+        <fa-icon
+          class="basket__item-count-icon"
+          [icon]="faMinusCircle"
+          size="lg"
+          [ngClass]="{ 'basket__item-count-icon_visible': product.count > 1 }"
+          (click)="minusCount(product)"
+        ></fa-icon>
+        {{ product.count }}
+        <fa-icon
+          class="basket__item-count-icon"
+          [icon]="faPlusCircle"
+          size="lg"
+          [ngClass]="{
+            'basket__item-count-icon_visible': product.amount >  product.count
+          }"
+          (click)="plusCount(product)"
+        ></fa-icon>
+      </div>
+      <div class="basket__item-price">{{ +product.price }} Руб.</div>
+      <fa-icon
+        class="basket__item-delete"
+        [icon]="faTimesCircle"
+        size="lg"
+        (click)="delete(product)"
+      ></fa-icon>
+    </article>
+    <hr />
+    <article class="basket__submit">
+      <div class="basket__submit-text">
+        Total quantity of products:
+        <span class="basket__submit-quantity">{{ cartProducts.length }}</span>
+      </div>
+      <div class="basket__submit-text">
+        Total price:
+        <span class="basket__submit-price">{{ totalPrice }} Руб.</span>
+      </div>
+    </article>
+
+    <form class="form" [formGroup]="form" (ngSubmit)="submit()">
+      <h2 class="form__title">Delivery</h2>
+      <div
+        class="form__control"
+        [ngClass]="{
+          form__control_invalid:
+            form.get('name').touched && form.get('name').invalid
+        }"
+      >
+        <label class="form__control-label" for="name">Name</label>
+        <input
+          class="form__control-input"
+          id="name"
+          type="text"
+          formControlName="name"
+        />
+        <div
+          class="form__control-validation"
+          *ngIf="form.get('name').touched && form.get('name').invalid"
+        >
+          <small *ngIf="form.get('name').errors.required"
+            >Enter your name</small
+          >
+        </div>
+      </div>
+      <div
+        class="form__control"
+        [ngClass]="{
+          form__control_invalid:
+            form.get('phone').touched && form.get('phone').invalid
+        }"
+      >
+        <label class="form__control-label" for="phone">Phone</label>
+        <input
+          class="form__control-input"
+          id="phone"
+          type="phone"
+          formControlName="phone"
+        />
+        <div
+          class="form__control-validation"
+          *ngIf="form.get('phone').touched && form.get('phone').invalid"
+        >
+          <small *ngIf="form.get('phone').errors.required"
+            >Enter your phone number
+          </small>
+        </div>
+      </div>
+      <div
+        class="form__control"
+        [ngClass]="{
+          form__control_invalid:
+            form.get('adress').touched && form.get('adress').invalid
+        }"
+      >
+        <label class="form__control-label" for="adress">Adress</label>
+        <input
+          class="form__control-input"
+          id="adress"
+          type="adress"
+          formControlName="adress"
+        />
+        <div
+          class="form__control-validation"
+          *ngIf="form.get('adress').touched && form.get('adress').invalid"
+        >
+          <small *ngIf="form.get('adress').errors.required"
+            >Enter your adress
+          </small>
+        </div>
+      </div>
+      <div
+        class="form__control"
+        [ngClass]="{
+          form__control_invalid:
+            form.get('payment').touched && form.get('payment').invalid
+        }"
+      >
+        <label class="form__control-label" for="payment">Payment method</label>
+        <select
+          class="form__control-input"
+          id="payment"
+          name="payment"
+          formControlName="payment"
+        >
+          <option selected disabled value="" hidden>
+            Choose payment method
+          </option>
+          <option value="cash">Cash</option>
+          <option value="card">Card</option>
+        </select>
+        <div
+          class="form__control-validation"
+          *ngIf="form.get('payment').touched && form.get('payment').invalid"
+        >
+          <small *ngIf="form.get('payment').errors.required"
+            >Choose payment method</small
+          >
+        </div>
+      </div>
+      <button
+        class="button basket__submit-button"
+        type="submit"
+        [disabled]="form.invalid || submitted"
+        (click)="submit()"
+      >
+        Confirm
+      </button>
+    </form>
+
+    <div class="product__button_back">
+      <button class="button basket__back">Назад</button>
+    </div>
+  </div>
+</section>
+
+<ng-template #empty>
+  <div class="empty">
+    <p class="empty__message">The basket is empty :(</p>
+  </div>
+</ng-template>

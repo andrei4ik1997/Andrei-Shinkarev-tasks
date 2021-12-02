@@ -1,0 +1,80 @@
+.footer {
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 280px;
+    width: 70%;
+    margin: auto;
+  }
+  &__menu-container {
+    list-style-type: none;
+  }
+  &__menu-item {
+    font-family: "Source Sans Pro", sans-serif;
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
+  &__menu-item-link {
+    text-decoration: none;
+    color: #ffffff;
+  }
+
+  &__links {
+    font-family: "Source Sans Pro", sans-serif;
+    font-size: 16px;
+    color: #ffffff;
+  }
+
+  &__links-container {
+    list-style-type: none;
+    margin-top: 20px;
+  }
+  &__links-item {
+    margin-top: 20px;
+  }
+  &__links-item-link {
+    text-decoration: none;
+    color: #ffffff;
+  }
+  &__logo {
+    margin: auto 0px;
+    font-family: "Oswald";
+    font-size: 20px;
+    color: #ffffff;
+  }
+  &__contacts {
+  }
+  &__contacts-button {
+    height: 45px;
+    width: 100%;
+    border: 1px solid #ffffff;
+    box-sizing: border-box;
+    border-radius: 6px;
+    background-color: transparent;
+    font-family: "Source Sans Pro", sans-serif;
+    font-size: 15px;
+    color: #ffffff;
+    cursor: pointer;
+  }
+  &__contacts-phone {
+    margin: 20px 0px;
+    font-family: "Source Sans Pro", sans-serif;
+    font-weight: 600;
+    font-size: 20px;
+    color: #ffffff;
+  }
+  &__contacts-mail a {
+    text-decoration: none;
+    font-family: "Source Sans Pro", sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 15px;
+  }
+}
+
+.footer__contacts-mail a:active,
+.footer__contacts-mail a:visited,
+.footer__contacts-mail a:link {
+  color: #ffffff;
+}

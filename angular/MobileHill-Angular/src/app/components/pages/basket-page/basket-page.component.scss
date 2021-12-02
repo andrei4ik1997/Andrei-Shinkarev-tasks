@@ -1,0 +1,147 @@
+.basket {
+  position: relative;
+  min-height: 500px;
+  font-size: 24px;
+  margin: auto;
+  width: 70%;
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 30px 30px 0px 0px;
+  padding: 30px;
+  &__title {
+    font-family: "Noto Sans", sans-serif;
+    font-weight: 800;
+    font-size: 18px;
+  }
+}
+
+.basket__item {
+  position: relative;
+  width: 100%;
+  background: #ffffff;
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.25);
+  border-radius: 20px;
+  padding: 0px 20px;
+  margin: 30px 0px;
+  display: flex;
+  align-items: center;
+  &-img {
+    width: 10%;
+    height: 90px;
+  }
+  &-name {
+    width: 50%;
+    font-family: "Oswald", sans-serif;
+    font-weight: 600;
+    font-size: 15px;
+    overflow-wrap: break-word;
+    margin-left: 20px;
+  }
+  &-count {
+    width: 15%;
+    font-family: "Oswald", sans-serif;
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &-count-icon {
+    display: flex;
+    color: white;
+    background-color: black;
+    border-radius: 100%;
+    cursor: pointer;
+    visibility: hidden;
+    &_visible {
+      visibility: visible;
+    }
+  }
+  &-price {
+    width: 25%;
+    text-align: center;
+    font-family: "Oswald", sans-serif;
+    font-size: 15px;
+  }
+  &-delete {
+    position: absolute;
+    right: -15px;
+    top: -15px;
+    color: #f9fe00;
+    background-color: black;
+    border-radius: 100%;
+    cursor: pointer;
+  }
+}
+
+.basket__submit {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  font-family: "Biryani";
+  font-size: 18px;
+  &-text {
+    font-size: 18px;
+    margin-top: 10px;
+  }
+  &-price,
+  &-quantity {
+    text-decoration-line: underline;
+    font-weight: bold;
+    font-size: 20px;
+    font-family: "Oswald", sans-serif;
+  }
+}
+
+.button {
+  margin: 30px auto 0px auto;
+  width: 30%;
+  height: 35px;
+  background: #f3f638;
+  box-shadow: 6px 6px 20px rgba(0, 0, 0, 0.25);
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 15px;
+  font-family: "Noto Sans", sans-serif;
+  color: black;
+}
+
+.form {
+  width: 80%;
+  margin: 20px auto;
+  padding: 10px;
+  border: #ccc 1px dotted;
+  &__title {
+    text-align: center;
+  }
+}
+
+.form__control {
+  display: flex;
+  flex-direction: column;
+  color: #888;
+  margin-top: 10px;
+  &__title {
+    text-align: center;
+  }
+  &_invalid {
+    color: #dc3545;
+    input {
+      border-color: #dc3545;
+    }
+  }
+  &-label {
+    margin-bottom: 5px;
+  }
+
+  &-input {
+    display: block;
+    width: 100%;
+    padding: 0.4rem;
+    font-size: 1.2rem;
+    border: 1px solid #ccc;
+    outline: none;
+  }
+}

@@ -1,0 +1,92 @@
+.form {
+  width: 80%;
+  margin: 20px auto;
+  padding: 10px;
+  border: #ccc 1px dotted;
+  &__title {
+    text-align: center;
+  }
+  &__row{
+    display: flex;
+    flex-direction: row;
+
+    .form__control {
+      flex-grow: 1;
+      flex-basis: 150px;
+      margin-right: 20px;
+      &:last-child {
+        margin-right: 0px;
+      }
+    }
+  }
+  &__button {
+    background: #dc3545;
+    color: #fff;
+    display: inline-block;
+    margin-top: 20px;
+    width: 100%;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    border: none;
+    cursor: pointer;
+    margin-right: 0.5rem;
+    transition: opacity 0.2s ease-in;
+    outline: none;
+    &:disabled {
+      cursor: not-allowed;
+      background: #f4f4f4;
+      color: #111;
+    }
+  }
+}
+.form__control {
+  display: flex;
+  flex-direction: column;
+  color: #888;
+  margin-top: 10px;
+  &_invalid {
+    color: #dc3545;
+    input {
+      border-color: #dc3545;
+    }
+  }
+  &-label {
+    margin-bottom: 5px;
+  }
+
+  &-input {
+    display: block;
+    width: 100%;
+    padding: 0.4rem;
+    font-size: 1.2rem;
+    border: 1px solid #ccc;
+    outline: none;
+  }
+}
+
+
+.spinner {
+  display: flex;
+  justify-content: center;
+  &__image {
+    width: 300px;
+    height: 300px;
+  }
+}
+
+.btn {
+  margin-top: 10px;
+  display: inline-block;
+  background: #333333;
+  color: #fff;
+  padding: 0.4rem 1.3rem;
+  font-size: 1rem;
+  border: none;
+  cursor: pointer;
+  margin-right: 0.5rem;
+  transition: opacity 0.2s ease-in;
+  outline: none;
+}

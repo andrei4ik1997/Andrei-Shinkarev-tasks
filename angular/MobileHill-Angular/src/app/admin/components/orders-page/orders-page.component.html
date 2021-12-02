@@ -1,0 +1,55 @@
+<div *ngIf="!loading; else spinner">
+  <div *ngIf="orders.length; else empty">
+    <table class="table" *ngIf="orders.length; else nothing">
+      <thead class="table__head">
+        <tr class="table__row table__row_backgroud-grey">
+          <th class="table__row-cell">№</th>
+          <th class="table__row-cell">Date</th>
+          <th class="table__row-cell">Phone</th>
+          <th class="table__row-cell">Adress</th>
+          <th class="table__row-cell">Products</th>
+          <th class="table__row-cell">Price</th>
+          <th class="table__row-cell">Status</th>
+        </tr>
+      </thead>
+      <tbody class="table__body">
+        <tr class="table__row" *ngFor="let order of orders; let i = index">
+          <td class="table__row-cell">{{ i + 1 }}</td>
+          <td class="table__row-cell">{{ order.date | date: "medium" }}</td>
+          <td class="table__row-cell">{{ order.phone }}</td>
+          <td class="table__row-cell">{{ order.adress }}</td>
+          <td class="table__row-cell">
+            <div *ngFor="let product of order.orders">
+              {{ product.name }}
+            </div>
+          </td>
+          <td class="table__row-cell">
+            <div>{{ order.price }}$</div>
+            <div>{{ order.payment }}</div>
+          </td>
+          <td class="table__row-cell">
+            <button class="button button-delete" (click)="delete(order.id)">
+              Complited
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<ng-template #spinner>
+  <div class="spinner">
+    <img alt="spinner" class="spinner__image" src="/assets/spinner.svg" />
+  </div>
+</ng-template>
+
+<ng-template #empty>
+  <div class="empty">
+    <p class="empty__message">No orders :(</p>
+  </div>
+</ng-template>
+<ng-template #nothing>
+  <div class="nothing">
+    <p class="nothing__message">Not found :(</p>
+  </div>
+</ng-template>
