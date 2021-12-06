@@ -14,7 +14,7 @@
   </div>
 
   <section class="about__benefits">
-    <h2 class="about__benefits-title">Наши преимущества</h2>
+    <h2 class="about__benefits-title">OUR ADVANTAGES</h2>
     <div class="about__benefits-container">
       <article class="about__benefits-item">
         <img
@@ -26,7 +26,7 @@
           <div class="about__benefits-item-icon">
             <fa-icon [icon]="faShippingFast" size="lg"></fa-icon>
           </div>
-          <div class="about__benefits-item-desc">Доставка по всей Беларуси</div>
+          <div class="about__benefits-item-desc">Worldwide delivery</div>
         </div>
       </article>
       <article class="about__benefits-item">
@@ -39,7 +39,7 @@
           <div class="about__benefits-item-icon">
             <fa-icon [icon]="faCartArrowDown" size="lg"></fa-icon>
           </div>
-          <div class="about__benefits-item-desc">Широкий ассортимент</div>
+          <div class="about__benefits-item-desc">Wide range</div>
         </div>
       </article>
       <article class="about__benefits-item">
@@ -52,21 +52,51 @@
           <div class="about__benefits-item-icon">
             <fa-icon [icon]="faPercent" size="lg"></fa-icon>
           </div>
-          <div class="about__benefits-item-desc">Скидки и акции</div>
+          <div class="about__benefits-item-desc">Discounts and promotions</div>
         </div>
       </article>
     </div>
   </section>
   <section class="about__subscribe">
     <article class="about__subscribe-container">
-      <h2 class="about__subscribe-title">Рассылка</h2>
+      <h2 class="about__subscribe-title">Subscription</h2>
       <p class="about__subscribe-subtitle">
-        Будь в курсе новинок и акции, а также пополнения ассортимента
+        Be aware of new products and promotions, as well as replenishment of the
+        assortment
       </p>
-      <div class="about__subscribe-input-container">
-        <input class="about__subscribe-input" placeholder="Ваш e-mail" />
-        <button class="about__subscribe-button">Подписаться</button>
-      </div>
+      <form class="about__subscribe-input-container" [formGroup]="form">
+        <div
+          class="form__control"
+          [ngClass]="{
+            form__control_invalid:
+              (form.get('email').untouched || form.get('email').touched) &&
+              form.get('email').invalid
+          }"
+        >
+          <input
+            class="form__control-input"
+            placeholder="Your e-mail"
+            formControlName="email"
+          />
+          <div
+            class="form__control-validation"
+            *ngIf="form.get('email').touched && form.get('email').invalid"
+          >
+            <small *ngIf="form.get('email').errors.pattern"
+              >Invalid email</small
+            >
+          </div>
+        </div>
+
+        <button
+          class="about__subscribe-button"
+          type="submit"
+          [disabled]="form.invalid"
+          (click)="subscribe()"
+        >
+          Subscribe
+        </button>
+      </form>
     </article>
     <img
       alt="logo"

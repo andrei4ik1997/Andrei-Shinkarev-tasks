@@ -5,11 +5,11 @@ import {
   faTimesCircle,
   faPlusCircle,
 } from '@fortawesome/free-solid-svg-icons';
-import { CardsService } from 'src/app/shared/cards.service';
+import { CardsService } from 'src/app/shared/services/cards.service';
 import { Card, Order } from 'src/app/shared/interfaces';
-import { OrderService } from 'src/app/shared/order.service';
 import { Subscription } from 'rxjs';
 import { ToastrService } from 'ngx-toastr';
+import { OrderService } from 'src/app/shared/services/order.service';
 @Component({
   selector: 'app-basket-page',
   templateUrl: './basket-page.component.html',
@@ -25,6 +25,7 @@ export class BasketPageComponent implements OnInit, OnDestroy {
   getOrderSubscription: Subscription;
   form: FormGroup;
   submitted: boolean = false;
+  confirmed: boolean = false;
 
   constructor(
     private cardsService: CardsService,
@@ -34,7 +35,6 @@ export class BasketPageComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.cartProducts = this.cardsService.cartProducts;
-    console.log();
     for (let i = 0; i < this.cartProducts.length; i++) {
       console.log(this.cartProducts[i]);
       this.totalPrice +=
@@ -47,6 +47,9 @@ export class BasketPageComponent implements OnInit, OnDestroy {
       adress: new FormControl(null, Validators.required),
       payment: new FormControl('', Validators.required),
     });
+  }
+  isConfirmed() {
+    this.confirmed = true;
   }
 
   submit() {
@@ -62,13 +65,14 @@ export class BasketPageComponent implements OnInit, OnDestroy {
       price: this.totalPrice,
       date: new Date(),
     };
-    console.log(order);
     this.getOrderSubscription = this.orderService
       .create(order)
       .subscribe(() => {
         this.form.reset();
         this.submitted = false;
-        this.toastr.success('Card add', 'Add');
+        this.cartProducts = [];
+        this.cardsService.cartProducts = [];
+        this.toastr.success('Order create', 'Order');
       });
   }
 

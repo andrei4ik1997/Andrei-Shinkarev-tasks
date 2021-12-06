@@ -1,3 +1,4 @@
+<ng-template appRef></ng-template>
 <div class="container">
   <header class="header">
     <app-header></app-header>
@@ -7,6 +8,6 @@
     <router-outlet></router-outlet>
   </main>
   <footer class="footer">
-    <app-footer></app-footer>
+    <app-footer (modal)="showModal()"></app-footer>
   </footer>
 </div>

@@ -9,7 +9,25 @@ import { ToastrService } from 'ngx-toastr';
   providedIn: 'root',
 })
 export class CardsService {
-  cartProducts: Card[] = [];
+  cartProducts: Card[] = [
+    {
+      amount: 121,
+      articul: '122',
+      brand: 'Xiaomi',
+      camera: 12,
+      category: 'Mobile phone',
+      date: '2021-12-03T14:45:23.295Z',
+      display: 99,
+      id: '-Mq-k-7Z-GsZYVT7D7G4',
+      images: [
+        'https://www.techinn.com/f/13769/137696541/samsung-galaxy-a51-4gb-128gb-6.5-dual-sim-%D0%A1%D0%BC%D0%B0%D1%80%D1%82%D1%84%D0%BE%D0%BD.jpg',
+      ],
+      memory: '512',
+      name: 'Ramsung A51',
+      price: 1222,
+      count: 1,
+    },
+  ];
   inBasket: number = 0;
   constructor(private http: HttpClient, private toastr: ToastrService) {}
 

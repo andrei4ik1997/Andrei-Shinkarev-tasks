@@ -1,48 +1,38 @@
 <section class="sort">
-  <form class="sort__form">
-    <h3 class="sort__form-title">Сортировать по:</h3>
-    <div class="sort__form-container">
-      <div class="sort__form-checkbox">
-        <input
-          class="sort__form-input"
-          type="radio"
-          id="alphabet"
-          name="sort"
-          value="alphabet"
-          defaultChecked
-        />
-        <label class="sort__form-label" for="alphabet"> Названию </label>
-      </div>
-      <div class="sort__form-checkbox">
-        <input
-          class="sort__form-input"
-          type="radio"
-          id="price"
-          name="sort"
-          value="price"
-        />
-        <label class="sort__form-label" for="price"> Цене </label>
-      </div>
-      <div class="sort__form-checkbox">
-        <input
-          class="sort__form-input"
-          type="radio"
-          id="count"
-          name="sort"
-          value="count"
-        />
-        <label class="sort__form-label" for="count"> Количеству </label>
-      </div>
-      <div class="sort__form-checkbox">
-        <input
-          class="sort__form-input"
-          type="radio"
-          id="date"
-          name="sort"
-          value="date"
-        />
-        <label class="sort__form-label" for="date"> Дате </label>
-      </div>
+  <form
+    class="sort__form"
+    [formGroup]="form"
+  >
+    <h3 class="sort__form-title">Sort by:</h3>
+    <div class="sort__form-control">
+      <input
+        class="sort__form-control-input"
+        type="radio"
+        id="newest"
+        value="newest"
+        formControlName="sort"
+      />
+      <label class="sort__form-control-label" for="newest"> Newest </label>
+    </div>
+    <div class="sort__form-control">
+      <input
+        class="sort__form-control-input"
+        type="radio"
+        id="price"
+        value="price"
+        formControlName="sort"
+      />
+      <label class="sort__form-control-label" for="price"> Price </label>
+    </div>
+    <div class="sort__form-control">
+      <input
+        class="sort__form-control-input"
+        type="radio"
+        id="name"
+        value="name"
+        formControlName="sort"
+      />
+      <label class="sort__form-control-label" for="name"> Name </label>
     </div>
   </form>
 </section>

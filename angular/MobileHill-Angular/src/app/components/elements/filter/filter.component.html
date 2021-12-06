@@ -1,35 +1,101 @@
 <section class="filter">
-  <form class="filter__form">
-    <h3 class="filter__form-title">Фильтр</h3>
-    <div class="filter__form-checkbox">
-      <input
-        class="filter__form-input"
-        type="checkbox"
-        id="cheap"
-        name="cheap"
-        value="cheap"
-      />
-      <label class="filter__form-label" for="cheap"> Бюджетная </label>
+  <form class="filter__form" (change)="setFilter($event)">
+    <h3 class="filter__form-title">Filters</h3>
+    <div class="filter__form-parametr">
+      <div class="filter__form-parametr-title">Brand</div>
+      <div class="filter__form-parametr-checkbox" *ngFor="let brand of brands">
+        <input
+          class="filter__form-parametr-input"
+          type="checkbox"
+          id="{{ brand }}"
+          name="brand"
+          value="{{ brand }}"
+        />
+        <label class="filter__form-parametr-label" for="{{ brand }}"
+          >{{ brand }}
+        </label>
+      </div>
     </div>
-    <div class="filter__form-checkbox">
-      <input
-        class="filter__form-input"
-        type="checkbox"
-        id="optimal"
-        name="optimal"
-        value="optimal"
-      />
-      <label class="filter__form-label" for="optimal"> Средняя </label>
+    <div class="filter__form-parametr">
+      <div class="filter__form-parametr-title">Price, $</div>
+      <div class="filter__form-parametr-checkbox">
+        <input
+          class="filter__form-parametr-input"
+          type="number"
+          min="0"
+          name="price"
+          id="minPrice"
+          placeholder="min"
+        />
+        <input
+          class="filter__form-parametr-input"
+          type="number"
+          name="price"
+          min="0"
+          id="maxPrice"
+          placeholder="max"
+        />
+      </div>
     </div>
-    <div class="filter__form-checkbox">
-      <input
-        class="filter__form-input"
-        type="checkbox"
-        id="premium"
-        name="premium"
-        value="premium"
-      />
-      <label class="filter__form-label" for="premium"> Премиум </label>
+    <div class="filter__form-parametr">
+      <div class="filter__form-parametr-title">Display, ''</div>
+      <div class="filter__form-parametr-checkbox">
+        <input
+          class="filter__form-parametr-input"
+          type="number"
+          min="0"
+          id="minDisplay"
+          name="display"
+          placeholder="min"
+        />
+        <input
+          class="filter__form-parametr-input"
+          type="number"
+          min="0"
+          id="maxDisplay"
+          name="display"
+          placeholder="max"
+        />
+      </div>
+    </div>
+    <div class="filter__form-parametr">
+      <div class="filter__form-parametr-title">Memory</div>
+      <div
+        class="filter__form-parametr-checkbox"
+        *ngFor="let memory of memories"
+      >
+        <input
+          class="filter__form-parametr-input"
+          type="checkbox"
+          id="{{ memory }}"
+          name="memory"
+          value="{{ memory }}"
+        />
+        <label class="filter__form-parametr-label" for="{{ memory }}"
+          >{{ memory }} Gb
+        </label>
+      </div>
+    </div>
+    <div class="filter__form-parametr">
+      <div class="filter__form-parametr-title">Camera, MP</div>
+      <div class="filter__form-parametr-checkbox">
+        <input
+          class="filter__form-parametr-input"
+          type="number"
+          min="0"
+          id="minCamera"
+          name="camera"
+          placeholder="min"
+        />
+        <input
+          class="filter__form-parametr-input"
+          type="number"
+          min="0"
+          id="maxCamera"
+          name="camera"
+          placeholder="max"
+        />
+      </div>
     </div>
   </form>
 </section>

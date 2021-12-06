@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { CardsService } from 'src/app/shared/cards.service';
+import { CardsService } from 'src/app/shared/services/cards.service';
 import { Card } from 'src/app/shared/interfaces';
 
 @Component({
@@ -14,8 +14,8 @@ export class CardComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  
   addProduct(card: Card) {
     this.cardsService.addProduct(card);
-
   }
 }

@@ -1,26 +1,38 @@
 .filter {
   padding-left: 25px;
-  &__form {
-    display: flex;
-    flex-direction: column;
-    color: white;
-    font-family: "Biryani", sans-serif;
-    font-size: 16px;
+}
+
+.filter__form {
+  display: flex;
+  flex-direction: column;
+  color: white;
+  font-family: "Biryani", sans-serif;
+  font-size: 14px;
+  &-title {
   }
-  &__form-title {
-    font-weight: bold;
-    margin: 0px;
-  }
-  &__form-checkbox {
-    margin-top: 10px;
-    display: flex;
-    align-items: center;
-  }
-  &__form-input {
-    margin: 0px;
-  }
-  &__form-label {
-    margin-left: 10px;
-    cursor: pointer;
+  &-parametr {
+    margin-top: 20px;
+
+    &-title {
+      font-size: 13px;
+      font-weight: bold;
+      color: black;
+    }
+    &-checkbox {
+      display: flex;
+      width: 100%;
+      align-items: baseline;
+    }
+    &-input {
+      &[type="number"] {
+        max-width: 45%;
+        padding-left: 5px;
+      }
+      outline: none;
+    }
+    &-label {
+      margin-left: 5px;
+      cursor: pointer;
+    }
   }
 }

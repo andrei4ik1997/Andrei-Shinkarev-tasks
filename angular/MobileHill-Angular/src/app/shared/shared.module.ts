@@ -3,8 +3,10 @@ import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { ToastrModule } from 'ngx-toastr';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { SearchPipe } from './pipes/search.pipe';
 
 @NgModule({
+  declarations: [SearchPipe],
   imports: [
     HttpClientModule,
     FormsModule,
@@ -13,9 +15,17 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     ToastrModule.forRoot({
       closeButton: true,
       progressBar: true,
-      timeOut: 3000
+      timeOut: 3000,
     }),
   ],
-  exports: [HttpClientModule,FormsModule,ReactiveFormsModule, QuillModule, ToastrModule],
+  exports: [
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
+    SearchPipe,
+    QuillModule,
+    ToastrModule,
+  ],
+
 })
 export class SharedModule {}

@@ -95,7 +95,7 @@
 .about__subscribe {
   margin-top: 100px;
   width: 100%;
-  height: 170px;
+  height: 200px;
   background: #cccccc;
   border: 1px solid rgba(0, 0, 0, 0.18);
   border-left: none;
@@ -126,21 +126,7 @@
     display: flex;
     margin-top: 10px;
   }
-  &-input {
-    width: 75%;
-    height: 35px;
-    background: rgba(169, 169, 169, 0.5);
-    border: none;
-    outline: none;
-    padding-left: 10px;
-    font-family: "Biryani", sans-serif;
-    font-size: 13px;
-    letter-spacing: 0.05em;
-    color: rgba(255, 255, 255, 0.7);
-    &::-webkit-input-placeholder {
-      color: white;
-    }
-  }
+
   &-button {
     width: 25%;
     height: 35px;
@@ -154,8 +140,42 @@
     font-size: 13px;
     font-family: "Noto Sans", sans-serif;
     word-wrap: break-word;
+    &:disabled {
+      cursor: not-allowed;
+      background: #f4f4f4;
+      color: #111;
+    }
   }
   &-logo {
     width: 50%;
+  }
+}
+
+.form__control {
+  display: flex;
+  flex-direction: column;
+  color: #888;
+  &_invalid {
+    color: #dc3545;
+    input {
+      border-color: #dc3545;
+    }
+  }
+  &-label {
+    margin-bottom: 5px;
+  }
+
+  &-input {
+    display: block;
+    background: rgba(169, 169, 169, 0.5);
+    width: 100%;
+    padding: 0.4rem;
+    font-size: 1.2rem;
+    border: 1px solid #ccc;
+    outline: none;
+    color: rgba(255, 255, 255, 0.7);
+    &::-webkit-input-placeholder {
+      color: white;
+    }
   }
 }

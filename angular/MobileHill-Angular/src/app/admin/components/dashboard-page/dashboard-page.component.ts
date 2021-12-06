@@ -1,5 +1,5 @@
 import { Subscription } from 'rxjs';
-import { CardsService } from './../../../shared/cards.service';
+import { CardsService } from '../../../shared/services/cards.service';
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Card } from 'src/app/shared/interfaces';
 import { ToastrService } from 'ngx-toastr';

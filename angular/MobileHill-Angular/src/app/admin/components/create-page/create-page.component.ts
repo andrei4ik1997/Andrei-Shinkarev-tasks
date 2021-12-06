@@ -1,4 +1,4 @@
-import { CardsService } from './../../../shared/cards.service';
+import { CardsService } from '../../../shared/services/cards.service';
 import { Component, OnInit } from '@angular/core';
 import { FormArray, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Card } from 'src/app/shared/interfaces';
@@ -35,7 +35,7 @@ export class CreatePageComponent implements OnInit {
         image: new FormControl(null, Validators.required),
         imageArray: new FormArray([]),
       }),
-      dispay: new FormControl(null, [
+      display: new FormControl(null, [
         Validators.required,
         Validators.pattern('^[0-9]*[.,]?[0-9]+$'),
       ]),

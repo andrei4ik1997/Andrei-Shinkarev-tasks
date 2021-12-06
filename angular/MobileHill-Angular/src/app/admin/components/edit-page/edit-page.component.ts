@@ -1,5 +1,5 @@
 import { Card } from 'src/app/shared/interfaces';
-import { CardsService } from './../../../shared/cards.service';
+import { CardsService } from '../../../shared/services/cards.service';
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
 import { FormArray, FormControl, FormGroup, Validators } from '@angular/forms';
@@ -41,7 +41,7 @@ export class EditPageComponent implements OnInit, OnDestroy {
             Validators.pattern('^[0-9]+$'),
           ]),
           images: new FormArray([]),
-          dispay: new FormControl(card.dispay, [
+          display: new FormControl(card.display, [
             Validators.required,
             Validators.pattern('^[0-9]*[.,]?[0-9]+$'),
           ]),
@@ -50,7 +50,7 @@ export class EditPageComponent implements OnInit, OnDestroy {
             Validators.required,
             Validators.pattern('^[0-9]*[.,]?[0-9]+$'),
           ]),
-          description: new FormControl(card.description, [Validators.required]),
+          description: new FormControl(card.description),
         });
         this.card.images.forEach((image) => {
           this.addSkill(image);

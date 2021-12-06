@@ -1,33 +1,25 @@
 .sort {
-    margin: 30px auto;
-    width: 70%;
-    &__form {
-      display: flex;
-      align-items: center;
-    }
-    &__form-title {
-      margin: 0px;
-      font-family: "Biryani", sans-serif;
-      font-size: 16px;
-      text-align: center;
-      color: #ffffff;
-      flex: none;
-    }
-    &__form-container {
-      display: flex;
-      align-items: center;
-      margin-right: 40px;
-    }
-    &__form-checkbox {
-      margin-left: 30px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    &__form-input {
+  margin: 30px auto;
+  width: 70%;
+  &__form {
+    display: flex;
+  }
+  &__form-title {
+    margin: 0px;
+    font-family: "Biryani", sans-serif;
+    font-size: 16px;
+    text-align: center;
+    color: #ffffff;
+    flex: none;
+  }
+  &__form-control {
+    margin-left: 30px;
+    display: flex;
+    align-items: center;
+    &-input {
       margin: 0px;
     }
-    &__form-label {
+    &-label {
       font-family: "Biryani", sans-serif;
       margin-left: 12px;
       font-size: 16px;
@@ -35,3 +27,4 @@
       cursor: pointer;
     }
   }
+}

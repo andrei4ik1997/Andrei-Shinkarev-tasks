@@ -12,6 +12,29 @@
     font-weight: 800;
     font-size: 18px;
   }
+  &__buttons {
+    margin: 30px 0px 0px 0px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    &-link {
+      color: #0072bc;
+      font-size: 14px;
+    }
+  }
+  &__total-price {
+    margin-top: 20px;
+    padding-top: 10px;
+    font-size: 14px;
+    border-top: 1px gray solid;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    &-cost {
+      font-weight: bold;
+      text-decoration: underline;
+    }
+  }
 }
 
 .basket__item {
@@ -41,8 +64,13 @@
     font-family: "Oswald", sans-serif;
     font-size: 15px;
     display: flex;
-    align-items: center;
-    justify-content: space-between;
+    flex-direction: column;
+    &-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      text-align: center;
+    }
   }
 
   &-count-icon {
@@ -94,7 +122,6 @@
 }
 
 .button {
-  margin: 30px auto 0px auto;
   width: 30%;
   height: 35px;
   background: #f3f638;
@@ -106,13 +133,23 @@
   font-size: 15px;
   font-family: "Noto Sans", sans-serif;
   color: black;
+  &:disabled {
+    cursor: not-allowed;
+    background: #f4f4f4;
+    color: #111;
+  }
+}
+.basket__submit-button {
+  margin-top: 20px;
+  display: flex;
+  justify-content: flex-end;
+
 }
 
 .form {
-  width: 80%;
+  width: 100%;
   margin: 20px auto;
   padding: 10px;
-  border: #ccc 1px dotted;
   &__title {
     text-align: center;
   }

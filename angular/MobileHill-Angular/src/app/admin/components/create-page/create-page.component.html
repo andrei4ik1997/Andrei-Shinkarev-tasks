@@ -235,27 +235,27 @@
       class="form__control"
       [ngClass]="{
         form__control_invalid:
-          form.get('dispay').touched && form.get('dispay').invalid
+          form.get('display').touched && form.get('display').invalid
       }"
     >
-      <label class="form__control-label" for="dispay">Dispay, ''</label>
+      <label class="form__control-label" for="display">display, ''</label>
       <input
         class="form__control-input"
-        id="dispay"
+        id="display"
         type="number"
         min="0"
         step="0.1"
-        placeholder="Dispay"
-        formControlName="dispay"
+        placeholder="display"
+        formControlName="display"
       />
       <div
         class="form__control-validation"
-        *ngIf="form.get('dispay').touched && form.get('dispay').invalid"
+        *ngIf="form.get('display').touched && form.get('display').invalid"
       >
-        <small *ngIf="form.get('dispay').errors.required"
+        <small *ngIf="form.get('display').errors.required"
           >The field cannot be empty</small
         >
-        <small *ngIf="form.get('dispay').errors.pattern">Only numbers</small>
+        <small *ngIf="form.get('display').errors.pattern">Only numbers</small>
       </div>
     </div>
     <div
@@ -274,12 +274,12 @@
         formControlName="memory"
       >
         <option selected disabled value="" hidden>Check memory</option>
-        <option value="16 Gb">16 Gb</option>
-        <option value="32 Gb">32 Gb</option>
-        <option value="64 Gb">64 Gb</option>
-        <option value="128 Gb">128 Gb</option>
-        <option value="256 Gb">256 Gb</option>
-        <option value="512 Gb">512 Gb</option>
+        <option value="16">16 Gb</option>
+        <option value="32">32 Gb</option>
+        <option value="64">64 Gb</option>
+        <option value="128">128 Gb</option>
+        <option value="256">256 Gb</option>
+        <option value="512">512 Gb</option>
       </select>
       <div
         class="form__control-validation"

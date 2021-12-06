@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
@@ -8,7 +8,14 @@ import { faSearch } from '@fortawesome/free-solid-svg-icons';
 })
 export class SearchComponent implements OnInit {
   faSearch = faSearch;
+  searchInput: string = '';
+
+  @Output() setSearchInput: EventEmitter<string> = new EventEmitter<string>();
   constructor() {}
 
   ngOnInit(): void {}
+
+  onChangeSearchInput() {
+    this.setSearchInput.emit(this.searchInput);
+  }
 }

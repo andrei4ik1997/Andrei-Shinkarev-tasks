@@ -1,15 +1,32 @@
 <section class="items">
-  <div class="items__container" *ngIf="cards$ | async as cards; else spinner">
-    <app-card
-      [ngStyle]="{ width: '30%' }"
-      *ngFor="let card of cards"
-      [card]="card"
-    ></app-card>
+  <div *ngIf="cards; else spinner">
+    <div *ngIf="(cards | searchCards: searchValue).length; else nothing">
+      <div
+        class="items__container"
+        *ngIf="myfilter(cards).length; else nothing"
+      >
+        <app-card
+          [ngStyle]="{ width: '30%', marginRight: '20px' }"
+          *ngFor="
+            let card of myfilter(cards)
+              | searchCards: searchValue
+              | sortCards: sortValue
+          "
+          [card]="card"
+        ></app-card>
+      </div>
+    </div>
   </div>
 </section>
 
 <ng-template #spinner>
   <div class="spinner">
     <img alt="spinner" class="spinner__image" src="/assets/spinner.svg" />
+  </div>
+</ng-template>
+
+<ng-template #nothing>
+  <div class="nothing">
+    <p class="nothing__message">Didn't find anything :(</p>
   </div>
 </ng-template>

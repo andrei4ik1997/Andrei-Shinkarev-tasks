@@ -1,7 +1,7 @@
 import { Order } from './../../../shared/interfaces';
 import { Component, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
-import { OrderService } from 'src/app/shared/order.service';
+import { OrderService } from 'src/app/shared/services/order.service';
 
 @Component({
   selector: 'app-orders-page',

@@ -1,6 +1,15 @@
-<app-search></app-search>
-<app-sort></app-sort>
+<app-search (setSearchInput)="setSearchValue($event)"></app-search>
+<app-sort (sortValue)="setSortValue($event)"></app-sort>
 <div class="container">
-  <app-filter [ngStyle]="{ width: '15%' }"></app-filter>
-  <app-items [ngStyle]="{ width: '70%' }"></app-items>
+  <app-filter
+    [ngStyle]="{ width: '15%' }"
+    (personFilter)="setPersonFilter($event)"
+  ></app-filter>
+
+  <app-items
+    [ngStyle]="{ width: '70%' }"
+    [searchValue]="searchValue"
+    [sortValue]="sortValue"
+    [personFilter]="personFilter"
+  ></app-items>
 </div>

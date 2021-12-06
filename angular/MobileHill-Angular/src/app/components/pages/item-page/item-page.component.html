@@ -23,7 +23,7 @@
           ></fa-icon>
           <div class="product__desc-characteristic-name">Диагональ дисплея</div>
           <span class="product__desc-characteristic-value">
-            {{ card.dispay }}''
+            {{ card.display }}''
           </span>
         </div>
         <div class="product__desc-characteristic">
@@ -115,7 +115,7 @@
       <div class="product__info-description-title">
         Дополнительные характеристики
       </div>
-      <div class="product__info-description-text">
+      <div class="product__info-description-text" *ngIf="card.description">
         <quill-view-html [content]="card.description"></quill-view-html>
       </div>
     </div>

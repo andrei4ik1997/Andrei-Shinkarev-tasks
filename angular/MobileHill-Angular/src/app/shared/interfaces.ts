@@ -25,10 +25,10 @@ export interface Card {
   amount: string | number;
   count?: number;
   images: string[];
-  dispay: string | number;
+  display: string | number;
   memory: string;
   camera: string | number;
-  description: string;
+  description?: string;
   date: Date | string;
 }
 
@@ -41,4 +41,23 @@ export interface Order {
   payment: string;
   phone: string;
   price: string;
+}
+
+export interface Filter {
+  brands: string[];
+  memories: string[];
+  price: { min: number; max: number };
+  display: { min: number; max: number };
+  camera: { min: number; max: number };
+}
+
+export interface Subscribe {
+  email: string;
+  date: Date;
+}
+
+export interface CallBack {
+  name?: string;
+  telephone: string;
+  date: Date;
 }

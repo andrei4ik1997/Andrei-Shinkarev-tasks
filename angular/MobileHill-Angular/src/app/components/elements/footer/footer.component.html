@@ -72,7 +72,9 @@
   </nav>
   <div class="footer__logo">MobileHill</div>
   <div class="footer__contacts">
-    <button class="footer__contacts-button">Заказать звонок</button>
+    <button class="footer__contacts-button" (click)="modal.emit()">
+      Заказать звонок
+    </button>
     <div class="footer__contacts-phone">+77 (077) 777-77-77</div>
     <div class="footer__contacts-mail">
       <a href="mailto:mobileHill@gmail.com">mobileHill@gmail.com</a>

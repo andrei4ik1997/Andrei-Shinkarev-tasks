@@ -1,4 +1,4 @@
-import { CardsService } from 'src/app/shared/cards.service';
+import { CardsService } from 'src/app/shared/services/cards.service';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
 import {

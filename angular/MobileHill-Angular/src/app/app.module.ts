@@ -22,11 +22,14 @@ import { SharedModule } from './shared/shared.module';
 import { AuthInterceptor } from './shared/auth.interceptor';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgxGalleryModule } from '@kolkov/ngx-gallery';
+import { SortPipe } from './shared/pipes/sort.pipe';
+import { ModalComponent } from './components/elements/modal/modal.component';
+import { RefDirective } from './shared/ref.directive';
 
 const INTERCEPTOR__PROVIDER: Provider = {
   provide: HTTP_INTERCEPTORS,
   multi: true,
-  useClass: AuthInterceptor
+  useClass: AuthInterceptor,
 };
 
 @NgModule({
@@ -45,6 +48,9 @@ const INTERCEPTOR__PROVIDER: Provider = {
     CardComponent,
     FooterComponent,
     HeaderComponent,
+    SortPipe,
+    ModalComponent,
+    RefDirective,
   ],
   imports: [
     BrowserModule,
@@ -52,9 +58,10 @@ const INTERCEPTOR__PROVIDER: Provider = {
     AppRoutingModule,
     FontAwesomeModule,
     SharedModule,
-    NgxGalleryModule 
+    NgxGalleryModule,
   ],
   providers: [INTERCEPTOR__PROVIDER],
   bootstrap: [AppComponent],
+  entryComponents: [RefDirective],
 })
 export class AppModule {}

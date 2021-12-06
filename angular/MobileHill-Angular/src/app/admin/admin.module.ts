@@ -9,7 +9,6 @@ import { CreatePageComponent } from './components/create-page/create-page.compon
 import { DashboardPageComponent } from './components/dashboard-page/dashboard-page.component';
 import { SharedModule } from '../shared/shared.module';
 import { AuthGuard } from './services/auth.guard';
-import { SearchPipe } from './pipes/search.pipe';
 import { OrdersPageComponent } from './components/orders-page/orders-page.component';
 
 @NgModule({
@@ -19,7 +18,6 @@ import { OrdersPageComponent } from './components/orders-page/orders-page.compon
     EditPageComponent,
     CreatePageComponent,
     DashboardPageComponent,
-    SearchPipe,
     OrdersPageComponent,
   ],
   imports: [
