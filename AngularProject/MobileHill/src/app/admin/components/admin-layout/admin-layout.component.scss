@@ -1,0 +1,39 @@
+.link:active,
+.link:visited,
+.link:link {
+  text-decoration: none;
+}
+.admin-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 100px;
+  padding: 0px 20px;
+  background-color: gray;
+  font-family: "Roboto", sans-serif;
+  &__title {
+    max-width: 30%;
+    text-align: center;
+  }
+  &__title-link {
+    color: white;
+  }
+}
+
+.admin-header__menu {
+  &-list {
+    display: flex;
+    list-style-type: none;
+    &-item {
+      margin-right: 10px;
+      &-link {
+        color: white;
+        font-size: 18px;
+        &_active {
+          color: black;
+        }
+      }
+    }
+  }
+}

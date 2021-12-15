@@ -1,0 +1,61 @@
+<header class="admin-header">
+  <h1 class="admin-header__title">
+    <a class="link admin-header__title-link" routerLink="/">Mobile Hill Admin</a>
+  </h1>
+    <nav class="admin-header__menu" *ngIf="auth.isAuthenticated()">
+      <ul class="admin-header__menu-list">
+        <li class="admin-header__menu-list-item">
+          <a
+            class="link admin-header__menu-list-item-link"
+            routerLinkActive="admin-header__menu-list-item-link_active"
+            [routerLink]="['/admin', 'dashboard']"
+            >Dashboard</a
+          >
+        </li>
+        <li class="admin-header__menu-list-item">
+          <a
+            class="link admin-header__menu-list-item-link"
+            routerLinkActive="admin-header__menu-list-item-link_active"
+            [routerLink]="['/admin', 'create']"
+            >Create</a
+          >
+        </li>
+        <li class="admin-header__menu-list-item">
+          <a
+            class="link admin-header__menu-list-item-link"
+            routerLinkActive="admin-header__menu-list-item-link_active"
+            [routerLink]="['/admin', 'orders']"
+            >Orders</a
+          >
+        </li>
+        <li class="admin-header__menu-list-item">
+          <a
+            class="link admin-header__menu-list-item-link"
+            routerLinkActive="admin-header__menu-list-item-link_active"
+            [routerLink]="['/admin', 'callBack']"
+            >Сall back</a
+          >
+        </li>
+        <li class="admin-header__menu-list-item">
+          <a
+            class="link admin-header__menu-list-item-link"
+            routerLinkActive="admin-header__menu-list-item-link_active"
+            [routerLink]="['/admin', 'subscribers']"
+            >Subscribers</a
+          >
+        </li>
+        <li class="admin-header__menu-list-item">
+          <a
+            class="link admin-header__menu-list-item-link"
+            [routerLink]="['/admin', 'login']"
+            (click)="logout($event)"
+            >Exit</a
+          >
+        </li>
+      </ul>
+    </nav>
+</header>
+
+<div class="container">
+  <router-outlet></router-outlet>
+</div>
