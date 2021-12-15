@@ -1,0 +1,38 @@
+<section class="sort">
+  <form
+    class="sort__form"
+    [formGroup]="form"
+  >
+    <h3 class="sort__form-title">Sort by:</h3>
+    <div class="sort__form-control">
+      <input
+        class="sort__form-control-input"
+        type="radio"
+        id="newest"
+        value="newest"
+        formControlName="sort"
+      />
+      <label class="sort__form-control-label" for="newest"> Newest </label>
+    </div>
+    <div class="sort__form-control">
+      <input
+        class="sort__form-control-input"
+        type="radio"
+        id="price"
+        value="price"
+        formControlName="sort"
+      />
+      <label class="sort__form-control-label" for="price"> Price </label>
+    </div>
+    <div class="sort__form-control">
+      <input
+        class="sort__form-control-input"
+        type="radio"
+        id="name"
+        value="name"
+        formControlName="sort"
+      />
+      <label class="sort__form-control-label" for="name"> Name </label>
+    </div>
+  </form>
+</section>
