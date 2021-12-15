@@ -1,0 +1,127 @@
+.contacts {
+  width: 70%;
+  margin: auto;
+  padding: 30px;
+  border-radius: 30px 30px 0px 0px;
+  background: rgba(255, 255, 255, 0.7);
+
+  &__title {
+    font-family: "Noto Sans", sans-serif;
+    font-size: 30px;
+    font-weight: 600;
+  }
+  &__contaiter {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 25px;
+  }
+}
+.contacts__appeal {
+  position: relative;
+  margin-right: 50px;
+  width: 60%;
+  height: 300px;
+  padding: 20px;
+  border-radius: 30px;
+  box-shadow: 0px 4px 100px rgba(0, 0, 0, 0.25);
+  background: linear-gradient(180deg, #aaf8f3 0%, rgba(9, 102, 96, 0.5) 100%);
+
+  &-title {
+    font-family: "Biryani", sans-serif;
+    font-size: 36px;
+    font-weight: bold;
+    color: #ffffff;
+  }
+  &-desc {
+    margin-top: 50px;
+    width: 65%;
+    font-family: "Biryani", sans-serif;
+    font-size: 15px;
+    color: #ffffff;
+  }
+  &-icon {
+    position: absolute;
+    top: 120px;
+    right: 30px;
+  }
+  &-logo {
+    position: absolute;
+    top: 0px;
+    right: 20px;
+    width: 50%;
+  }
+}
+
+.contacts__contact {
+  width: 40%;
+  height: 300px;
+  padding: 20px 20px 0px 20px;
+  border-radius: 30px;
+  box-shadow: 0px 4px 100px rgba(0, 0, 0, 0.25);
+  background: linear-gradient(180deg, #aaf8f3 0%, rgba(9, 102, 96, 0.5) 100%);
+
+  &-title {
+    text-align: center;
+    line-height: 1;
+    color: #ffffff;
+    font-family: "Biryani", sans-serif;
+    font-weight: bold;
+    font-size: 36px;
+  }
+  &-icon {
+    margin: 20px auto;
+    text-align: center;
+  }
+  &-container {
+    margin: auto;
+    text-align: center;
+    letter-spacing: 0.05em;
+    color: #ffffff;
+    font-family: "Biryani", sans-serif;
+    font-size: 15px;
+    font-weight: bold;
+  }
+  &-phone {
+    font-weight: bold;
+    font-size: 20px;
+  }
+  &-desc {
+    margin-top: 10px;
+  }
+}
+
+.contacts__adress {
+  position: relative;
+  width: 100%;
+  margin-top: 30px;
+  padding: 20px 0px 20px 40px;
+  border-radius: 30px;
+  box-shadow: 0px 4px 100px rgba(0, 0, 0, 0.25);
+  background: linear-gradient(180deg, #aaf8f3 0%, rgba(9, 102, 96, 0.5) 100%);
+
+  &-title {
+    color: #ffffff;
+    font-family: "Biryani", sans-serif;
+    font-size: 36px;
+    font-weight: bold;
+  }
+  &-desc {
+    position: relative;
+    max-width: 70%;
+    color: #ffffff;
+    font-family: "Biryani", sans-serif;
+    font-size: 15px;
+    z-index: 1;
+  }
+  &-icon {
+    position: absolute;
+    top: 20px;
+    right: 40px;
+  }
+  &-logo {
+    position: absolute;
+    bottom: 0px;
+    right: 135px;
+    width: 40%;
+  }
+}
