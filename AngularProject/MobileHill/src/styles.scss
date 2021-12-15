@@ -1,0 +1,21 @@
+
+@import url("https://fonts.googleapis.com/css2?family=Oxanium&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Biryani&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Oswald&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap");
+@import "~quill/dist/quill.core.css";
+@import "~quill/dist/quill.bubble.css";
+@import "~quill/dist/quill.snow.css";
+@import "~ngx-toastr/toastr";
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.ngx-gallery-preview-img {
+  width: 300px;
+  height: 500px;
+}
