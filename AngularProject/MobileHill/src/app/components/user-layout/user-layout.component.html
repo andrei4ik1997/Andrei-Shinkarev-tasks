@@ -1,0 +1,12 @@
+<ng-template appRef></ng-template>
+<div class="container">
+  <header class="header">
+    <app-header></app-header>
+  </header>
+  <main class="main">
+    <router-outlet></router-outlet>
+  </main>
+  <footer class="footer">
+    <app-footer (modal)="showModal()"></app-footer>
+  </footer>
+</div>
