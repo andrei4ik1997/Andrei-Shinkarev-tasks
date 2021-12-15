@@ -1,0 +1,61 @@
+<form class="form form_login" [formGroup]="form" (ngSubmit)="submit()">
+  <h2 class="form__title">Enter the admin panel</h2>
+
+  <div class="form__auth-error" *ngIf="errorMessage">{{ errorMessage }}</div>
+  <div class="form__auth-error" *ngIf="authFailedMessage">{{ authFailedMessage }}</div>
+  <div
+    class="form__control"
+    [ngClass]="{
+      form__control_invalid:
+        form.get('email').touched && form.get('email').invalid
+    }"
+  >
+    <label class="form__control-label" for="email">Email</label>
+    <input
+      class="form__control-input"
+      id="email"
+      type="email"
+      formControlName="email"
+    />
+    <div
+      class="form__control-validation"
+      *ngIf="form.get('email').touched && form.get('email').invalid"
+    >
+      <small *ngIf="form.get('email').errors.required">Not value</small>
+      <small *ngIf="form.get('email').errors.email">Error email</small>
+    </div>
+  </div>
+  <div
+    class="form__control"
+    [ngClass]="{
+      form__control_invalid:
+        form.get('password').touched && form.get('password').invalid
+    }"
+  >
+    <label class="form__control-label" for="password">Password</label>
+    <input
+      class="form__control-input"
+      id="password"
+      type="password"
+      formControlName="password"
+    />
+    <div
+      class="form__control-validation"
+      *ngIf="form.get('password').touched && form.get('password').invalid"
+    >
+      <small *ngIf="form.get('password').errors.required">Not value</small>
+      <small *ngIf="form.get('password').errors.minlength"
+        >Password more
+        {{ form.get("password").errors.minlength.requiredLength }} simbols, now
+        {{ form.get("password").errors.minlength.actualLength }}</small
+      >
+    </div>
+  </div>
+  <button
+    type="submit"
+    class="form__button"
+    [disabled]="form.invalid || submitted"
+  >
+    Login
+  </button>
+</form>
