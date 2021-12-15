@@ -1,0 +1,85 @@
+<div class="search">
+  <input
+    class="search-input"
+    type="text"
+    placeholder="Search"
+    [(ngModel)]="searchInput"
+  />
+</div>
+
+<div *ngIf="!loading; else spinner">
+  <div *ngIf="products.length; else empty">
+    <table
+      class="table"
+      *ngIf="(products | searchProducts: searchInput).length; else nothing"
+    >
+      <thead class="table__head">
+        <tr class="table__row table__row_backgroud-grey">
+          <th class="table__row-cell">№</th>
+          <th class="table__row-cell">Articul</th>
+          <th class="table__row-cell">Name</th>
+          <th class="table__row-cell">Price</th>
+          <th class="table__row-cell">Amount</th>
+          <th class="table__row-cell">Date add</th>
+          <th class="table__row-cell">Action</th>
+        </tr>
+      </thead>
+      <tbody class="table__body">
+        <tr
+          class="table__row"
+          *ngFor="
+            let product of products | searchProducts: searchInput;
+            let i = index
+          "
+          aria-label="№"
+        >
+          <td class="table__row-cell" aria-label="№">{{ i + 1 }}</td>
+          <td class="table__row-cell" aria-label="Articul">
+            {{ product.articul }}
+          </td>
+          <td class="table__row-cell" aria-label="Name">{{ product.name }}</td>
+          <td class="table__row-cell" aria-label="Price">
+            {{ product.price | currency: "USD" }}
+          </td>
+          <td class="table__row-cell" aria-label="Amount">
+            {{ product.amount }}
+          </td>
+          <td class="table__row-cell" aria-label="Date add">
+            {{ product.date | date: "medium" }}
+          </td>
+          <td class="table__row-cell" aria-label="Action">
+            <div>
+              <button
+                class="button button-edit"
+                [routerLink]="['/admin', 'post', product.id, 'edit']"
+              >
+                Edit
+              </button>
+              <button class="button button-delete" (click)="delete(product.id)">
+                Delete
+              </button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<ng-template #spinner>
+  <div class="spinner">
+    <img alt="spinner" class="spinner__image" src="/assets/spinner.svg" />
+  </div>
+</ng-template>
+
+<ng-template #empty>
+  <div class="empty">
+    <p class="empty__message">The database is empty :(</p>
+  </div>
+</ng-template>
+
+<ng-template #nothing>
+  <div class="nothing">
+    <img alt="spinner" class="nothing__message" src="/assets/no-result.gif" />
+    <p class="nothing__message">Sorry! No result found :(</p>
+  </div>
+</ng-template>
