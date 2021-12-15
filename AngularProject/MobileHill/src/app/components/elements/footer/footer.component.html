@@ -1,0 +1,81 @@
+<div class="footer__container">
+  <nav class="footer__menu">
+    <ul class="footer__menu-container">
+      <li class="footer__menu-item">
+        <a
+          class="footer__menu-item-link"
+          routerLinkActive="footer__menu-list-item-link_active"
+          routerLink="/main"
+          >Main</a
+        >
+      </li>
+
+      <li class="footer__menu-item">
+        <a
+          class="footer__menu-item-link"
+          routerLinkActive="footer__menu-list-item-link_active"
+          routerLink="/about"
+          >About</a
+        >
+      </li>
+      <li class="footer__menu-item">
+        <a
+          class="footer__menu-item-link"
+          routerLinkActive="footer__menu-list-item-link_active"
+          routerLink="/contacts"
+          >Contacts</a
+        >
+      </li>
+    </ul>
+  </nav>
+  <nav class="footer__links">
+    <ul class="footer__links-container">
+      <li class="footer__links-item">
+        <a class="footer__links-item-link" href="http://vk.com" target="_blank"
+          >Vk</a
+        >
+      </li>
+      <li class="footer__links-item">
+        <a
+          class="footer__links-item-link"
+          href="https://www.facebook.com/"
+          target="_blank"
+          >Facebook</a
+        >
+      </li>
+      <li class="footer__links-item">
+        <a
+          class="footer__links-item-link"
+          href="https://twitter.com/"
+          target="_blank"
+          >Twitter</a
+        >
+      </li>
+      <li class="footer__links-item">
+        <a
+          class="footer__links-item-link"
+          href="https://youtube.com/"
+          target="_blank"
+          >YouTube</a
+        >
+      </li>
+      <li class="footer__links-item">
+        <a
+          class="footer__links-item-link"
+          href="https://instagram.com/"
+          target="_blank"
+          >Instagram</a
+        >
+      </li>
+    </ul>
+  </nav>
+  <div class="footer__contacts">
+    <button class="footer__contacts-button" (click)="modal.emit()">
+      Request a call
+    </button>
+    <div class="footer__contacts-phone">+77 (077) 777-7777</div>
+    <div class="footer__contacts-mail">
+      <a href="mailto:mobileHill@gmail.com">mobileHill@gmail.com</a>
+    </div>
+  </div>
+</div>

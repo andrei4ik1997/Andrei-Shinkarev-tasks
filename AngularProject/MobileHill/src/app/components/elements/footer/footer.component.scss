@@ -1,0 +1,77 @@
+.footer {
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 70%;
+    height: 280px;
+    margin: auto;
+    font-size: 16px;
+  }
+  &__menu-container {
+    list-style-type: none;
+  }
+  &__menu-item {
+    margin-bottom: 20px;
+    font-family: "Source Sans Pro", sans-serif;
+  }
+  &__menu-item-link {
+    color: #ffffff;
+    text-decoration: none;
+  }
+
+  &__links {
+    color: #ffffff;
+    font-family: "Source Sans Pro", sans-serif;
+  }
+
+  &__links-container {
+    margin-top: 20px;
+    list-style-type: none;
+  }
+  &__links-item {
+    margin-top: 20px;
+  }
+  &__links-item-link {
+    color: #ffffff;
+    text-decoration: none;
+  }
+  &__logo {
+    margin: auto 0px;
+    color: #ffffff;
+    font-family: "Oswald";
+    font-size: 20px;
+  }
+  &__contacts-button {
+    height: 45px;
+    width: 100%;
+    border: 1px solid #ffffff;
+    border-radius: 6px;
+    background-color: transparent;
+    color: #ffffff;
+    font-family: "Noto Sans", sans-serif;
+    cursor: pointer;
+  }
+  &__contacts-phone {
+    margin: 20px 0px;
+    color: #ffffff;
+    text-align: center;
+    font-family: "Source Sans Pro", sans-serif;
+    font-weight: 600;
+    font-size: 20px;
+  }
+  &__contacts-mail a {
+    text-decoration: none;
+    font-family: "Source Sans Pro", sans-serif;
+  }
+}
+
+.footer__contacts-mail a:active,
+.footer__contacts-mail a:visited,
+.footer__contacts-mail a:link {
+  color: #ffffff;
+}
+
+.footer__menu-list-item-link_active {
+  color: black;
+}
