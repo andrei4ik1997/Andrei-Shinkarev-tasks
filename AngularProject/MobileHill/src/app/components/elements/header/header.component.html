@@ -1,0 +1,56 @@
+<div class="header__container">
+  <div class="header__logo">
+    <a class="header__logo-link" routerLink="/">
+      <img
+        alt="logo"
+        class="header__logo-image"
+        src="/assets/img/shop/logo.png"
+      />
+    </a>
+  </div>
+
+  <nav class="header__menu">
+    <ul class="header__menu-list">
+      <li class="header__menu-list-item">
+        <a
+          class="header__menu-list-item-link"
+          routerLink="/main"
+          routerLinkActive="header__menu-list-item-link_active"
+          >Main
+        </a>
+      </li>
+      <li class="header__menu-list-item">
+        <a
+          class="header__menu-list-item-link"
+          routerLink="/about"
+          routerLinkActive="header__menu-list-item-link_active"
+          >About
+        </a>
+      </li>
+      <li class="header__menu-list-item">
+        <a
+          class="header__menu-list-item-link"
+          routerLink="/contacts"
+          routerLinkActive="header__menu-list-item-link_active"
+          >Contacts
+        </a>
+      </li>
+    </ul>
+    <ul class="header__menu-list">
+      <li class="header__menu-list-item">
+        <a class="header__menu-list-item-link" routerLink="/basket">
+          <fa-icon [icon]="faShoppingCart" size="lg"></fa-icon>
+          <div class="basket-count">{{ (basket$ | async).length }}</div>
+        </a>
+      </li>
+      <li class="header__menu-list-item" *ngIf="admin">
+        <a
+          class="header__menu-list-item-link"
+          routerLinkActive="header__menu-list-item-link_active"
+          routerLink="/admin"
+          >Admin
+        </a>
+      </li>
+    </ul>
+  </nav>
+</div>
