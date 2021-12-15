@@ -1,0 +1,72 @@
+.table {
+  width: 90%;
+  margin: 10px auto;
+  table-layout: fixed;
+  font-family: "Roboto", sans-serif;
+  border-collapse: collapse;
+  &__row {
+    &_backgroud-grey {
+      background-color: #f4f4f4;
+    }
+    &-cell {
+      padding: 1rem;
+      text-align: left;
+    }
+  }
+}
+
+.button {
+  margin-right: 10px;
+  background: none;
+  display: inline-block;
+  font-size: 1rem;
+  border: none;
+  cursor: pointer;
+  font-family: "Noto Sans", sans-serif;
+  transition: opacity 0.2s ease-in;
+  outline: none;
+  &-delete {
+    color: #dc3545;
+  }
+}
+
+.spinner {
+  display: flex;
+  justify-content: center;
+  &__image {
+    width: 300px;
+    height: 300px;
+  }
+}
+
+.empty {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+  &__message {
+    font-size: 36px;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .table__head {
+    display: none;
+  }
+  .table__row {
+    display: block;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid #e8e9eb;
+  }
+  .table__row-cell {
+    display: flex;
+    justify-content: space-between;
+    padding: 0px;
+    margin-bottom: 5px;
+  }
+  .table__row-cell:before {
+    content: attr(aria-label);
+    float: left;
+    font-weight: bold;
+  }
+}
