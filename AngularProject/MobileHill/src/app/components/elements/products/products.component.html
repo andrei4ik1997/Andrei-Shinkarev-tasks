@@ -1,0 +1,60 @@
+<section class="products">
+  <div *ngIf="products.length; else spinner">
+    <div
+      *ngIf="
+        (products | searchProducts: (search$ | async)).length;
+        else nothing
+      "
+    >
+      <div
+        class="products__container"
+        *ngIf="myfilter(products).length; else nothing"
+      >
+        <app-product
+          class="products__product"
+          *ngFor="
+            let product of myfilter(products)
+              | searchProducts: (search$ | async)
+              | sortProducts: (sort$ | async)
+              | paginate
+                : {
+                    id: 'items__pages',
+                    itemsPerPage: 9,
+                    currentPage: page,
+                    totalItems: (
+                      myfilter(products) | searchProducts: (search$ | async)
+                    ).length
+                  }
+          "
+          [product]="product"
+        ></app-product>
+      </div>
+      <div class="pagination" *ngIf="myfilter(products).length">
+        <pagination-controls
+          id="items__pages"
+          (pageChange)="setPage($event)"
+          (pageBoundsCorrection)="setPage($event)"
+          [maxSize]="5"
+          [directionLinks]="true"
+          [autoHide]="true"
+          [responsive]="true"
+          previousLabel="Back"
+          nextLabel="Next"
+        ></pagination-controls>
+      </div>
+    </div>
+  </div>
+</section>
+
+<ng-template #spinner>
+  <div class="spinner">
+    <img alt="spinner" class="spinner__image" src="/assets/spinner.svg" />
+  </div>
+</ng-template>
+
+<ng-template #nothing>
+  <div class="nothing">
+    <img alt="not found" class="nothing__image" src="/assets/no-result.gif" />
+    <p class="nothing__message">Sorry! No result found :(</p>
+  </div>
+</ng-template>
