@@ -1,0 +1,64 @@
+<div class="backdrop">
+  <div class="modal">
+    <div class="modal__row">
+      <h2 class="modal__title">Request a call</h2>
+      <div class="modal__close" (click)="close.emit()">&#9747;</div>
+    </div>
+
+    <form class="modal__form" [formGroup]="form">
+      <div
+        class="form__control"
+        [ngClass]="{
+          form__control_invalid:
+            form.get('name').touched && form.get('name').invalid
+        }"
+      >
+        <input
+          class="form__control-input"
+          placeholder="Your name"
+          formControlName="name"
+        />
+        <div
+          class="form__control-validation"
+          *ngIf="form.get('name').touched && form.get('name').invalid"
+        >
+          <small *ngIf="form.get('name').errors.pattern"
+            >Use only English letters
+          </small>
+        </div>
+      </div>
+      <div
+        class="form__control"
+        [ngClass]="{
+          form__control_invalid:
+            form.get('telephone').touched && form.get('telephone').invalid
+        }"
+      >
+        <input
+          class="form__control-input"
+          placeholder="Phone, format (xxx) xxx-xxxx"
+          formControlName="telephone"
+        />
+        <div
+          class="form__control-validation"
+          *ngIf="form.get('telephone').touched && form.get('telephone').invalid"
+        >
+          <small *ngIf="form.get('telephone').errors.required"
+            >Required field
+          </small>
+          <small *ngIf="form.get('telephone').errors.pattern"
+            >format (xxx) xxx-xxxx
+          </small>
+        </div>
+      </div>
+      <button
+        class="modal__button"
+        type="submit"
+        [disabled]="form.invalid"
+        (click)="submit()"
+      >
+        Submit
+      </button>
+    </form>
+  </div>
+</div>
