@@ -1,0 +1,127 @@
+<section class="product product_section">
+  <div *ngIf="product; else spinner">
+    <div class="product__header-container">
+      <h5 class="product__chapter">{{ product.category }}</h5>
+      <a class="product__back" routerLink="/">
+        <fa-icon [icon]="faArrowLeft" size="lg"></fa-icon>
+      </a>
+    </div>
+    <div class="product__name product__name_section">{{ product.name }}</div>
+    <div class="product__info-container">
+      <ngx-gallery
+        [options]="galleryOptions"
+        [images]="galleryImages"
+      ></ngx-gallery>
+      <div class="product__desc">
+        <div class="product__desc-count">
+          In stock: {{ product.amount }} pcs.
+        </div>
+        <div class="product__desc-title">Main characteristics</div>
+        <div class="product__desc-characteristic">
+          <fa-icon
+            class="product__desc-characteristic-icon"
+            [icon]="faCheck"
+            size="lg"
+          ></fa-icon>
+          <div class="product__desc-characteristic-name">Display diagonal</div>
+          <span class="product__desc-characteristic-value">
+            {{ product.display }}''
+          </span>
+        </div>
+        <div class="product__desc-characteristic">
+          <fa-icon
+            class="product__desc-characteristic-icon"
+            [icon]="faCheck"
+            size="lg"
+          ></fa-icon>
+          <span class="product__desc-characteristic-name">
+            Built-in memory
+          </span>
+          <span class="product__desc-characteristic-value">
+            {{ product.memory }} Gb
+          </span>
+        </div>
+        <div class="product__desc-characteristic">
+          <fa-icon
+            class="product__desc-characteristic-icon"
+            [icon]="faCheck"
+            size="lg"
+          ></fa-icon>
+          <span class="product__desc-characteristic-name"> Main camera </span>
+          <span class="product__desc-characteristic-value">
+            {{ product.camera }} MP
+          </span>
+        </div>
+        <div class="product__desc-container">
+          <div class="product__desc-property">
+            <div class="product__desc-property-title">Colour</div>
+            <div class="product__desc-property-value">
+              <div
+                class="
+                  product__desc-property-value-color
+                  product__desc-property-value-color_black
+                "
+              ></div>
+              <div
+                class="
+                  product__desc-property-value-color
+                  product__desc-property-value-color_white
+                "
+              ></div>
+              <div
+                class="
+                  product__desc-property-value-color
+                  product__desc-property-value-color_green
+                "
+              ></div>
+            </div>
+          </div>
+          <div class="product__desc-property">
+            <div class="product__desc-property-title">Price</div>
+            <div class="product__desc-property-value">
+              {{ product.price | currency: "USD" }}
+            </div>
+          </div>
+        </div>
+        <div class="product__desc-footer">
+          <button
+            class="product__desc-footer-button"
+            (click)="addProduct(product)"
+            *ngIf="productInBasket(product.id) < product.amount; else max"
+          >
+            Add to cart
+          </button>
+          <ng-template #max>
+            <div class="product__max-value">Max available value in basket</div>
+          </ng-template>
+          <div class="product__desc-footer-container">
+            <div class="product__desc-footer-bonus">
+              <fa-icon [icon]="faToolbox" size="lg"></fa-icon>
+              <span class="product__desc-footer-bonus-text">
+                Warranty service
+              </span>
+            </div>
+            <div class="product__desc-footer-bonus">
+              <fa-icon [icon]="faTruck" size="lg"></fa-icon>
+              <span class="product__desc-footer-bonus-text">
+                Worldwide shipping
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="product__info-description">
+      <div class="product__info-description-title">Additional features</div>
+      <div class="product__info-description-text" *ngIf="product.description">
+        <quill-view-html [content]="product.description"></quill-view-html>
+      </div>
+    </div>
+  </div>
+</section>
+
+<ng-template #spinner>
+  <div class="spinner">
+    <img alt="spinner" class="spinner__image" src="/assets/spinner.svg" />
+  </div>
+</ng-template>

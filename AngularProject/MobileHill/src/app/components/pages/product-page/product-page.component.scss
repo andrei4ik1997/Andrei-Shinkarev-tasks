@@ -1,0 +1,233 @@
+.product {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  padding: 10px 25px 25px 25px;
+  width: 70%;
+  min-height: 500px;
+  border-radius: 30px 30px 0px 0px;
+  background: rgba(255, 255, 255, 0.7);
+  font-size: 20px;
+
+  &__header-container {
+    display: flex;
+    justify-content: space-between;
+  }
+  &__chapter {
+    color: #000000;
+    font-family: "Noto Sans", sans-serif;
+    font-size: 15px;
+  }
+  &__back {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 35px;
+    height: 35px;
+    border-radius: 100%;
+    background: #f9fe00;
+    &:active,
+    &:visited,
+    &:link {
+      color: black;
+      text-decoration: none;
+    }
+  }
+  &__name {
+    overflow-wrap: break-word;
+    text-transform: capitalize;
+    color: #000000;
+    font-family: "Oswald", sans-serif;
+    font-size: 42px;
+    font-weight: 600;
+  }
+  &__info-container {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 35px;
+  }
+}
+.product__img {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30%;
+  height: 500px;
+  &-main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 80%;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    border-radius: 20px;
+    box-shadow: 15px 15px 20px rgba(0, 0, 0, 0.25);
+    background: #ffffff;
+
+    &-picture {
+      width: 100%;
+      height: 100%;
+    }
+  }
+  &-promo {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 15%;
+    &-picture {
+      width: 20%;
+      height: 100%;
+      border: 1px solid rgba(0, 0, 0, 0.08);
+      border-radius: 5px;
+      box-shadow: 15px 15px 20px rgba(0, 0, 0, 0.25);
+      background: #ffffff;
+    }
+  }
+}
+
+.product__desc {
+  width: 65%;
+  &-count {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: max-content;
+    height: 25px;
+    padding: 0px 10px;
+    background: rgba(243, 246, 56, 0.7);
+    font-family: "Roboto";
+    font-weight: 300;
+    font-size: 12px;
+  }
+  &-title {
+    margin-top: 30px;
+    font-family: "Noto Sans", sans-serif;
+    font-size: 25px;
+    font-weight: 600;
+  }
+  &-characteristic {
+    display: flex;
+    width: 100%;
+    margin-top: 25px;
+    font-family: "Poppins", sans-serif;
+    font-size: 15px;
+    &-icon {
+      margin-right: 15px;
+      color: #ff0000;
+    }
+    &-name {
+      width: 70%;
+    }
+  }
+
+  &-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 30px;
+    font-family: "Biryani", sans-serif;
+    font-size: 25px;
+    font-weight: bold;
+  }
+}
+
+.product__desc-property {
+  width: 45%;
+
+  &-title {
+    text-transform: capitalize;
+    color: #000000;
+    font-family: "Biryani", sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+  }
+  &-value {
+    display: flex;
+    margin-top: 20px;
+    text-transform: capitalize;
+    font-family: "Oswald", sans-serif;
+    font-size: 30px;
+    &-color {
+      width: 40px;
+      height: 40px;
+      margin-right: 15px;
+      border-radius: 100%;
+      box-shadow: 0px 1px 6px 4px rgba(0, 0, 0, 0.25);
+      &_black {
+        background: #070c06;
+      }
+      &_green {
+        background: #337c62;
+      }
+      &:nth-child(n):hover {
+        border: 3px solid #ffffff;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+.product__desc-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-top: 40px;
+  &-button {
+    width: 45%;
+    height: 40px;
+    border: none;
+    border-radius: 6px;
+    box-shadow: 6px 6px 20px rgba(0, 0, 0, 0.25);
+    background: #f3f638;
+    font-family: "Noto Sans", sans-serif;
+    font-weight: 600;
+    font-size: 15px;
+    cursor: pointer;
+    &:active {
+      box-shadow: 0 3px 0 #f3f638;
+    }
+  }
+  &-container {
+    width: 45%;
+  }
+  &-bonus {
+    margin-bottom: 20px;
+    color: rgba(0, 0, 0, 0.5);
+    font-family: "Roboto";
+    font-size: 10px;
+
+    &:last-child {
+      margin-bottom: 0px;
+    }
+    &-text {
+      margin-left: 10px;
+    }
+  }
+}
+
+.product__info-description {
+  margin-top: 30px;
+
+  &-title {
+    font-family: "Noto Sans", sans-serif;
+    font-size: 17px;
+    font-weight: 600;
+  }
+  &-text {
+    margin-top: 10px;
+    text-align: justify;
+    font-size: 16px;
+  }
+}
+
+.spinner {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  &__image {
+    width: 300px;
+    height: 300px;
+  }
+}
