@@ -1,0 +1,106 @@
+<div class="about">
+  <div class="about__container">
+    <h2 class="about__title">Wellcome to MobileHill</h2>
+    <img
+      alt="logo"
+      class="about__title-logo"
+      src="../../../../assets/img/about/title1.png"
+    />
+    <img
+      alt="logo"
+      class="about__title-logo"
+      src="../../../../assets/img/about/title2.png"
+    />
+  </div>
+
+  <section class="about__benefits">
+    <h2 class="about__benefits-title">OUR ADVANTAGES</h2>
+    <div class="about__benefits-container">
+      <article class="about__benefits-item">
+        <img
+          alt="logo"
+          class="about__benefits-item-logo"
+          src="../../../../assets/img/about/delivery.png"
+        />
+        <div class="about__benefits-item-container">
+          <div class="about__benefits-item-icon">
+            <fa-icon [icon]="faShippingFast" size="lg"></fa-icon>
+          </div>
+          <div class="about__benefits-item-desc">Worldwide delivery</div>
+        </div>
+      </article>
+      <article class="about__benefits-item">
+        <img
+          alt="logo"
+          class="about__benefits-item-logo"
+          src="../../../../assets/img/about/items.png"
+        />
+        <div class="about__benefits-item-container">
+          <div class="about__benefits-item-icon">
+            <fa-icon [icon]="faCartArrowDown" size="lg"></fa-icon>
+          </div>
+          <div class="about__benefits-item-desc">Wide range</div>
+        </div>
+      </article>
+      <article class="about__benefits-item">
+        <img
+          alt="logo"
+          class="about__benefits-item-logo"
+          src="../../../../assets/img/about/sales.png"
+        />
+        <div class="about__benefits-item-container">
+          <div class="about__benefits-item-icon">
+            <fa-icon [icon]="faPercent" size="lg"></fa-icon>
+          </div>
+          <div class="about__benefits-item-desc">Discounts and promotions</div>
+        </div>
+      </article>
+    </div>
+  </section>
+  <section class="about__subscribe">
+    <article class="about__subscribe-container">
+      <h2 class="about__subscribe-title">Subscription</h2>
+      <p class="about__subscribe-subtitle">
+        Be aware of new products and promotions, as well as replenishment of the
+        assortment
+      </p>
+      <form class="about__subscribe-input-container" [formGroup]="form">
+        <div
+          class="form__control"
+          [ngClass]="{
+            form__control_invalid:
+              form.get('email').touched && form.get('email').invalid
+          }"
+        >
+          <input
+            class="form__control-input"
+            placeholder="Your e-mail"
+            formControlName="email"
+          />
+          <div
+            class="form__control-validation"
+            *ngIf="form.get('email').touched && form.get('email').invalid"
+          >
+            <small *ngIf="form.get('email').errors.pattern"
+              >Invalid email</small
+            >
+          </div>
+        </div>
+
+        <button
+          class="about__subscribe-button"
+          type="submit"
+          [disabled]="form.invalid"
+          (click)="subscribe()"
+        >
+          Subscribe
+        </button>
+      </form>
+    </article>
+    <img
+      alt="logo"
+      class="about__subscribe-logo"
+      src="../../../../assets/img/about/subscribe.png"
+    />
+  </section>
+</div>
