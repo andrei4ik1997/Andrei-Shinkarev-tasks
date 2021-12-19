@@ -1,0 +1,52 @@
+.latestProdust{
+  width: 100%;
+}
+
+.latest-progucts__desc {
+  width: 50%;
+  margin-bottom: 40px;
+}
+
+.latest-progucts__row {
+  display: flex;
+  margin: 0px -15px;
+}
+
+.product {
+  width: 33.33333%;
+  padding: 0px 15px;
+}
+
+.product__img {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.product__title-name {
+  margin-right: 15px;
+  color: #515769;
+  font-size: 1.5714rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.product__link {
+  position: relative;
+  font-size: 0.9286rem;
+  font-weight: 600;
+}
+
+.product__link:after {
+  position: absolute;
+  top: 8px;
+  right: -15px;
+  width: 9px;
+  height: 2px;
+  background: #17bed2;
+  content: " ";
+}
+
+.product a:hover,
+.product__title-name:hover {
+  color: #999caa;
+}

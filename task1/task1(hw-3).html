@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./task1(hw-3).css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <title>Task1 HW-3</title>
+  </head>
+  <body>
+    <section class="registration">
+      <h2 class="registration__title">Online Event Registration Form</h2>
+      <p class="registration__description">
+        If you would like to take part in our event, please fill in your details
+        in the Event Registration Form below and you will be automatically
+        registered. Event registration must be completed at least six (6) days
+        prior to the event.
+      </p>
+      <form
+        class="registrationForm"
+        action=""
+        method="POST"
+        name="registrationForm"
+      >
+        <div class="wrapper">
+          <div class="formItem">
+            <label class="formItem__label" for="firstNameInput" id="firstName"
+              >Name<span class="formItem__label_required">*</span></label
+            >
+            <input
+              class="formItem__input"
+              id="firstNameInput"
+              type="text"
+              name="firstName"
+              aria-labelledby="firstName"
+              placeholder="First"
+              required
+            />
+          </div>
+          <div class="formItem formItem_margin0">
+            <label
+              class="formItem__label formItem__label_none"
+              id="secondName"
+            ></label>
+            <input
+              class="formItem__input"
+              type="text"
+              name="lastName"
+              aria-labelledby="secondName"
+              placeholder="Last"
+              required
+            />
+          </div>
+        </div>
+        <div class="wrapper">
+          <div class="formItem">
+            <label class="formItem__label" for="emailInput" id="email"
+              >Email<span class="formItem__label_required">*</span></label
+            >
+            <input
+              class="formItem__input"
+              type="email"
+              id="emailInput"
+              name="email"
+              aria-labelledby="email"
+              required
+            />
+          </div>
+          <div class="formItem">
+            <label class="formItem__label" for="phoneInput" id="phone"
+              >Phone<span class="formItem__label_required">*</span></label
+            >
+            <input
+              class="formItem__input"
+              id="phoneInput"
+              type="tel"
+              pattern="[0-9]{3}\s[0-9]{3}\s[0-9]{4}"
+              name="phone"
+              placeholder="### ### ####"
+              aria-labelledby="phone"
+              required
+            />
+          </div>
+        </div>
+        <div class="wrapper">
+          <div class="formItem">
+            <label class="formItem__label" for="friendsInput" id="friends">
+              How many friends will you bring along?<span
+                class="formItem__label_required"
+                >*</span
+              >
+            </label>
+            <select
+              class="formItem__input"
+              id="friendsInput"
+              size="1"
+              name="friends"
+              aria-labelledby="friends"
+              required
+            >
+              <option class="formItem__option" value="none">None</option>
+              <option class="formItem__option" value="1">1</option>
+              <option class="formItem__option" value="2">2</option>
+              <option class="formItem__option" value="3">3</option>
+              <option class="formItem__option" value="more">more</option>
+            </select>
+          </div>
+          <div class="formItem">
+            <label class="formItem__label" for="arriveInput" id="arrive">
+              When will you arrive?<span class="formItem__label_required"
+                >*</span
+              ></label
+            >
+            <input
+              class="formItem__input formItem__input_arrive"
+              id="arriveInput"
+              type="time"
+              name="arrive"
+              placeholder="HH:MM AM"
+              aria-labelledby="arrive"
+              required
+            />
+          </div>
+        </div>
+        <div class="formItem formItem_width100">
+          <label class="formItem__label">
+            How did you hear about the event?<span
+              class="formItem__label_required"
+              >*</span
+            ></label
+          >
+          <div class="formItem__input formItem__input_radio">
+            <input
+              class="formItem__radio"
+              type="radio"
+              id="friendColeagueInput"
+              name="whoSay"
+              value="friendColeague"
+              aria-labelledby="friendColeague"
+              required
+            />
+            <label
+              class="formItem__label formItem__label_radio"
+              for="friendColeagueInput"
+              id="friendColeague"
+              >Friend or coleague</label
+            >
+          </div>
+          <div class="formItem__input formItem__input_radio">
+            <input
+              class="formItem__radio"
+              type="radio"
+              id="advertisementInput"
+              name="whoSay"
+              value="advertisement"
+              aria-labelledby="advertisement"
+            />
+            <label
+              class="formItem__label formItem__label_radio"
+              for="advertisementInput"
+              id="advertisement"
+              >Advertisement</label
+            >
+          </div>
+          <div class="formItem__input formItem__input_radio">
+            <input
+              class="formItem__radio"
+              type="radio"
+              id="tvInput"
+              name="whoSay"
+              value="tv"
+              aria-labelledby="tv"
+            />
+            <label
+              class="formItem__label formItem__label_radio"
+              for="tvInput"
+              id="tv"
+              >TV</label
+            >
+          </div>
+          <div class="formItem__input formItem__input_radio">
+            <input
+              class="formItem__radio"
+              type="radio"
+              id="searchEngineInput"
+              name="whoSay"
+              value="searchEngine"
+              aria-labelledby="searchEngine"
+            />
+            <label
+              class="formItem__label formItem__label_radio"
+              for="searchEngineInput"
+              id="searchEngine"
+              >Search Engine</label
+            >
+          </div>
+        </div>
+        <div class="location">
+          <p class="location__description">
+            Bellow, you can find a map of the event venue. Please contact us for
+            any further details or use the coordinates on your GPS. See you
+            there!
+          </p>
+          <iframe
+            class="location__map"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5827.913131077547!2d-79.0812243332917!3d43.084408491861296!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89d343064ddaf479%3A0xe057259c9676e8ce!2z0J_QsNGA0Log0JrQstC40L0g0JLQuNC60YLQvtGA0LjRjw!5e0!3m2!1sru!2sby!4v1631960158689!5m2!1sru!2sby"
+            loading="lazy"
+          ></iframe>
+        </div>
+
+        <div class="formItem formItem_coordinates">
+          <label class="formItem__label" for="coordinatesInput" id="coordinates"
+            >Coordinates</label
+          >
+          <input
+            class="formItem__input"
+            type="text"
+            id="coordinatesInput"
+            name="coordinates"
+            aria-labelledby="coordinates"
+          />
+        </div>
+        <button class="registrationForm__button" type="submit">register</button>
+      </form>
+    </section>
+  </body>
+</html>

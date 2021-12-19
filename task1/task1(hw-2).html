@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task1</title>
+  </head>
+  <body>
+    <table border="1" width="40%">
+      <td>
+        <form action="" method="get" name="eventRegistrationForm">
+          <h2>Online Event Registration Form</h2>
+          <p>
+            If you would like to take part in our event, please fill in your
+            details in the Event Registration Form below and you will be
+            automatically registered. Event registration must be completed at
+            least six (6) days prior to the event.
+          </p>
+          <table cellpadding="5">
+            <tr align="left">
+              <th><label for="firstName">Name<font color='red'>&#9913</font></label></th>
+            </tr>
+            <tr>
+              <td>
+                <input
+                  id="firstName"
+                  type="text"
+                  name="firstName"
+                  placeholder="First"
+                  required
+                />
+              </td>
+              <td>
+                <input
+                  type="text"
+                  name="lastName"
+                  placeholder="Last"
+                  required
+                />
+              </td>
+            </tr>
+            <tr align="left">
+              <th><label for="email">Email<font color='red'>&#9913</font></label></th>
+              <th><label for="phone">Phone <font size="2">(format 375-xx-xxx-xx-xx)</font><font color='red'>&#9913</font></label></th>
+            </tr>
+            <tr>
+              <td><input type="email" id="email" name="email" required /></td>
+              <td>
+                <input
+                  id="phone"
+                  type="tel"
+                  pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}-[0-9]{2}-[0-9]{2}"
+                  name="phone"
+                  placeholder="375-xx-xxx-xx-xx"
+                  required
+                />
+              </td>
+            </tr>
+            <tr align="left">
+              <th>
+                <label for="friends">
+                  How many friends will you bring along?<font color='red'>&#9913</font>
+                </label>
+              </th>
+              <th>
+                <label for="arrive"> When will you arrive?<font color='red'>&#9913</font> </label>
+              </th>
+            </tr>
+            <tr>
+              <td>
+                <select id="friends" size="1" name="friends">
+                  <option selected>None</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="more">more</option>
+                </select>
+              </td>
+              <td>
+                <input id="arrive" type="time" name="arrive" required />
+              </td>
+            </tr>
+            <tr align="left">
+              <th>How did you hear about the event:?<font color='red'>&#9913</font></th>
+            </tr>
+            <tr>
+              <td>
+                <input
+                  type="radio"
+                  id="friendColeague"
+                  name="whoSay"
+                  value="friendColeague"
+                />
+                <label for="friendColeague">Friend or coleague</label>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <input
+                  type="radio"
+                  id="advertisement"
+                  name="whoSay"
+                  value="advertisement"
+                />
+                <label for="advertisement">Advertisement</label>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <input type="radio" id="tv" name="whoSay" value="tv" />
+                <label for="tv">TV</label>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <input
+                  type="radio"
+                  id="searchEngine"
+                  name="whoSay"
+                  value="searchEngine"
+                />
+                <label for="searchEngine">Search Engine</label>
+              </td>
+            </tr>
+          </table>
+          <p>
+            Bellow, you can find a map of the event venue. Please contact us for
+            any further details or use the coordinates on your GPS. See you
+            there!
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5827.913131077547!2d-79.0812243332917!3d43.084408491861296!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89d343064ddaf479%3A0xe057259c9676e8ce!2z0J_QsNGA0Log0JrQstC40L0g0JLQuNC60YLQvtGA0LjRjw!5e0!3m2!1sru!2sby!4v1631960158689!5m2!1sru!2sby"
+              width="100%"
+              height="300"
+              style="border: 0"
+              loading="lazy"
+            ></iframe>
+          </p>
+          <p>
+            <label for="coordinates">Coordinates</label><br />
+            <input type="text" id="coordinates" name="coordinates" />
+          </p>
+          <p align="center"> <button type="submit">REGISTER</button> </p>
+        </form>
+      </td>
+    </table>
+  </body>
+</html>
