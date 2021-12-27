@@ -1,0 +1,64 @@
+<div *ngIf="!loading; else spinner">
+  <div *ngIf="orders.length; else empty">
+    <table class="table">
+      <thead class="table__head">
+        <tr class="table__row table__row_backgroud-grey">
+          <th class="table__row-cell">№</th>
+          <th class="table__row-cell">Date</th>
+          <th class="table__row-cell">Name</th>
+          <th class="table__row-cell">Phone</th>
+          <th class="table__row-cell">City</th>
+          <th class="table__row-cell">Adress</th>
+          <th class="table__row-cell">Products</th>
+          <th class="table__row-cell">Price</th>
+          <th class="table__row-cell">Commentary</th>
+          <th class="table__row-cell">Action</th>
+        </tr>
+      </thead>
+      <tbody class="table__body">
+        <tr class="table__row" *ngFor="let order of orders; let i = index">
+          <td class="table__row-cell" aria-label="№">{{ i + 1 }}</td>
+          <td class="table__row-cell" aria-label="Date">
+            {{ order.date | date: "medium" }}
+          </td>
+          <td class="table__row-cell" aria-label="Name">{{ order.name }}</td>
+          <td class="table__row-cell" aria-label="Phone">{{ order.phone }}</td>
+          <td class="table__row-cell" aria-label="City">{{ order.city }}</td>
+          <td class="table__row-cell" aria-label="Adress">
+            {{ order.adress }}
+          </td>
+          <td class="table__row-cell" aria-label="Products">
+            <ul *ngFor="let product of order.products">
+              <li>{{ product.name }} x {{ product.count }}</li>
+            </ul>
+          </td>
+          <td class="table__row-cell" aria-label="Price">
+            <div>
+              <div>{{ order.price | currency: "USD" }}</div>
+              <div>{{ order.payment }}</div>
+            </div>
+          </td>
+          <td class="table__row-cell" aria-label="Commentary">
+            {{ order.commentary }}
+          </td>
+          <td class="table__row-cell" aria-label="Action">
+            <button class="button button-delete" (click)="delete(order.id)">
+              Complited
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<ng-template #spinner>
+  <div class="spinner">
+    <img alt="spinner" class="spinner__image" src="/assets/spinner.svg" />
+  </div>
+</ng-template>
+
+<ng-template #empty>
+  <div class="empty">
+    <p class="empty__message">No orders :(</p>
+  </div>
+</ng-template>

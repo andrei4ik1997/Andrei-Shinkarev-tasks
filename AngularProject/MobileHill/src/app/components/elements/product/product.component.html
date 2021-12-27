@@ -1,0 +1,21 @@
+<article class="product" [@product]="productState">
+  <a class="product__image-container" routerLink="/main/{{ product.id }}">
+    <img class="product__image" alt="img" src="{{ product.images[0] }}" />
+  </a>
+
+  <div class="product__name">{{ product.name }}</div>
+
+  <div class="product__container">
+    <span class="product__price">{{ product.price | currency: "USD" }}</span>
+    <button
+      class="product__button-basket"
+      (click)="addProduct(product)"
+      *ngIf="productInBasket(product.id) < product.amount; else max"
+    >
+      Add to cart
+    </button>
+    <ng-template #max>
+      <div class="product__max-value">Max available value</div>
+    </ng-template>
+  </div>
+</article>

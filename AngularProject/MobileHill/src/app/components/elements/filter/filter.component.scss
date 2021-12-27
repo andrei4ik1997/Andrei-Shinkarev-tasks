@@ -1,0 +1,50 @@
+.filter {
+  padding: 0px 10px 0px 25px
+}
+
+.filter__form {
+  display: flex;
+  flex-direction: column;
+  color: white;
+  font-family: "Biryani", sans-serif;
+  font-size: 14px;
+  &-parametr {
+    margin-top: 20px;
+    &-title {
+      color: black;
+      font-size: 13px;
+      font-weight: bold;
+    }
+    &-checkbox {
+      display: flex;
+      align-items: baseline;
+      width: 100%;
+    }
+    &-input {
+      &[type="number"] {
+        max-width: 50%;
+        padding-left: 5px;
+      }
+      outline: none;
+    }
+    &-label {
+      margin-left: 5px;
+      cursor: pointer;
+    }
+  }
+
+  &-button-clear {
+    width: 100%;
+    min-height: 30px;
+    padding: 0 5px;
+    margin-top: 20px;
+    background: #333333;
+    border: none;
+    color: #fff;
+    font-family: "Noto Sans", sans-serif;
+    font-size: 1rem;
+    cursor: pointer;
+    outline: none;
+    transition: opacity 0.2s ease-in;
+  }
+}

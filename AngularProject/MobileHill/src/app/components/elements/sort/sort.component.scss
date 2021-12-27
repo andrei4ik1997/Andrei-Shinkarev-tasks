@@ -1,0 +1,27 @@
+.sort {
+  margin: 30px auto;
+  width: 70%;
+  &__form {
+    display: flex;
+  }
+  &__form-title {
+    color: #ffffff;
+    font-family: "Biryani", sans-serif;
+    font-size: 16px;
+  }
+  &__form-control {
+    display: flex;
+    align-items: center;
+    margin-left: 30px;
+    &-input {
+      margin: 0px;
+    }
+    &-label {
+      margin-left: 12px;
+      text-decoration-line: underline;
+      font-family: "Biryani", sans-serif;
+      font-size: 16px;
+      cursor: pointer;
+    }
+  }
+}

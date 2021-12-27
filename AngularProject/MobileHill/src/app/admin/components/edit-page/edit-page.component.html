@@ -1,0 +1,326 @@
+<div *ngIf="form; else loading">
+  <form class="form" [formGroup]="form" (ngSubmit)="submit()">
+    <h1 class="form__title">Edit a product</h1>
+    <div
+      class="form__control"
+      [ngClass]="{
+        form__control_invalid:
+          form.get('name').touched && form.get('name').invalid
+      }"
+    >
+      <label class="form__control-label" for="name">Name</label>
+      <input
+        class="form__control-input"
+        id="name"
+        type="text"
+        placeholder="Name"
+        formControlName="name"
+      />
+      <div
+        class="form__control-validation"
+        *ngIf="form.get('name').touched && form.get('name').invalid"
+      >
+        <small *ngIf="form.get('name').errors.required">
+          The field cannot be empty
+        </small>
+      </div>
+    </div>
+    <div class="form__row">
+      <div
+        class="form__control"
+        [ngClass]="{
+          form__control_invalid:
+            form.get('category').touched && form.get('category').invalid
+        }"
+      >
+        <label class="form__control-label" for="category">Category</label>
+        <select
+          class="form__control-input"
+          id="category"
+          name="category"
+          formControlName="category"
+        >
+          <option selected disabled value="" hidden>Choose category</option>
+          <option value="Mobile phone">Mobile phone</option>
+          <option value="Tablet">Tablet</option>
+          <option value="Laptop">Laptop</option>
+        </select>
+        <div
+          class="form__control-validation"
+          *ngIf="form.get('category').touched && form.get('category').invalid"
+        >
+          <small *ngIf="form.get('category').errors.required"
+            >Choose category</small
+          >
+        </div>
+      </div>
+      <div
+        class="form__control"
+        [ngClass]="{
+          form__control_invalid:
+            form.get('brand').touched && form.get('brand').invalid
+        }"
+      >
+        <label class="form__control-label" for="category">Brand</label>
+        <select
+          class="form__control-input"
+          id="brand"
+          name="brand"
+          formControlName="brand"
+        >
+          <option selected disabled value="" hidden>Choose brand</option>
+          <option value="Samsung">Samsung</option>
+          <option value="Apple">Apple</option>
+          <option value="Xiaomi">Xiaomi</option>
+          <option value="HONOR">HONOR</option>
+          <option value="POCO">POCO</option>
+          <option value="Huawei">Huawei</option>
+          <option value="Realme">Realme</option>
+          <option value="OnePlus">OnePlus</option>
+          <option value="Google">Google</option>
+          <option value="Nokia">Nokia</option>
+          <option value="Asus">Asus</option>
+        </select>
+        <div
+          class="form__control-validation"
+          *ngIf="form.get('brand').touched && form.get('brand').invalid"
+        >
+          <small *ngIf="form.get('brand').errors.required">Choose brand</small>
+        </div>
+      </div>
+    </div>
+    <div class="form__row">
+      <div
+        class="form__control"
+        [ngClass]="{
+          form__control_invalid:
+            form.get('articul').touched && form.get('articul').invalid
+        }"
+      >
+        <label class="form__control-label" for="articul">Articul</label>
+        <input
+          class="form__control-input"
+          id="articul"
+          type="text"
+          placeholder="Articul"
+          formControlName="articul"
+        />
+        <div
+          class="form__control-validation"
+          *ngIf="form.get('articul').touched && form.get('articul').invalid"
+        >
+          <small *ngIf="form.get('articul').errors.required"
+            >The field cannot be empty</small
+          >
+        </div>
+      </div>
+
+      <div
+        class="form__control"
+        [ngClass]="{
+          form__control_invalid:
+            form.get('price').touched && form.get('price').invalid
+        }"
+      >
+        <label class="form__control-label" for="price">Price, $</label>
+        <input
+          class="form__control-input"
+          id="price"
+          min="0"
+          type="number"
+          placeholder="Price"
+          formControlName="price"
+        />
+        <div
+          class="form__control-validation"
+          *ngIf="form.get('price').touched && form.get('price').invalid"
+        >
+          <small *ngIf="form.get('price').errors.required"
+            >The field cannot be empty
+          </small>
+          <small *ngIf="form.get('price').errors.pattern">Only numbers</small>
+        </div>
+      </div>
+      <div
+        class="form__control"
+        [ngClass]="{
+          form__control_invalid:
+            form.get('amount').touched && form.get('amount').invalid
+        }"
+      >
+        <label class="form__control-label" for="amount">Amount, pc.</label>
+        <input
+          class="form__control-input"
+          id="amount"
+          min="0"
+          type="number"
+          placeholder="Amount"
+          formControlName="amount"
+        />
+        <div
+          class="form__control-validation"
+          *ngIf="form.get('amount').touched && form.get('amount').invalid"
+        >
+          <small *ngIf="form.get('amount').errors.required"
+            >The field cannot be empty</small
+          >
+        </div>
+      </div>
+    </div>
+    <div formGroupName="images">
+      <div
+        class="form__control"
+        *ngFor="let image of getImageArray().controls; let i = index"
+        [ngClass]="{
+          form__control_invalid:
+            getImageArray().controls[i].touched &&
+            getImageArray().controls[i].invalid
+        }"
+      >
+        <label class="form__control-label" for="image-{{ i + 1 }}"
+          >Image {{ i + 1 }}</label
+        >
+        <input
+          class="form__control-input"
+          id="image-{{ i + 1 }}"
+          type="text"
+          placeholder="Image src"
+          [formControlName]="i"
+        />
+        <div
+          class="form__control-validation"
+          *ngIf="
+            getImageArray().controls[i].touched &&
+            getImageArray().controls[i].invalid
+          "
+        >
+          <small *ngIf="getImageArray().controls[i].errors.required"
+            >The field cannot be empty</small
+          >
+        </div>
+      </div>
+      <div class="form__buttons">
+        <button
+          type="button"
+          class="form__button form__button-add"
+          (click)="addInput()"
+        >
+          Add input for image
+        </button>
+        <button
+          type="button"
+          class="form__button form__button-add"
+          (click)="deleteInput()"
+          *ngIf="getImageArray().length"
+        >
+          Delete last input
+        </button>
+      </div>
+    </div>
+    <div class="form__row">
+      <div
+        class="form__control"
+        [ngClass]="{
+          form__control_invalid:
+            form.get('display').touched && form.get('display').invalid
+        }"
+      >
+        <label class="form__control-label" for="display">display, ''</label>
+        <input
+          class="form__control-input"
+          id="display"
+          min="0"
+          step="0.1"
+          type="number"
+          placeholder="display"
+          formControlName="display"
+        />
+        <div
+          class="form__control-validation"
+          *ngIf="form.get('display').touched && form.get('display').invalid"
+        >
+          <small *ngIf="form.get('display').errors.required"
+            >The field cannot be empty</small
+          >
+          <small *ngIf="form.get('display').errors.pattern">Only numbers</small>
+        </div>
+      </div>
+      <div
+        class="form__control"
+        [ngClass]="{
+          form__control_invalid:
+            form.get('memory').touched && form.get('memory').invalid
+        }"
+      >
+        <label class="form__control-label" for="memory">Memory, Gb</label>
+        <select
+          class="form__control-input"
+          size="1"
+          id="memory"
+          name="memory"
+          formControlName="memory"
+        >
+          <option selected disabled value="" hidden>Check memory</option>
+          <option value="16">16 Gb</option>
+          <option value="32">32 Gb</option>
+          <option value="64">64 Gb</option>
+          <option value="128">128 Gb</option>
+          <option value="256">256 Gb</option>
+          <option value="512">512 Gb</option>
+        </select>
+        <div
+          class="form__control-validation"
+          *ngIf="form.get('memory').touched && form.get('memory').invalid"
+        >
+          <small *ngIf="form.get('memory').errors.required"
+            >The field cannot be empty</small
+          >
+        </div>
+      </div>
+      <div
+        class="form__control"
+        [ngClass]="{
+          form__control_invalid:
+            form.get('camera').touched && form.get('camera').invalid
+        }"
+      >
+        <label class="form__control-label" for="camera">Camera, MP</label>
+        <input
+          class="form__control-input"
+          id="camera"
+          type="number"
+          min="0"
+          step="0.1"
+          placeholder="Camera"
+          formControlName="camera"
+        />
+        <div
+          class="form__control-validation"
+          *ngIf="form.get('camera').touched && form.get('camera').invalid"
+        >
+          <small *ngIf="form.get('camera').errors.required"
+            >The field cannot be empty</small
+          >
+          <small *ngIf="form.get('camera').errors.pattern">Only numbers</small>
+        </div>
+      </div>
+    </div>
+    <div class="form__control">
+      <label class="form__control-label" for="description">Description</label>
+      <quill-editor formControlName="description"></quill-editor>
+    </div>
+    <button
+      type="submit"
+      class="form__button"
+      [disabled]="form.invalid || submitted"
+    >
+      Update
+    </button>
+  </form>
+</div>
+
+<ng-template #loading>
+  <div class="spinner">
+    <img alt="spinner" class="spinner__image" src="/assets/spinner.svg" />
+  </div>
+</ng-template>

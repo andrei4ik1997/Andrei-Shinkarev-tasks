@@ -1,0 +1,49 @@
+{
+  "$schema": "./node_modules/@angular/service-worker/config/schema.json",
+  "index": "/index.html",
+  "assetGroups": [
+    {
+      "name": "app",
+      "installMode": "prefetch",
+      "resources": {
+        "files": [
+          "/favicon.ico",
+          "/index.html",
+          "/manifest.webmanifest",
+          "/*.css",
+          "/*.js"
+        ],
+        "urls": [
+          "https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap",
+          "https://fonts.googleapis.com/css2?family=Oxanium&display=swap",
+          "https://fonts.googleapis.com/css2?family=Biryani&display=swap",
+          "https://fonts.googleapis.com/css2?family=Oswald&display=swap",
+          "https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap"
+        ]
+      }
+    },
+    {
+      "name": "assets",
+      "installMode": "lazy",
+      "updateMode": "prefetch",
+      "resources": {
+        "files": [
+          "/assets/**",
+          "/*.(svg|cur|jpg|jpeg|png|apng|webp|avif|gif|otf|ttf|woff|woff2)"
+        ]
+      }
+    }
+  ],
+  "dataGroups": [
+    {
+      "name": "firebase",
+      "urls": [
+        "https://mobilehill-fa3df-default-rtdb.europe-west1.firebasedatabase.app/**"
+      ],
+      "cacheConfig": {
+        "maxSize": 5,
+        "maxAge": "3600"
+      }
+    }
+  ]
+}
